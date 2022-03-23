@@ -16,10 +16,14 @@
 }
 
 .heading1 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 8rem;
   line-height: 8.5rem;
-  letter-spacing: 5%;
+  letter-spacing: 10%;
+  width:100%;
+  margin:auto;
+  padding:2px 2px !important;
+  text-align: centre;
   font-family: "Outfit", sans-serif;
 }
 
@@ -29,6 +33,10 @@
   font-weight: 600;
   font-family: Outfit;
   font-style: normal;
+  width:100%;
+  padding:2px 2px !important;
+  text-align: centre;
+  
 }
 
 .heading3 {
@@ -80,7 +88,7 @@
   // margin-bottom: 6rem;
   padding-bottom: 6rem;
   .heading1 {
-    width: 82.2rem;
+    width: 80%;
     // margin: auto;
   }
 
@@ -103,7 +111,7 @@
   }
   .readMore {
     width: fit-content;
-    height: 4.7rem;
+    height: auto;
     // margin: auto;
   }
 }
@@ -123,7 +131,8 @@
   justify-content: space-around;
   position: relative;
   overflow-x: hidden;
-
+  pointer-events: none;
+  
   .heading1 {
     z-index: 5;
   }
@@ -142,6 +151,9 @@
     justify-content: space-between;
     width: 60%;
     z-index: 5;
+    overflow: auto;
+    pointer-events: none;
+
   }
 
   .backBoxListText {
@@ -153,9 +165,11 @@
   }
   .blackBoxIcon {
     display: flex;
+    flex:25%;
     flex-direction: column;
     align-items: center;
-    gap: 1.6rem;
+    gap: auto;
+    pointer-events: none;
     &:first-child {
       .balckBoxIconImg {
         // height: 80px;
@@ -182,13 +196,20 @@
   text-align: center;
   min-height: 100vh;
 
+  .containerHeader{
+    display: flex;
+    align-items: center;
+  }
+
   .revolutionList {
     display: flex;
+    flex:33%;
     align-items: center;
     justify-content: space-between;
     padding: 10rem 15.3rem;
     display: flex;
     align-items: baseline;
+    overflow-x: auto;
   }
 
   .revolutionItemText {
@@ -219,8 +240,7 @@
   }
 
   .revolutionCard {
-    width: 80%;
-    margin: 3rem auto;
+    width: 100%;
     position: relative;
     overflow: hidden;
 
@@ -258,10 +278,13 @@
 
     .revolutionCardList {
       display: flex;
+      flex:33%;
       justify-content: space-between;
       align-items: center;
       padding: 4rem 3rem 1rem 3rem;
       z-index: 9;
+      display: flex;
+      overflow-x: auto;
     }
   }
 
@@ -271,6 +294,8 @@
     font-size: 20px;
     font-family: Inter;
     line-height: 30px;
+    padding:4px;
+    margin:4px;
   }
 
   .revolutionCardSubHeading {
@@ -395,6 +420,7 @@
 
   .readMoreText {
     text-align: right;
+    font-size: 2em;
   }
 }
 
@@ -587,18 +613,21 @@
     margin: 0 1rem;
 
     .readMoreText {
+      display:block;
       span {
         font-size: 3rem !important;
       }
     }
   }
 
-  .revolutionList,
-  .revolutionCardList {
-    width: unset;
-    padding: 10rem 6rem !important;
+  .revolutionList {
+    display:block;
+    // width: unset;
+    flex:33.33%;
+    padding: auto !important;
     gap: 5rem;
     justify-content: flex-start;
+    align-items: stretch;
     // flex-wrap: wrap;
     overflow-x: auto;
     &::-webkit-scrollbar {
@@ -610,24 +639,43 @@
     }
   }
 
+  .revolutionCardList {
+    display:block;
+    float: left;
+    flex:33.33%;
+    // width: unset;
+    gap: 5rem;
+    justify-content: flex-start;
+    // flex-wrap: wrap;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    
+  }
+
   .revolutionCardText {
     font-size: 14px !important;
     line-height: 20px !important;
+    text-align: center;
+    padding:2px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .revolutionCardSubHeading {
     font-size: 3rem !important;
   }
 
-  .revolutionCardList {
-    padding: 0 3rem !important;
-    padding-top: 10px !important;
-    flex-direction: column;
-    margin-bottom: 8rem;
-    .revolutionCardImage {
-      width: 49px;
-      margin: auto;
-    }
-  }
+  // .revolutionCardList {
+  //   padding: 0 3rem !important;
+  //   padding-top: 10px !important;
+  //   flex-direction: column;
+  //   margin-bottom: 8rem;
+  //   .revolutionCardImage {
+  //     width: 49px;
+  //     margin: auto;
+  //   }
+  // }
 
   .revolutionaCotainer {
     margin: unset;

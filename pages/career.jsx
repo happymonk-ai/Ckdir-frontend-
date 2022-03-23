@@ -9,7 +9,7 @@ const career = ({ openRoles }) => {
       <div className={styles.landingContainer}>
         <Header />
         <div className={styles.landingPage}>
-          <div className={styles.heading1}>Jobs at Happymonk</div>
+          <div className={styles.heading1}>Jobs at Happymonk.AI</div>
           <p className={styles.landingText}>
             Like building revolutionary products? Do your fingers type faster
             than your brains? Then, This is the right place for you.

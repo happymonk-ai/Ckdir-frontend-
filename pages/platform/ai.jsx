@@ -16,10 +16,12 @@ import serversImg from "../../public/icons/connected-servers.svg";
 import aiAnalyticsImg from "../../public/icons/AI-analytics.svg";
 import workingChartImg from "../../public/working-chart.png";
 
+import ai from  "../../public/ai.jpg";
+
 const platFormCardData = [
   {
     imageUrl: cardImg1,
-    heading: "Edge IOT",
+    heading: "Human, Machines & Things Intelligence",
     text:
       "Autonomous Prediction & Actions on the edge. Get critical insights, and aid your team with critical information from sensors, real-time data of your organization, being even offline.",
   },
@@ -27,7 +29,7 @@ const platFormCardData = [
     imageUrl: cardImg2,
     heading: "Sensor Fusion",
     text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac suspendisse etiam sit lacus. Curabitur purus senectus sed nisl. Donec amet maecenas imperdiet id duis id mi etiam et.",
+      "Create a shared, secure and immutable view of the truth, delivering transformable new levels of transparency, efficiency and opportunity through Digital Twins.",
   },
 ];
 const AI = () => {
@@ -46,16 +48,15 @@ const AI = () => {
 
       {/* chart section */}
       <div className={styles.chart}>
+      <div className={styles.heading}>Salient features</div>
         <div className={styles.chartImg}>
-          <Image src={workingChartImg} alt="chart" />
+          <Image src={ai} alt="AI_Happymonk_sequence_Diagram" />
         </div>
       </div>
 
       {/* Salient features section */}
 
       <div className={styles.sf}>
-        {/* <div className={styles.heading}>Salient features</div> */}
-
         <div className={styles.glassCard}>
           {/* glowing cards */}
           {/* <div className={styles.circle1}></div>
@@ -103,7 +104,7 @@ const AI = () => {
 
       {/* software section */}
       <div className={styles.software}>
-        <div className={styles.heading}>Software</div>
+        {/* <div className={styles.heading}>Software</div> */}
         <div className={styles.sCards}>
           <div className={styles.sCard}>
             <div className={styles.sCardImg}>
@@ -114,9 +115,9 @@ const AI = () => {
                 Detection & Identification
               </div>
               <div className={styles.sCardSummary}>
-                Hyper Connected Systems : Proactively Detects Incidents across
-                factories, warehouse, fleet, ensuring improved employee safety,
-                lesser workplace accidents, easier compliance management.
+                Proactively Detects Incidents across
+                factories, warehouse, fleet, elevating employee safety,
+                fewer workplace accidents, easier compliance management.
               </div>
             </div>
           </div>
@@ -130,8 +131,7 @@ const AI = () => {
                 Decentralized Command and Control
               </div>
               <div className={styles.sCardSummary}>
-                Centralized Command & Control over your entire decentralized
-                infrastructure.
+                
               </div>
             </div>
           </div>

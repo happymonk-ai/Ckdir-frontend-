@@ -4,7 +4,6 @@ import styles from "../../styles/Blockchain.module.scss";
 import securityShieldImg from "../../public/icons/securityShiedl.svg";
 import decentralisedImg from "../../public/icons/Decentralised-fill.svg";
 import logsImg from "../../public/icons/Immutable-logs.svg";
-import cs1Img from "../../public/Rectangle_630.png";
 import kpImg from "../../public/laptop-network.png";
 import rightIcon from "../../public/icons/right-circle.svg";
 import soundIcon from "../../public/icons/sound.svg";
@@ -13,6 +12,9 @@ import phonesImg from "../../public/phoneGroup.png";
 import locationImg from "../../public/icons/location.svg";
 import proofDocIcon from "../../public/icons/proofDoc.svg";
 import authorityProof from "../../public/icons/authorityProof.svg";
+import zkp from "../../public/zkp.jpeg";
+
+
 
 const Blockchain = ({ kpList }) => {
   return (
@@ -21,11 +23,7 @@ const Blockchain = ({ kpList }) => {
         <Header />
         <div className={styles.textContainer}>
           <span className={styles.landingText}>
-            Revolutionize
-            <br className={styles.displeNone} />
-            the way
-            <br className={styles.displeNone} />
-            vital information is managed!
+            Revolutionize the way vital information is managed!
           </span>
         </div>
       </div>
@@ -53,7 +51,7 @@ const Blockchain = ({ kpList }) => {
               <div className={styles.featureIcon}>
                 <Image src={decentralisedImg} alt="decentralised" />
               </div>
-              <div className={styles.bText}>Decentralised</div>
+              <div className={styles.bText}>Decentralized</div>
             </li>
             <li className={styles.bItem}>
               <div className={styles.featureIcon}>
@@ -102,10 +100,13 @@ const Blockchain = ({ kpList }) => {
 
       {/* 0 knowledge proof section */}
       <div className={styles.kp}>
-        <div className={styles.heading}>Zero knowledge Proof</div>
-        <div className={styles.kpText}>
+        {/* <div className={styles.heading}>Zero knowledge Proof</div> */}
+        <div className={styles.kpImg}>
+            <Image src={zkp} alt="knowledge proof" />
+          </div>
+        {/* <div className={styles.kpText}>
           ZKP is essentially about proving that:
-        </div>
+        </div> */}
         <div className={styles.kpPoints}>
           <ul className={styles.kpList}>
             {kpList?.map((e, i) => (
@@ -115,9 +116,9 @@ const Blockchain = ({ kpList }) => {
               </li>
             ))}
           </ul>
-          <div className={styles.kpImg}>
-            <Image src={kpImg} alt="knowledge proof" />
-          </div>
+          {/* <div className={styles.kpImg}>
+            <Image src={zkp} alt="knowledge proof" />
+          </div> */}
         </div>
 
         <div className={styles.cards}>
@@ -153,7 +154,7 @@ const Blockchain = ({ kpList }) => {
 
       {/* Hardware section */}
       <div className={styles.hardware}>
-        <div className={styles.heading}>Zero knowledge Proof - Hardware</div>
+        <div className={styles.heading}>A More Common Example</div>
         <div className={styles.hwSummary}>
           Having a private network across your organization in different
           locations, enables cross-communication between devices, allowing for

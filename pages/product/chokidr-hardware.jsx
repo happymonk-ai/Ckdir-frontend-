@@ -110,7 +110,7 @@ const ChokidrHardware = ({ dharList }) => {
           <div className={styles.heading}>Dhar</div>
           <div className={styles.dharQuote}>
             <div>
-              You’re backhauling data to a cloud that’s far away, miles away...
+              You’re back hauling data to a cloud that’s far away, miles away...
             </div>
             <div className={styles.dharSaid}>Said - ‘cloud’</div>
           </div>
@@ -247,9 +247,9 @@ export const getStaticProps = () => {
     props: {
       dharList: [
         "Connect up 8 Cameras, BLE Enabled Sensor integration like thermal, LiDAR, ML/DL algorithms development and integration, Remote firmware upgrade, Audio and video, Cloud and mobile apps, PoE with IP67 enclosure",
-        "MultiProcesser System with integrated FPGA module customized for Hashes & Hash graphs.",
+        "Multi Processor System with integrated FPGA module customized for Hashes & Hash graphs.",
         "Integrated Battery Backup for upto 12 hours.",
-        "Connect via 5G, LorwaWAN",
+        "Connect via integrated 5G, LoRaWAN",
         "Theft Prevention Module.",
       ],
     },

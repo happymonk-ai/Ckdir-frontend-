@@ -102,6 +102,16 @@ const Footer = () => {
                   <a>Linkedin</a>
                 </Link>
               </li>
+              <li className={styles.listItem}>
+                <Link href={"https://www.linkedin.com/company/10816363/"}>
+                  <a>Facebook</a>
+                </Link>
+              </li>
+              <li className={styles.listItem}>
+                <Link href={"https://www.linkedin.com/company/10816363/"}>
+                  <a>Slack</a>
+                </Link>
+              </li>
               {/* <li className={styles.listItem}> */}
                 {/* <Link href={'/product/chokidr-software/identities'}>
                                     <a> */}
@@ -133,12 +143,17 @@ const Footer = () => {
                 </span>
                 <span>sales@happymonk.co</span>
               </li>
-
+              <li className={`${styles.listItem} ${styles.connect}`}>
+                <span className={styles.contactIcon}>
+                  <Image src={envelopImg} alt="email" />
+                </span>
+                <span>partners@happymonk.co</span>
+              </li>
               <li className={`${styles.listItem} ${styles.connect}`}>
                 <span className={styles.contactIcon}>
                   <Image src={phoneImg} alt="phone" />
                 </span>
-                <span>+91 82961 33177</span>
+                <span>+91 99161 77221</span>
               </li>
             </ul>
             {/* <ul className={styles.topSpacing}>
@@ -174,7 +189,7 @@ const Footer = () => {
         </div>
         <div className={styles.tradeMark}>
           <span className={styles.tradeMarkText}>
-            &copy; 2021 Happymonk AI Labs Pvt Ltd.| All Rights Reserved
+            &copy; 2021 Happymonk AI Labs Pvt Ltd 
           </span>
         </div>
       </div>

@@ -31,15 +31,15 @@ const career = ({ openRoles }) => {
           <div className={styles.heading2}>Our Mission</div>
           <div className={styles.para}>
             <div>
-              We specialize in enabling People & Things to connect into one
-              common universe which aids humans to take better, smarter and
+              We Enable Organization, People & Things to connect into one
+              common eco-system which aids humans to take better, smarter and
               faster decisions, maintain government compliance and create
-              financial efficiency in the ecosystem.
+              financial efficiency in the ecosystem. Making One Large Happy Family.
             </div>
 
             <div>
-              Our focus is in the fields of Autonomous machines, Cyber Physical
-              Systems &, Command & Control through the use of state of the art
+              Our focus is in the fields of <b>Autonomous machines, Cyber Physical
+              Systems &, Command & Control</b> through the use of state of the art
               AI & Privacy Preserving techniques.
             </div>
           </div>
@@ -78,7 +78,7 @@ const career = ({ openRoles }) => {
               <Image src={handshakeImg} alt={"value"} />
             </div>
             <div className={styles.text}>
-              <div className={styles.subHeading}>Compassione</div>
+              <div className={styles.subHeading}>Compassion</div>
               <div className={styles.summary}>
                 We are kind and caring to everyone we encounter.
               </div>
@@ -170,7 +170,7 @@ const career = ({ openRoles }) => {
               <div className={styles.fglow1}></div>
               <div className={styles.fglow2}></div>
               <div className={styles.subHeading}>Sushil Agarwal</div>
-              <div className={styles.fdeseg}>VP of Marketing</div>
+              <div className={styles.fdeseg}>Director - Marketing</div>
               {/* <div className={styles.summary}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
                 eu, elit bibendum quis facilisi.
@@ -199,7 +199,7 @@ const career = ({ openRoles }) => {
               are at the forefront of creating state of the art methods, powered
               by Deep Learning, Computer Vision and Cryptography, assisting
               businesses and individuals in adopting Blockchain driven
-              technologies and transforming traditional lifes.
+              technologies and transforming traditional lives.
             </div>
           </div>
         </div>

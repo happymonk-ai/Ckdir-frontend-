@@ -35,7 +35,7 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   color: $white;
-  width: 110.4rem;
+  width: 50%;
   font-family: "Outfit";
   font-style: normal;
   line-height: 8rem;
@@ -43,11 +43,16 @@
 }
 
 .chart {
-  margin: 10rem 6rem;
+  margin: auto;
+  margin-top: 8.5rem;
+  .heading {
+    text-align: center;
+  }
 }
 .chartImg {
-  margin: auto;
-  width: fit-content;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // salient feature section

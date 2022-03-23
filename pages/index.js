@@ -48,9 +48,8 @@ const revCardData = {
       title: "On-Machine Compute Systems",
       text: (
         <p className={styles.revolutionCardText}>
-          Enabling machines to precieve, identify, 
-          <br className={styles.dNone} />
-          manuplate & aid, the world around them.
+          Enabling machines to perceive, identify, 
+          manipulate & aid, the world around them.
         </p>
       ),
     },
@@ -60,8 +59,7 @@ const revCardData = {
       text: (
         <p className={styles.revolutionCardText}>
           Take information management & keep data in your 
-          <br className={styles.dNone} />
-          premisis and enable local processing of sensors and data.
+          premises and enable local processing of sensors and data.
         </p>
       ),
     },
@@ -71,7 +69,6 @@ const revCardData = {
       text: (
         <p className={styles.revolutionCardText}>
           Get Realtime actionable insights, 
-          <br className={styles.dNone} />
           from wide variety of IoT gateways and Edge Devices.
         </p>
       ),
@@ -84,7 +81,6 @@ const revCardData = {
       text: (
         <p className={styles.revolutionCardText}>
           Quickly track, identify and aid incidents, pinpoint accurately
-          <br className={styles.dNone} />
           and ensure compliance and safety of the user.
         </p>
       ),
@@ -95,23 +91,19 @@ const revCardData = {
       text: (
         <p className={styles.revolutionCardText}>
           Enable you to track your fleet
-          <br className={styles.dNone} />
           real time, giving you complete
-          <br className={styles.dNone} />
           access to all data that might be.
         </p>
       ),
     },
     {
       img: tempOptImg,
-      title: "Decentralized Infrastruture",
+      title: "Decentralized Infrastructure",
       text: (
         <p className={styles.revolutionCardText}>
           Real Tracking, Fencing, heavily
-          <br className={styles.dNone} />
           needed for the world where multiple
-          <br className={styles.dNone} />
-          touchpoints is everyday business.
+          touch points is everyday business.
         </p>
       ),
     },
@@ -119,11 +111,10 @@ const revCardData = {
   3: [
     {
       img: reliableDataImg,
-      title: "Zero Knowledge Collbration",
+      title: "Zero Knowledge Collaboration",
       text: (
         <p className={styles.revolutionCardText}>
           Decentralized verifiable data,
-          <br className={styles.dNone} />
           which cannot be tempered with.
         </p>
       ),
@@ -134,7 +125,6 @@ const revCardData = {
       text: (
         <p className={styles.revolutionCardText}>
           Collect, report and share real-time information 
-          <br className={styles.dNone} />
           for enhanced decision-making and effective response.
         </p>
       ),
@@ -144,8 +134,7 @@ const revCardData = {
       title: "Art of War",
       text: (
         <p className={styles.revolutionCardText}>
-          Rapid and intelligent control of the Organisations for 
-          <br className={styles.dNone} />
+          Rapid and intelligent control of the Organizations for 
           members and lower level members.
         </p>
       ),
@@ -158,7 +147,6 @@ const revCardData = {
       text: (
         <p className={styles.revolutionCardText}>
           Compliant with regulatory
-          <br className={styles.dNone} />
           standards like GDPR.
         </p>
       ),
@@ -169,7 +157,6 @@ const revCardData = {
       text: (
         <p className={styles.revolutionCardText}>
           Smart real time monitoring
-          <br className={styles.dNone} />
           within the network of your IoT.
         </p>
       ),
@@ -180,7 +167,6 @@ const revCardData = {
       text: (
         <p className={styles.revolutionCardText}>
           Harnessing the power of IoT for
-          <br className={styles.dNone} />
           hazard detection to prevent damage.
         </p>
       ),
@@ -205,11 +191,8 @@ const Home = () => {
           <div className={styles.landingPage}>
             <div className={styles.mainText}>
               <div className={styles.heading1}>
-                Starting <span> </span>
-                <br className={styles.landingBreak} />
-                at the Edge <span> </span>
-                <br className={styles.landingBreak} />
-                of the present.
+                Empowering organizations to create 
+                a better tomorrow.
               </div>
               <p className={styles.landingText}>
                 We develop technologies that create a safer tomorrow that promise a safer, better and inclusive future.
@@ -231,7 +214,7 @@ const Home = () => {
         <div className={styles.chokidarImg}>
           <Image src={chokidarDeviceImg} alt="Chokidr" />
         </div>
-        <div className={styles.heading1}>
+        <div className={styles.heading2}>
           Worried about critical systems going offline?
           {/* <br /> */}
         </div>
@@ -246,13 +229,19 @@ const Home = () => {
             <div className={styles.balckBoxIconImg}>
               <Image src={decentI} alt="Decentralised" />
             </div>
-            <div className={styles.backBoxListText}>Decentralised</div>
+            <div className={styles.backBoxListText}>Decentralized</div>
           </li>
           <li className={styles.blackBoxIcon}>
             <div className={styles.balckBoxIconImg}>
               <Image src={edgeCompImg} alt="edge computed" />
             </div>
             <div className={styles.backBoxListText}>Edge Computed</div>
+          </li>
+          <li className={styles.blackBoxIcon}>
+            <div className={styles.balckBoxIconImg}>
+              <Image src={edgeCompImg} alt="edge computed" />
+            </div>
+            <div className={styles.backBoxListText}>Offline</div>
           </li>
         </ul>
       </div>
@@ -264,6 +253,14 @@ const Home = () => {
         </div>
         <div className={styles.heading2}>Creating Revolution through Change</div>
 
+        {/* 
+        
+        List is over here
+        
+        
+        
+        
+        */}
         <ul className={styles.revolutionList}>
           <li className={styles.revolutionItem} onClick={() => setActiveRev(1)}>
             <div className={styles.revolutionItemImg}>
@@ -286,18 +283,10 @@ const Home = () => {
           <li className={styles.revolutionItem} onClick={() => setActiveRev(3)}>
             <div className={styles.revolutionItemImg}>
               {activeRev === 3 && <div className={styles.imgGlow}></div>}
-              <Image src={securityAuditImg} alt="Seaurity and audit" />
+              <Image src={securityAuditImg} alt="C4I Systems" />
             </div>
             <div className={styles.revolutionItemText}>C4I Systems</div>
           </li>
-
-          {/* <li className={styles.revolutionItem} onClick={() => setActiveRev(4)}>
-            <div className={styles.revolutionItemImg}>
-              {activeRev === 4 && <div className={styles.imgGlow}></div>}
-              <Image src={socialFootprintImg} alt="Social Footprint" />
-            </div>
-            <div className={styles.revolutionItemText}>Social Footprint</div>
-          </li> */}
         </ul>
 
         <div className={styles.revolutionCard}>

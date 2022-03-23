@@ -18,9 +18,9 @@ const ConnectNetworkSection = ({ heading, text, url, btnText, isActive, img }) =
                     {text}
                 </div>
             )}
-            <div className={styles.contactBtn}>
+            {/* <div className={styles.contactBtn}>
                 <Button title={btnText ? btnText : "Contact"} url={url} isActive={isActive} />
-            </div>
+            </div> */}
         </div>
     )
 }
