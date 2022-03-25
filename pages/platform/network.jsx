@@ -27,7 +27,7 @@ const Network = () => {
     {
       imageUrl: platformCard1Img,
       heading: "Go offline",
-      text: "Our Propriety hardware systems allows you to take your data on-premise, adhere to compliance and create offline systems which scale horizontally deeply easing impacting the financial efficeny and compliance.",
+      text: "Our Propriety hardware systems allows you to take your data on-premise, adhere to compliance and create offline systems which scale horizontally deeply easing impacting the financial efficiency and compliance.",
     },
     {
       imageUrl: platformCard1Img,
@@ -127,7 +127,7 @@ const Network = () => {
               </div>
               <div className={styles.featureText}>
                 Verify Critical Data Across Organization, People & things using
-                ZKP's
+                ZKPs
               </div>
             </li>
           </ul>
