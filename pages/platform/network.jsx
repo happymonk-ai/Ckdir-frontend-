@@ -21,7 +21,7 @@ const Network = () => {
   const platFormCardData = [
     {
       imageUrl: platformCard1Img,
-      heading: "Cloud Connect",
+      heading: `Cloud Connect`,
       text: "Click, Connect & Integrate your legacy Infrastructure, Fleet and Members into a common eco-system with multi-tenancy permissions and views",
     },
     {
@@ -32,7 +32,7 @@ const Network = () => {
     {
       imageUrl: platformCard1Img,
       heading: "G2A, G2G Communication",
-      text: "Connect ",
+      text: "Create Private G2G Communication across locations, sensors and communication services via LoRaWAN. ",
     },
     {
       imageUrl: platformCard2Img,
@@ -75,25 +75,37 @@ const Network = () => {
           <ul className={styles.featureList}>
             <li className={styles.featureItem}>
               <div className={styles.featureIcon}>
-                <Image src={inteligenceImg} alt="intelligence" />
+                <Image src={privecyImg} alt="privacy" />
               </div>
-              <div className={styles.featureText}>Public x Private Network</div>
+              <div className={styles.featureText}>
+                Cloud Connect&trade; Retrofit Your IPCamera Infrastructure via
+                ONVIF&trade;
+              </div>
             </li>
             <li className={styles.featureItem}>
               <div className={styles.featureIcon}>
-                <Image
-                  src={coordinatingDevicesImg}
-                  alt="coordinating devices"
-                />
+                <Image src={inteligenceImg} alt="intelligence" />
               </div>
-              <div className={styles.featureText}>Digital Twins</div>
+              <div className={styles.featureText}>
+                Public x Private Network using LoRaWAN&trade;, 5G&trade; and
+                LAN&trade; Networks
+              </div>
             </li>
             <li className={styles.featureItem}>
               <div className={styles.featureIcon}>
                 <Image src={governanceImg} alt="governance" />
               </div>
               <div className={styles.featureText}>
-                Offline Sensing and Processing
+                Offline Sensing and storage, syncs via Monk&trade; across all
+                the systems.
+              </div>
+            </li>
+            <li className={styles.featureItem}>
+              <div className={styles.featureIcon}>
+                <Image src={governanceImg} alt="governance" />
+              </div>
+              <div className={styles.featureText}>
+                On-premise storage of information & Analytics on DHAR&trade;.
               </div>
             </li>
             <li className={styles.featureItem}>
@@ -101,7 +113,21 @@ const Network = () => {
                 <Image src={privecyImg} alt="privacy" />
               </div>
               <div className={styles.featureText}>
-                Zero Knowledge Collaboration
+                RetroFit Legacy Sensors RFID, BLE, 5G via DHAR&trade; with click
+                of a button.
+              </div>
+            </li>
+
+            <li className={styles.featureItem}>
+              <div className={styles.featureIcon}>
+                <Image
+                  src={coordinatingDevicesImg}
+                  alt="coordinating devices"
+                />
+              </div>
+              <div className={styles.featureText}>
+                Verify Critical Data Across Organization, People & things using
+                ZKP's
               </div>
             </li>
           </ul>

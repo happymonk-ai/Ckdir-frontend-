@@ -196,20 +196,26 @@
   text-align: center;
   min-height: 100vh;
 
+  .heading2{
+    padding:auto;
+    text-align: center;
+  }
+
   .containerHeader{
     display: flex;
     align-items: center;
+
   }
 
   .revolutionList {
     display: flex;
-    flex:33%;
     align-items: center;
-    justify-content: space-between;
-    padding: 10rem 15.3rem;
-    display: flex;
-    align-items: baseline;
-    overflow-x: auto;
+    justify-content: space-evenly;
+    padding: 1rem 16rem 1rem 16rem;
+    margin:auto;
+    overflow-x: hidden;
+    width:100%;
+    z-index: 9;
   }
 
   .revolutionItemText {
@@ -277,14 +283,35 @@
     }
 
     .revolutionCardList {
+      width:100%;
       display: flex;
-      flex:33%;
       justify-content: space-between;
       align-items: center;
-      padding: 4rem 3rem 1rem 3rem;
+      padding:3rem;
       z-index: 9;
-      display: flex;
       overflow-x: auto;
+      transition: 0.2s;
+      transform-origin: right top;
+
+      .card{
+        min-width: 300px;
+        max-width: 500px;
+        min-height: 250px;
+        max-height: 300px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        transition: 0.2s;
+        transform-origin: right top;
+        padding-bottom: 1rem;
+      }
+      .card:hover {
+        transform: translateY(-1rem);
+    }
+      .readMoreText{
+        padding: auto;
+      }
     }
   }
 
@@ -620,9 +647,8 @@
     }
   }
 
-  .revolutionList {
-    display:block;
-    // width: unset;
+  .balckBoxIconList {
+    display:flex;
     flex:33.33%;
     padding: auto !important;
     gap: 5rem;
@@ -637,6 +663,7 @@
       line-height: unset;
       margin-top: 10px;
     }
+    
   }
 
   .revolutionCardList {
@@ -716,6 +743,11 @@
       .readMore {
         width: fit-content;
         margin: 0 auto;
+      }
+
+      .heading3 { 
+        width:50%;
+        align-items: center;
       }
 
       .globeBg {

@@ -147,49 +147,67 @@
 // card section
 .cardList {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8rem 6rem;
   gap: 2.5rem;
-}
+  overflow-x: auto;
+  width: 80%;
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
 
-.platformCard {
-  width: 65rem;
-  height: 73.9rem;
-  background: #0f0f0f;
-  border-radius: 1rem;
-}
+  .platformCard {
+    display: flex;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 350px;
+    max-height: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    margin:auto;
+    padding: 1rem auto 1rem auto;
+    flex-direction: column;
+    text-align: center;
+    background: #0f0f0f;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: 0.2s;
+    transform-origin: right top;
+    padding-bottom: 1rem;
+    overflow-x: hidden;
+    width:100%;
+    z-index: 9;
+  }
 
-.platformCardImage {
-  border-radius: 10px 10px 0px 0px;
-}
+  .platformCardImage {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 100%;
+  }
 
-.platformTextContainer {
-  padding: 2.2rem 5.3rem;
-  text-align: center;
-  color: rgba(228, 228, 231, 0.8);
-}
+  .platformTextContainer {
+    text-align: center;
+    color: rgba(228, 228, 231, 0.8);
+    font-size: 2rem;
+  }
 
-.platformCardHading {
-  font-family: Outfit;
-  font-size: 4rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 5rem;
-  padding-bottom: 3.9rem;
-}
-
-.platformCardText {
-  font-family: Inter;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 3rem;
-  text-align: center;
+  .platformCardHading {
+    font-family: Outfit;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 5rem;
+    padding-bottom: 3.9rem;
+  }
 }
 
 // software section
 .software {
+  display: block;
   .heading {
     text-align: center;
   }
@@ -315,7 +333,7 @@
   .landing {
     min-height: 665px;
     background-size: 100% 665px;
-    background-image: url('../public/ai-bg-small.png');
+    background-image: url("../public/ai-bg-small.png");
   }
 
   .landingText {
@@ -327,7 +345,6 @@
     margin: 5rem 0rem;
   }
   .sf {
-   
     .circle3 {
       top: 70%;
       left: 40%;
@@ -351,17 +368,14 @@
         align-items: center;
       }
     }
-   
   }
 
-
-
   .software {
-    .heading{
+    .heading {
       margin-top: 0;
     }
-    .sCardText{
-      gap: unset ;
+    .sCardText {
+      gap: unset;
     }
     .sCards {
       margin-top: 0;
@@ -379,13 +393,13 @@
         height: unset;
 
         align-items: center;
-        .sCardHeading{
+        .sCardHeading {
           text-align: center;
           font-size: 16px;
           line-height: 30px;
         }
 
-        .sCardSummary{
+        .sCardSummary {
           font-size: 14px;
           line-height: 20px;
           text-align: center;
@@ -415,7 +429,7 @@
       flex-direction: column;
       text-align: center;
     }
-    .csSummary{
+    .csSummary {
       font-size: 14px;
       line-height: 20px;
       margin-top: 10px;

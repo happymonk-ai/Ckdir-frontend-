@@ -177,7 +177,7 @@ const revCardData = {
 const revCardUrl = [
   "/product/chokidr-software/autonomousIdentities",
   "/product/chokidr-software/connecting-people-and-things",
-  "",
+  "/product/chokidr-software/connecting-people-and-things",
   "/product/chokidr-software/green-and-economy",
 ];
 const Home = () => {
@@ -209,6 +209,72 @@ const Home = () => {
         </div>
       </div>
 
+      
+      {/* revolution through change section */}
+      <div className={styles.revolutionaCotainer}>
+        <div className={styles.revolutionAtomImg}>
+          <Image src={revolutionAtomImg} alt="Revolution Atom" />
+        </div>
+        <div className={styles.heading2}>Revolution through Innovation</div>
+        {/* 
+        List is over here        
+        */}
+        <ul className={styles.revolutionList}>
+          <li className={styles.revolutionItem} onClick={() => setActiveRev(1)}>
+            <div className={styles.revolutionItemImg}>
+              {activeRev === 1 && <div className={styles.imgGlow}></div>}
+              <Image src={decentI} alt="autonomous_machines" />
+            </div>
+            <div className={styles.revolutionItemText}>
+              Autonomous Machines
+            </div>
+          </li>
+
+          <li className={styles.revolutionItem} onClick={() => setActiveRev(2)}>
+            <div className={styles.revolutionItemImg}>
+              {activeRev === 2 && <div className={styles.imgGlow}></div>}
+              <Image src={connectingPeopleImg} alt="Cyber Physical Systems" />
+            </div>
+            <div className={styles.revolutionItemText}>Cyber Physical Systems</div>
+          </li>
+
+          <li className={styles.revolutionItem} onClick={() => setActiveRev(3)}>
+            <div className={styles.revolutionItemImg}>
+              {activeRev === 3 && <div className={styles.imgGlow}></div>}
+              <Image src={securityAuditImg} alt="C4I Systems" />
+            </div>
+            <div className={styles.revolutionItemText}>C4I Systems</div>
+          </li>
+        </ul>
+
+        <div className={styles.revolutionCard}>
+          <div className={styles.circle1}></div>
+          <div className={styles.circle2}></div>
+          <div className={styles.circle3}></div>
+
+          <ul className={styles.revolutionCardList}>
+            {revCardData[activeRev].map((e, i) => (
+              <li key={i} className={styles.card}>
+                <div className={styles.revolutionCardImage}>
+                  <Image src={e.img} alt={e.title} />
+                </div>
+                <div className={styles.revolutionCardSubHeading}>{e.title}</div>
+                {e.text}
+              </li>
+            ))}
+          </ul>
+
+          <div className={styles.readMoreText}>
+            {revCardUrl[activeRev - 1] !== "" && (
+              <Link href={revCardUrl[activeRev - 1]}>
+                <a>
+                  <span>Read More</span>
+                </a>
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
       {/* Black Box section */}
       <div className={styles.balckBoxContainer}>
         <div className={styles.chokidarImg}>
@@ -246,78 +312,6 @@ const Home = () => {
         </ul>
       </div>
 
-      {/* revolution through change section */}
-      <div className={styles.revolutionaCotainer}>
-        <div className={styles.revolutionAtomImg}>
-          <Image src={revolutionAtomImg} alt="Revolution Atom" />
-        </div>
-        <div className={styles.heading2}>Creating Revolution through Change</div>
-
-        {/* 
-        
-        List is over here
-        
-        
-        
-        
-        */}
-        <ul className={styles.revolutionList}>
-          <li className={styles.revolutionItem} onClick={() => setActiveRev(1)}>
-            <div className={styles.revolutionItemImg}>
-              {activeRev === 1 && <div className={styles.imgGlow}></div>}
-              <Image src={decentI} alt="autonomous Industries" />
-            </div>
-            <div className={styles.revolutionItemText}>
-              Autonomous Machines
-            </div>
-          </li>
-
-          <li className={styles.revolutionItem} onClick={() => setActiveRev(2)}>
-            <div className={styles.revolutionItemImg}>
-              {activeRev === 2 && <div className={styles.imgGlow}></div>}
-              <Image src={connectingPeopleImg} alt="Cyber Physical Systems" />
-            </div>
-            <div className={styles.revolutionItemText}>Decentralized Cyber Physical Systems</div>
-          </li>
-
-          <li className={styles.revolutionItem} onClick={() => setActiveRev(3)}>
-            <div className={styles.revolutionItemImg}>
-              {activeRev === 3 && <div className={styles.imgGlow}></div>}
-              <Image src={securityAuditImg} alt="C4I Systems" />
-            </div>
-            <div className={styles.revolutionItemText}>C4I Systems</div>
-          </li>
-        </ul>
-
-        <div className={styles.revolutionCard}>
-          <div className={styles.circle1}></div>
-          <div className={styles.circle2}></div>
-          <div className={styles.circle3}></div>
-
-          <ul className={styles.revolutionCardList}>
-            {revCardData[activeRev].map((e, i) => (
-              <li key={i} className={styles.revolutionCardItem}>
-                <div className={styles.revolutionCardImage}>
-                  <Image src={e.img} alt={e.title} />
-                </div>
-                <div className={styles.revolutionCardSubHeading}>{e.title}</div>
-                {e.text}
-              </li>
-            ))}
-          </ul>
-
-          <div className={styles.readMoreText}>
-            {revCardUrl[activeRev - 1] !== "" && (
-              <Link href={revCardUrl[activeRev - 1]}>
-                <a>
-                  <span>Read More</span>
-                </a>
-              </Link>
-            )}
-          </div>
-        </div>
-      </div>
-
       {/* Protokollo Section */}
       <div className={styles.protokolloContiner}>
         <div className={styles.protokolloBg1}></div>
@@ -329,7 +323,7 @@ const Home = () => {
           A world where your Identity is verified without having to share your
           personal details such as age, date of birth. A world where data
           that is sent to authorities are reliable and not sent to wrong
-          personel. The imagination just got real.
+          personal. The imagination just got real.
         </p>
 
         <div className={styles.heading3}>Protokollo provides</div>
@@ -373,7 +367,7 @@ const Home = () => {
             </div>
             <p className={styles.para}>
               <b>Track & Trace</b> critical events and movements of workforce, enabling easier compliance, aiding human decisions and removing human dependency.<br/>
-              Remove Friction, Enable greater workforce collabration and streamline productivity. 
+              Remove Friction, Enable greater workforce collaboration and streamline productivity. 
             </p>
             <div className={styles.readMoreText}>
               <Link href="/platform/ai">
@@ -396,7 +390,7 @@ const Home = () => {
               <Image src={smartAIImg} alt="Smart AI" />
             </div>
             <p className={styles.para}>
-              <b>Detect, Identify and take action </b> on critical  action points across your organisations under one single dashboard.
+              <b>Detect, Identify and take action </b> on critical  action points across your organizations under one single dashboard.
               <br/>
               Save millions of dollars and improve workplace safety and enjoy better people satisfaction.
             </p>
@@ -435,7 +429,6 @@ const Home = () => {
             <br />
             <div className={styles.heading3}>
               Leverage industry leading expertise and find a shorter path to innovation
-              <br />
               Contact our representatives and get started right away.
             </div>
             <br />

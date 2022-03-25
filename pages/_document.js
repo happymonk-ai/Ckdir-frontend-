@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <title>Happymonk AI</title>
           {/* fonts */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

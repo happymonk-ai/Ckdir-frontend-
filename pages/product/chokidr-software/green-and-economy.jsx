@@ -42,13 +42,12 @@ const GreenAndEconomy = () => {
           <AlternateSection
             // isImageLast={true}
             heading={
-              "ZKPs to recognize /identify, location hidden, Assured quality of produce"
+              "Agricultural Insurance & Automation"
             }
             text={
               <div className={styles.container}>
                 <div className={styles.label}>
-                  Identification of incidents/ discovery of problem points in
-                  the whole cycle.
+                Agricultural insurance schemes are traditionally a well-recognized tool to manage weather related risks. Here, farmers pay an insurance premium before the cropping cycle begins and receive an insurance payout whenever they experience a loss on their farm. Thus, the insurer bears all the insured risk and farmers are able to manage their financial exposure to weather extremes, i.e., financial losses caused by weather extremes. In addition, in case of weather threats that systemically affect all the insured farmers, the insurer can further hedge the systemic part of the risk with a reinsurance company.
                 </div>
               </div>
             }
@@ -59,12 +58,11 @@ const GreenAndEconomy = () => {
           {/* <div className={styles.glow}></div> */}
           <AlternateSection
             isImageLast={true}
-            heading={"Produce Quality & Authenticity"}
+            heading={"Food Supply Chain"}
             text={
               <div className={styles.container}>
                 <div className={styles.label}>
-                  Guaranteed assurance of authenticity of fresh produce that
-                  reaches the consumer from the farm.
+                The blockchain technology can track the provenance of food and thus helps create trustworthy food supply chains and build trust between producers and consumers. As a trusted way of storing data, it facilitates the use of data-driven technologies to make farming smarter. In addition, jointly used with smart contracts, it allows timely payments between stakeholders that can be triggered by data changes appearing in the blockchain 
                 </div>
               </div>
             }
@@ -75,12 +73,11 @@ const GreenAndEconomy = () => {
           {/* <div className={styles.glow}></div> */}
           <AlternateSection
             // isImageLast={true}
-            heading={"Digital Identity"}
+            heading={"Smart Agriculture"}
             text={
               <div className={styles.container}>
                 <div className={styles.label}>
-                  The ability to authenticate the identity of people and things,
-                  making it a safe viable option.
+                Smart agriculture is featured by the utilization of ICT, internet of things (IoT), and various modern data collection and analysis technologies including unmanned aerial vehicles (UAV), sensors and machine learning. A key issue of establishing smart agriculture is developing a comprehensive security system that facilitates the use and management of data. Traditional ways manage data in a centralized fashion and are prone to inaccurate data, data distortion and misuse as well as cyber-attack.
                 </div>
               </div>
             }
@@ -95,9 +92,7 @@ const GreenAndEconomy = () => {
             text={
               <div className={styles.container}>
                 <div className={styles.label}>
-                  Harnessing the power of IoT for hazard detection such as
-                  fires, to prevent damage to both man-made property and the
-                  environment.
+                blockchain technology helps establish a trust relationship with consumers and build up the reputation of their products, by transparently providing individual product information in the blockchain. Enterprises can better achieve the value of their products and thus increase their competitiveness. This would make it difficult for suppliers of fraud and low-quality products to stay in markets and force all suppliers to improve the quality of products in the whole agricultural and food sectors. From the consumers’ perspective, the blockchain makes true and reliable information about how food is produced and transacted available. It helps address consumers’ concern about the safety, quality and environmental friendliness of food
                 </div>
               </div>
             }
@@ -106,18 +101,17 @@ const GreenAndEconomy = () => {
         </div>
       </div>
 
-      {/* commneted due to no content */}
       {/* <CaseStudySection /> */}
-      {/* <ConnectNetworkSection
+      <ConnectNetworkSection
         img={raysImg.src}
-        heading={"Loreum ipsum"}
+        heading={"Have a thought on how, we can help you improve your organization?"}
         text={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget nibh et ut feugiat duis scelerisque urna, blandit."
+          "Leverage industry leading expertise and find a shorter path to innovation Contact our representatives and get started right away."
         }
         url={"/register"}
         btnText={"Get Invited"}
         isActive={true}
-      /> */}
+      />
     </div>
   );
 };

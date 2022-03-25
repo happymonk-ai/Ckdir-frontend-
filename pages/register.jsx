@@ -68,7 +68,7 @@ const SelfRegistrationForm = () => {
                 icon={<Image src={idIcon} alt="id" />}
               />
             </div>
-            <div className={styles.radioField}>
+            {/* <div className={styles.radioField}>
               <div className={styles.radioOptions}>
                 <div className={styles.radioIcon}>
                   <CircleOutlinedIcon />
@@ -87,9 +87,9 @@ const SelfRegistrationForm = () => {
                 </div>
                 <div className={styles.fieldLabelText}>Driving license</div>
               </div>
-            </div>
+            </div> */}
 
-            <div className={styles.btn}>
+            {/* <div className={styles.btn}>
               <div>
                 <CarouselNavigation
                   counts={2}
@@ -97,9 +97,10 @@ const SelfRegistrationForm = () => {
                   getValue={() => {}}
                 />
               </div>
-              <div onClick={() => setSelfRegForm(1)}>
+              
+            </div> */}
+            <div onClick={() => setSelfRegForm(1)}>
                 <FilledBtn title="Next" url="" />
-              </div>
             </div>
           </div>
         </div>
@@ -270,13 +271,13 @@ const Register = () => {
             </div>
 
             <div className={styles.btn}>
-              <div>
+              {/* <div>
                 <CarouselNavigation
                   counts={3}
                   defaultView={0}
                   getValue={() => {}}
                 />
-              </div>
+              </div> */}
               <FilledBtn title="Next" url="/" />
             </div>
           </div>
@@ -286,9 +287,7 @@ const Register = () => {
         <div className={styles.text}>
           <div className={styles.heading}>Flagship Features</div>
           <div className={styles.para}>
-            Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi.
+            Real-Time Synchronization
           </div>
         </div>
         <div className={styles.img}>

@@ -21,13 +21,13 @@ import ai from  "../../public/ai.jpg";
 const platFormCardData = [
   {
     imageUrl: cardImg1,
-    heading: "Human, Machines & Things Intelligence",
+    heading: "Autonomous Machines",
     text:
       "Autonomous Prediction & Actions on the edge. Get critical insights, and aid your team with critical information from sensors, real-time data of your organization, being even offline.",
   },
   {
     imageUrl: cardImg2,
-    heading: "Sensor Fusion",
+    heading: "Edge IoT",
     text:
       "Create a shared, secure and immutable view of the truth, delivering transformable new levels of transparency, efficiency and opportunity through Digital Twins.",
   },
@@ -112,12 +112,10 @@ const AI = () => {
             </div>
             <div className={styles.sCardText}>
               <div className={styles.sCardHeading}>
-                Detection & Identification
+                Intelligent Video Analytics
               </div>
               <div className={styles.sCardSummary}>
-                Proactively Detects Incidents across
-                factories, warehouse, fleet, elevating employee safety,
-                fewer workplace accidents, easier compliance management.
+                Security & Safety are transforming human lives. enterprises face challenges with using existing infrastructure to power these applications. The CHOKIDR&trade; platform provides a unified infrastructure to power both traditional and modern organization, and their data from center to edge.
               </div>
             </div>
           </div>
@@ -128,10 +126,10 @@ const AI = () => {
             </div>
             <div className={`${styles.sCardText} ${styles.alignEnd}`}>
               <div className={styles.sCardHeading}>
-                Decentralized Command and Control
+                AI Over 5G & LoRaWAN&trade;
               </div>
               <div className={styles.sCardSummary}>
-                
+                Connect Billions of Devices, Harnessing the power of AI & Blockchain in a infinite eco-system over Monk&trade; Network over 5G & LoRaWAN. Deploy Solutions on Premise or Cloud or over IoT devices.
               </div>
             </div>
           </div>
@@ -141,11 +139,9 @@ const AI = () => {
               <Image src={fullPhoneImg} alt="device" />
             </div>
             <div className={styles.sCardText}>
-              <div className={styles.sCardHeading}>Visual Track and Trace</div>
+              <div className={styles.sCardHeading}>Autonomous AI <br></br> Everywhere to Anywhere</div>
               <div className={styles.sCardSummary}>
-                Spot abnormal behavior or suspicious activity that could
-                indicate a problem without even identifying the individual or
-                inferring any unnecessary bias.
+                Securely Deploy, Manage and scale your infrastructure across distributed edge infrastructure. Fleet & Sensor Integration Manage the lifecycle of deployment, security and detailed monitoring of your organization.
               </div>
             </div>
           </div>
