@@ -78,7 +78,7 @@ const Header = () => {
                                 heading: <Link href={'/product/chokidr-software'}><a>Chokidr Software </a></Link>,
                                 options: [
                                     <Link href={'/product/chokidr-software/identities'} key={1}><a>Identities</a></Link>,
-                                    <Link href={'/product/chokidr-software/autonomousIdentities'} key={1}><a>Autonomous Identities</a></Link>,
+                                    <Link href={'/product/chokidr-software/autonomousIdentities'} key={1}><a>Autonomous Machines</a></Link>,
                                     <Link href={'/product/chokidr-software/connecting-people-and-things'} key={1}><a>Connecting People and Things</a></Link>,
                                     <Link href={'/product/chokidr-software/command-and-control'} key={1}><a>Command And Control</a></Link>,
                                     <Link href={'/product/chokidr-software/edge-iot'} key={1}><a>Edge IOT</a></Link>,
