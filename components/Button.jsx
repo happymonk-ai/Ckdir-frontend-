@@ -8,7 +8,7 @@ const Button = ({
 }) => {
     return (
         <div className={styles.container}>
-            <Link href={url}>
+            <Link href={url} passHref>
                 <a>
                     <div className={styles.button}>
                         {title}

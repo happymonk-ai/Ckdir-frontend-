@@ -143,7 +143,7 @@ const Contact = () => {
           <div className={styles.text}>
             <div className={styles.heading}>Demo</div>
             <div className={styles.para}>
-              Request a demo from one of our conversion specialists.
+              Request a demo from one of our security specialists.
             </div>
             <div className={styles.readMore}>
               <Button
@@ -179,7 +179,7 @@ const Contact = () => {
         <div className={styles.inspired}>
           <div className={styles.heading}>Get Inspired</div>
           <div className={styles.para}>
-            Discover the many ways in which our customers use Sleeknote.
+            Discover the many ways in which our customers use CHOKIDR%trade;.
           </div>
         </div>
 
@@ -291,7 +291,7 @@ const Contact = () => {
                   </span>
                 </div>
                 <div className={styles.submitBtn}>
-                  <Button url={"/career"} title={"Send"} isActive={true} />
+                  <Button url={"/"} title={"Send"} isActive={true} />
                 </div>
               </div>
             </div>

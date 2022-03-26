@@ -133,7 +133,7 @@ const EdgeIot = () => {
                 <div className={styles.label}>
                   Common Edge IoT systems are prone to DDos Attacks across the
                   systems. Our Consensus mechanism prevents any DDoS, allowing
-                  you to keep your data on premise without compromising.F
+                  you to keep your data on premise without compromising.
                 </div>
               </div>
             }

@@ -125,6 +125,7 @@
   background-color: black;
   color: #fff;
   display: flex;
+  padding:auto;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -149,7 +150,7 @@
   .balckBoxIconList {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 80%;
     z-index: 5;
     overflow: auto;
     pointer-events: none;
@@ -192,7 +193,7 @@
 // revolution through change container
 .revolutionaCotainer {
   // background-color: $black;
-  margin-top: 33px;
+  margin-top: auto;
   text-align: center;
   min-height: 100vh;
 
@@ -221,7 +222,7 @@
   .revolutionItemText {
     color: $white;
     font-weight: 500;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     line-height: 5rem;
     text-align: center;
   }
@@ -249,7 +250,8 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-
+    padding-bottom: 1rem;
+    margin:auto;
     border-radius: 1rem;
     @include glassCard;
 
@@ -297,7 +299,7 @@
         min-width: 300px;
         max-width: 500px;
         min-height: 250px;
-        max-height: 300px;
+        max-height: 250px;
         border-radius: 16px;
         display: flex;
         flex-direction: column;
@@ -356,7 +358,7 @@
   position: relative;
   // background-color: $black;
   text-align: center;
-  padding-top: 17.5rem;
+  padding-top: auto;
   padding-bottom: 10rem;
 
   .protokolloBg1 {
@@ -592,7 +594,9 @@
     background-position: center;
     background-repeat: no-repeat;
     justify-content: space-around;
-    min-height: 295px;
+    padding:auto;
+    min-height: 200px;
+    max-height: 300px;
     .heading1 {
       font-size: 30px;
       line-height: unset;
@@ -630,6 +634,9 @@
         width: 2px;
       }
       gap: 5rem;
+    }
+    .readMore{
+      font-size:1em;
     }
   }
 
@@ -746,7 +753,7 @@
       }
 
       .heading3 { 
-        width:50%;
+        // width:50%;
         align-items: center;
       }
 

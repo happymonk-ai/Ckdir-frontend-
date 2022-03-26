@@ -177,7 +177,7 @@ const revCardData = {
 const revCardUrl = [
   "/product/chokidr-software/autonomousIdentities",
   "/product/chokidr-software/connecting-people-and-things",
-  "/product/chokidr-software/connecting-people-and-things",
+  "/product/chokidr-software/edge-iot",
   "/product/chokidr-software/green-and-economy",
 ];
 const Home = () => {
@@ -278,7 +278,8 @@ const Home = () => {
       {/* Black Box section */}
       <div className={styles.balckBoxContainer}>
         <div className={styles.chokidarImg}>
-          <Image src={chokidarDeviceImg} alt="Chokidr" />
+
+        <Image src={chokidarDeviceImg} alt="Chokidr" /> 
         </div>
         <div className={styles.heading2}>
           Worried about critical systems going offline?
@@ -310,6 +311,12 @@ const Home = () => {
             <div className={styles.backBoxListText}>Offline</div>
           </li>
         </ul>
+        <Button
+                title={"Read More"}
+                url={"/product/chokidr-hardware/"}
+                isActive={true}
+              />
+  
       </div>
 
       {/* Protokollo Section */}
@@ -434,11 +441,11 @@ const Home = () => {
             <br />
             <br />
             <div className={styles.readMore}>
-              <Button
+              <a><Button
                 title={"Register Now"}
                 url={"/register"}
                 isActive={true}
-              />
+              /></a>
             </div>
           </div>
         </div>
