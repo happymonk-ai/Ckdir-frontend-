@@ -311,11 +311,11 @@ const Home = () => {
             <div className={styles.backBoxListText}>Offline</div>
           </li>
         </ul>
-        <Button
+        {/* <Button
                 title={"Read More"}
                 url={"/product/chokidr-hardware/"}
                 isActive={true}
-              />
+              /> */}
   
       </div>
 
