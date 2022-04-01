@@ -176,7 +176,7 @@ const career = ({ openRoles }) => {
                 <div className={styles.fglow1}></div>
                 <div className={styles.fglow2}></div>
                 <h2 className={styles.subHeading}>Sushil Agarwal</h2>
-                <h5 className={styles.fdeseg}>VP of Marketing</h5>
+                <h5 className={styles.fdeseg}>Director - Marketing</h5>
                 {/* <div className={styles.summary}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis
                 eu, elit bibendum quis facilisi.
@@ -206,7 +206,7 @@ const career = ({ openRoles }) => {
                 art methods, powered by Deep Learning, Computer Vision and
                 Cryptography, assisting businesses and individuals in adopting
                 Blockchain driven technologies and transforming traditional
-                lifes.
+                lives.
               </p>
             </div>
           </div>

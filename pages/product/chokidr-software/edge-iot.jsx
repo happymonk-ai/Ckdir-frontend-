@@ -110,7 +110,6 @@ const EdgeIot = () => {
                   <p className={styles.label}>
                     Real-Time Track & Trace through digital twins across all the
                     warehouse, devices and fleets in one command and control
-                    center.
                   </p>
                 </div>
               }
@@ -126,7 +125,7 @@ const EdgeIot = () => {
                 <div className={styles.container}>
                   <p className={styles.label}>
                     Detects, identifies, stores and Sync Data with the network
-                    in case the systems face any network issue. center.
+                    in case the systems face any network issue.
                   </p>
                 </div>
               }
@@ -141,9 +140,9 @@ const EdgeIot = () => {
               text={
                 <div className={styles.container}>
                   <p className={styles.label}>
-                    Common Edge IoT systems are prone to DDos Attacks across the
-                    systems. Our Consensus mechanism prevents any DDoS, allowing
-                    you to keep your data on premise without compromising.F
+                  Common Edge IoT systems are prone to DDos Attacks across the
+                  systems. Our Consensus mechanism prevents any DDoS, allowing
+                  you to keep your data on premise without compromising.
                   </p>
                 </div>
               }

@@ -11,110 +11,140 @@ import derekImg from "../../../public/derek-lee.png";
 import digitalIdentityImg from "../../../public/senior-woman-using-her-phone-park.png";
 import greenEarthImg from "../../../public/freen-earth.png";
 import raysImg from "../../../public/bg-colorfull-rays.png";
-import Head from 'next/head'
+import Head from "next/head";
 
 const GreenAndEconomy = () => {
   return (
     <>
-     <Head>
+      <Head>
         <title>Social Footprint - Happymonk</title>
         <meta property="og:title" content="Social Footprint" key="title" />
       </Head>
-    <div>
-      <div className={`${styles.landing} ${gaeStyles.landing}`}>
-        <Header />
-        {/* <div className={styles.glowCircle}></div> */}
-        <div className={`${styles.container} ${gaeStyles.textContainer}`}>
-          <div className={`${styles.textContainer} ${gaeStyles.mainText}`}>
-            <h2 className={`${styles.landingText} ${gaeStyles.landingText}`}>
-              Social Footprint
-            </h2>
-            <p className={`${styles.para} ${gaeStyles.para}`}>
-              Reduce carbon footprint of your organisation.
-            </p>
-          </div>
-          {/* <div className={styles.img}> */}
-          {/* <Image
+      <div>
+        <div className={`${styles.landing} ${gaeStyles.landing}`}>
+          <Header />
+          {/* <div className={styles.glowCircle}></div> */}
+          <div className={`${styles.container} ${gaeStyles.textContainer}`}>
+            <div className={`${styles.textContainer} ${gaeStyles.mainText}`}>
+              <h2 className={`${styles.landingText} ${gaeStyles.landingText}`}>
+                Social Footprint
+              </h2>
+              <p className={`${styles.para} ${gaeStyles.para}`}>
+                Reduce carbon footprint of your organisation.
+              </p>
+            </div>
+            {/* <div className={styles.img}> */}
+            {/* <Image
                             src={landingImg}
                             alt={'software in devices'}
                         /> */}
-          {/* </div> */}
+            {/* </div> */}
+          </div>
         </div>
-      </div>
 
-      <div className={styles.alterList}>
-        <div className={styles.list1}>
-          {/* <div className={styles.glow}></div> */}
-          <AlternateSection
-            // isImageLast={true}
-            heading={
-              "ZKPs to recognize /identify, location hidden, Assured quality of produce"
-            }
-            text={
-              <div className={styles.container}>
-                <p className={styles.label}>
-                  Identification of incidents/ discovery of problem points in
-                  the whole cycle.
-                </p>
-              </div>
-            }
-            image={<Image src={derekImg} alt={"image"} />}
-          />
+        <div className={styles.alterList}>
+          <div className={styles.list1}>
+            {/* <div className={styles.glow}></div> */}
+            <AlternateSection
+              // isImageLast={true}
+              heading={"Agricultural Insurance & Automation"}
+              text={
+                <div className={styles.container}>
+                  <p className={styles.label}>
+                    Agricultural insurance schemes are traditionally a
+                    well-recognized tool to manage weather related risks. Here,
+                    farmers pay an insurance premium before the cropping cycle
+                    begins and receive an insurance payout whenever they
+                    experience a loss on their farm. Thus, the insurer bears all
+                    the insured risk and farmers are able to manage their
+                    financial exposure to weather extremes, i.e., financial
+                    losses caused by weather extremes. In addition, in case of
+                    weather threats that systemically affect all the insured
+                    farmers, the insurer can further hedge the systemic part of
+                    the risk with a reinsurance company.
+                  </p>
+                </div>
+              }
+              image={<Image src={derekImg} alt={"image"} />}
+            />
+          </div>
+          <div className={styles.list2}>
+            {/* <div className={styles.glow}></div> */}
+            <AlternateSection
+              isImageLast={true}
+              heading={"Food Supply Chain"}
+              text={
+                <div className={styles.container}>
+                  <p className={styles.label}>
+                    The blockchain technology can track the provenance of food
+                    and thus helps create trustworthy food supply chains and
+                    build trust between producers and consumers. As a trusted
+                    way of storing data, it facilitates the use of data-driven
+                    technologies to make farming smarter. In addition, jointly
+                    used with smart contracts, it allows timely payments between
+                    stakeholders that can be triggered by data changes appearing
+                    in the blockchain
+                  </p>
+                </div>
+              }
+              image={<Image src={fieldImg} alt={"image"} />}
+            />
+          </div>
+          <div className={styles.list3}>
+            {/* <div className={styles.glow}></div> */}
+            <AlternateSection
+              // isImageLast={true}
+              heading={"Smart Agriculture"}
+              text={
+                <div className={styles.container}>
+                  <p className={styles.label}>
+                    Smart agriculture is featured by the utilization of ICT,
+                    internet of things (IoT), and various modern data collection
+                    and analysis technologies including unmanned aerial vehicles
+                    (UAV), sensors and machine learning. A key issue of
+                    establishing smart agriculture is developing a comprehensive
+                    security system that facilitates the use and management of
+                    data. Traditional ways manage data in a centralized fashion
+                    and are prone to inaccurate data, data distortion and misuse
+                    as well as cyber-attack.
+                  </p>
+                </div>
+              }
+              image={<Image src={digitalIdentityImg} alt={"image"} />}
+            />
+          </div>
+          <div className={styles.list3}>
+            {/* <div className={styles.glow}></div> */}
+            <AlternateSection
+              isImageLast={true}
+              heading={"Ecological Safety"}
+              text={
+                <div className={styles.container}>
+                  <p className={styles.label}>
+                    blockchain technology helps establish a trust relationship
+                    with consumers and build up the reputation of their
+                    products, by transparently providing individual product
+                    information in the blockchain. Enterprises can better
+                    achieve the value of their products and thus increase their
+                    competitiveness. This would make it difficult for suppliers
+                    of fraud and low-quality products to stay in markets and
+                    force all suppliers to improve the quality of products in
+                    the whole agricultural and food sectors. From the consumers’
+                    perspective, the blockchain makes true and reliable
+                    information about how food is produced and transacted
+                    available. It helps address consumers’ concern about the
+                    safety, quality and environmental friendliness of food
+                  </p>
+                </div>
+              }
+              image={<Image src={greenEarthImg} alt={"image"} />}
+            />
+          </div>
         </div>
-        <div className={styles.list2}>
-          {/* <div className={styles.glow}></div> */}
-          <AlternateSection
-            isImageLast={true}
-            heading={"Produce Quality & Authenticity"}
-            text={
-              <div className={styles.container}>
-                <p className={styles.label}>
-                  Guaranteed assurance of authenticity of fresh produce that
-                  reaches the consumer from the farm.
-                </p>
-              </div>
-            }
-            image={<Image src={fieldImg} alt={"image"} />}
-          />
-        </div>
-        <div className={styles.list3}>
-          {/* <div className={styles.glow}></div> */}
-          <AlternateSection
-            // isImageLast={true}
-            heading={"Digital Identity"}
-            text={
-              <div className={styles.container}>
-                <p className={styles.label}>
-                  The ability to authenticate the identity of people and things,
-                  making it a safe viable option.
-                </p>
-              </div>
-            }
-            image={<Image src={digitalIdentityImg} alt={"image"} />}
-          />
-        </div>
-        <div className={styles.list3}>
-          {/* <div className={styles.glow}></div> */}
-          <AlternateSection
-            isImageLast={true}
-            heading={"Ecological Safety"}
-            text={
-              <div className={styles.container}>
-                <p className={styles.label}>
-                  Harnessing the power of IoT for hazard detection such as
-                  fires, to prevent damage to both man-made property and the
-                  environment.
-                </p>
-              </div>
-            }
-            image={<Image src={greenEarthImg} alt={"image"} />}
-          />
-        </div>
-      </div>
 
-      {/* commneted due to no content */}
-      {/* <CaseStudySection /> */}
-      {/* <ConnectNetworkSection
+        {/* commneted due to no content */}
+        {/* <CaseStudySection /> */}
+        {/* <ConnectNetworkSection
         img={raysImg.src}
         heading={"Loreum ipsum"}
         text={
@@ -124,7 +154,7 @@ const GreenAndEconomy = () => {
         btnText={"Get Invited"}
         isActive={true}
       /> */}
-    </div>
+      </div>
     </>
   );
 };

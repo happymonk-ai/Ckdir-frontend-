@@ -43,7 +43,10 @@
 }
 
 .chart {
-  margin: 10rem 6rem;
+  margin: 0rem;
+  .heading{
+   text-align: center;
+  }
 }
 .chartImg {
   margin: auto;

@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header";
 import LongCard from "../../components/LongCard";
 import styles from "../../styles/Career.module.scss";
 import Head from "next/head";
+import { useQuery } from "urql";
+
+const jobQuery = `
+  query {
+    jobDeescriptions{
+      id,
+      JobTitle,
+      Description,
+      JobOverview,
+      published_at,
+      exp
+      
+    }
+}
+`;
 
 const career = ({ openRoles }) => {
+  const [result, reexecuteQuery] = useQuery({
+    query: jobQuery,
+  });
+
+  const { data, fetching, error } = result;
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <>
       <Head>
@@ -15,7 +40,7 @@ const career = ({ openRoles }) => {
         <div className={styles.landingContainer}>
           <Header />
           <div className={styles.landingPage}>
-            <h2 className={styles.heading1}>Jobs at Happymonk</h2>
+            <h2 className={styles.heading1}>Jobs at Happymonk.AI</h2>
             <p className={styles.landingText}>
               Like building revolutionary products? Do your fingers type faster
               than your brains? Then, This is the right place for you.
@@ -26,21 +51,23 @@ const career = ({ openRoles }) => {
         {/* Roles */}
         <div className={styles.roles}>
           <h2 className={styles.heading1}>Open Roles</h2>
-          {openRoles.map((e, i) => (
-            <ul className={styles.roleList} key={i}>
-              <li className={styles.boldText}>{e.field}</li>
-              {e.roles.map((role, ri) => (
-                <React.Fragment key={`${i}-${ri}`}>
+          {data && (
+            // openRoles.map((e, i) =>
+            <ul className={styles.roleList} >
+              {/* <li className={styles.boldText}>{e.field}</li> */}
+              {data?.jobDeescriptions?.map((role, ri) => (
+                <React.Fragment key={ri}>
                   <li className={styles.roleItem}>
-                    <LongCard url="careers/job-description">
-                      <h4 className={styles.boldText}>{role.name}</h4>
+                    <LongCard url={`careers/job-description`}>
+                      <h4 className={styles.boldText}>{role.JobTitle}</h4>
                       <h5 className={styles.grayText}>{role.exp}</h5>
                     </LongCard>
                   </li>
                 </React.Fragment>
               ))}
             </ul>
-          ))}
+            // )
+          )}
         </div>
       </div>
     </>

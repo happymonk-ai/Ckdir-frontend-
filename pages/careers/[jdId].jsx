@@ -11,14 +11,42 @@ import Image from "next/image";
 import Button from "../../components/Button";
 import jbtopImg from "../../public/businesswoman-networking-using-digital-devices-sm.png";
 import applyImg from "../../public/top-view-person-writing-laptop-with-copy-space.png";
-import Head from 'next/head'
+import Head from "next/head";
+import { useRouter } from "next/router";
+
+const blogQuery = `
+query ($id: ID!){
+    blog(id: $id){
+      Title,
+      Description,
+      createdAt,
+    }
+  }
+`;
 
 const JD = ({ responsibility }) => {
+  const router = useRouter();
+  const id = router.query.jdId;
+
+  const [result, reexecuteQuery] = useQuery({
+    query: blogQuery,
+    variables: {
+      id,
+    },
+    pause: !id,
+  });
+
+  const { data, fetching, error } = result;
+
   return (
     <>
       <Head>
         <title>Job Description - Happymonk</title>
-        <meta property="og:title" content="Job Description Happymonk" key="title" />
+        <meta
+          property="og:title"
+          content="Job Description Happymonk"
+          key="title"
+        />
       </Head>
       <div>
         <div className={styles.landingContainer}>
@@ -123,15 +151,4 @@ const JD = ({ responsibility }) => {
 
 export default JD;
 
-export const getStaticProps = () => {
-  return {
-    props: {
-      responsibility: [
-        "Experience in dimensional data modeling, ETL development, and Data Warehousing, Data Lakes",
-        "Prototyping new ideas or technologies to prove efficacy and usefulness in production.",
-        "Develop Data streams,and REST API's to integrate with partners and customers in real-time",
-        "Design and develop large scale, high-volume, and high-performance data pipelines with large sets of data from different sources",
-      ],
-    },
-  };
-};
+

@@ -15,13 +15,13 @@ import connectedWorldImg from "../../public/g2g-com.png";
 import iotManImg from "../../public/iot-hw.png";
 import undrawValut from "../../public/ai-edge.png";
 import networkContactImg from "../../public/cloud-computing-banner-background-smart-city-1.png";
-import Head from 'next/head'
+import Head from "next/head";
 
 const ChokidrHardware = ({ dharList }) => {
   const feature = [
     {
       heading: "AI on edge",
-      text: "Intrusion Detection, Analytics, Event Detection. ",
+      text: "here is an urgent need to push the frontiers of artificial intelligence (AI) to the network edge to fully unleash the potential of big data. Edge AI is the combination of edge computing and AI. ",
       img: undrawValut,
     },
     {
@@ -238,7 +238,7 @@ const ChokidrHardware = ({ dharList }) => {
           img={networkContactImg.src}
           heading={"Join the Network"}
           text={
-            "Dhar. Launching this June! Deploy into your existing network, soon!"
+            "Dhar, Leverage industry leading expertise and find a shorter path to innovation Contact our representatives and get started right away"
           }
           url={"/contact"}
           isActive={true}
@@ -254,11 +254,13 @@ export const getStaticProps = () => {
   return {
     props: {
       dharList: [
-        "Connect up 8 Cameras, BLE Enabled Sensor integration like thermal, LiDAR, ML/DL algorithms development and integration, Remote firmware upgrade, Audio and video, Cloud and mobile apps, PoE with IP67 enclosure",
-        "MultiProcesser System with integrated FPGA module customized for Hashes & Hash graphs.",
-        "Integrated Battery Backup for upto 12 hours.",
-        "Connect via 5G, LorwaWAN",
-        "Theft Prevention Module.",
+        "Connect IP,BLE,RFID, Thermal, LiDAR Enabled Sensor systems to Leverage Edge Inferring for Instant Response",
+        "Dual CoreProcessor System with integrated FPGA module customized for Hashes & Hash graphs.",
+        "Integrated Battery Backup for upto 8hours. **",
+        "Ground to Air Coverage via 5G",
+        "Ground to Ground Coverage via LoRaWAN",
+        "IP67 Enabled Enclosure to work under extreme Conditions",
+        "Point Scale IoT, to Retrofit, existing Fleet and Asset systems",
       ],
     },
   };

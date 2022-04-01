@@ -40,7 +40,7 @@ import authorityProofImg from "../public/compressed/proof-of-authority.svg";
 import homeAnalytics from "../public/compressed/sensor-fusion-min.png";
 import smartAIImg from "../public/compressed/smart-artificail-intelligence-min.png";
 import iphone11Img from "../public/compressed/register-now-banner-min.png";
-import Head from 'next/head';
+import Head from "next/head";
 
 const revCardData = {
   1: [
@@ -49,9 +49,8 @@ const revCardData = {
       title: "On-Machine Compute Systems",
       text: (
         <p className={styles.revolutionCardText}>
-          Enabling machines to precieve, identify,
-          {/* <br className={styles.dNone} /> */}
-          manuplate & aid, the world around them.
+          Enabling machines to perceive, identify, manipulate & aid, the world
+          around them.
         </p>
       ),
     },
@@ -60,9 +59,8 @@ const revCardData = {
       title: "Decentralized, Offline & Localized",
       text: (
         <p className={styles.revolutionCardText}>
-          Take information management & keep data in your
-          {/* <br className={styles.dNone} /> */}
-          premisis and enable local processing of sensors and data.
+          Take information management & keep data in your premises and enable
+          local processing of sensors and data.
         </p>
       ),
     },
@@ -71,9 +69,8 @@ const revCardData = {
       title: "Intelligent Video & Sensor Analytics",
       text: (
         <p className={styles.revolutionCardText}>
-          Get Realtime actionable insights,
-          {/* <br className={styles.dNone} /> */}
-          from wide variety of IoT gateways and Edge Devices.
+          Get Realtime actionable insights, from wide variety of IoT gateways
+          and Edge Devices.
         </p>
       ),
     },
@@ -84,9 +81,8 @@ const revCardData = {
       title: "Industry 4.0",
       text: (
         <p className={styles.revolutionCardText}>
-          Quickly track, identify and aid incidents, pinpoint accurately
-          {/* <br className={styles.dNone} /> */}
-          and ensure compliance and safety of the user.
+          Quickly track, identify and aid incidents, pinpoint accurately and
+          ensure compliance and safety of the user.
         </p>
       ),
     },
@@ -95,24 +91,18 @@ const revCardData = {
       title: "Connecting People & Things",
       text: (
         <p className={styles.revolutionCardText}>
-          Enable you to track your fleet
-          {/* <br className={styles.dNone} /> */}
-          real time, giving you complete
-          {/* <br className={styles.dNone} /> */}
-          access to all data that might be.
+          Enable you to track your fleet real time, giving you complete access
+          to all data that might be.
         </p>
       ),
     },
     {
       img: tempOptImg,
-      title: "Decentralized Infrastruture",
+      title: "Decentralized Infrastructure",
       text: (
         <p className={styles.revolutionCardText}>
-          Real Tracking, Fencing, heavily
-          {/* <br className={styles.dNone} /> */}
-          needed for the world where multiple
-          {/* <br className={styles.dNone} /> */}
-          touchpoints is everyday business.
+          Real Tracking, Fencing, heavily needed for the world where multiple
+          touch points is everyday business.
         </p>
       ),
     },
@@ -120,12 +110,10 @@ const revCardData = {
   3: [
     {
       img: reliableDataImg,
-      title: "Zero Knowledge Collbration",
+      title: "Zero Knowledge Collaboration",
       text: (
         <p className={styles.revolutionCardText}>
-          Decentralized verifiable data,
-          {/* <br className={styles.dNone} /> */}
-          which cannot be tempered with.
+          Decentralized verifiable data, which cannot be tempered with.
         </p>
       ),
     },
@@ -134,9 +122,8 @@ const revCardData = {
       title: "Real-time Communication",
       text: (
         <p className={styles.revolutionCardText}>
-          Collect, report and share real-time information
-          {/* <br className={styles.dNone} /> */}
-          for enhanced decision-making and effective response.
+          Collect, report and share real-time information for enhanced
+          decision-making and effective response.
         </p>
       ),
     },
@@ -145,9 +132,8 @@ const revCardData = {
       title: "Art of War",
       text: (
         <p className={styles.revolutionCardText}>
-          Rapid and intelligent control of the Organisations for
-          {/* <br className={styles.dNone} /> */}
-          members and lower level members.
+          Rapid and intelligent control of the Organizations for members and
+          lower level members.
         </p>
       ),
     },
@@ -158,9 +144,7 @@ const revCardData = {
       title: "Assured quality",
       text: (
         <p className={styles.revolutionCardText}>
-          Compliant with regulatory
-          {/* <br className={styles.dNone} /> */}
-          standards like GDPR.
+          Compliant with regulatory standards like GDPR.
         </p>
       ),
     },
@@ -169,9 +153,7 @@ const revCardData = {
       title: "Quality & Authenticity",
       text: (
         <p className={styles.revolutionCardText}>
-          Smart real time monitoring
-          {/* <br className={styles.dNone} /> */}
-          within the network of your IoT.
+          Smart real time monitoring within the network of your IoT.
         </p>
       ),
     },
@@ -180,9 +162,7 @@ const revCardData = {
       title: "Ecological Safety",
       text: (
         <p className={styles.revolutionCardText}>
-          Harnessing the power of IoT for
-          {/* <br className={styles.dNone} /> */}
-          hazard detection to prevent damage.
+          Harnessing the power of IoT for hazard detection to prevent damage.
         </p>
       ),
     },
@@ -190,10 +170,10 @@ const revCardData = {
 };
 
 const revCardUrl = [
-  "/product/chokidr-software/autonomousMachines",
+  "/product/chokidr-software/autonomousIdentities",
   "/product/chokidr-software/connecting-people-and-things",
-  "",
-  "/product/chokidr-software/social-footprint",
+  "/product/chokidr-software/edge-iot",
+  "/product/chokidr-software/green-and-economy",
 ];
 const Home = () => {
   const [carouselSwitch, setCarouselSwitch] = useState(false);
@@ -211,11 +191,7 @@ const Home = () => {
             <div className={styles.landingPage}>
               <div className={styles.mainText}>
                 <h1 className={styles.heading1}>
-                  Starting <span> </span>
-                  <br className={styles.landingBreak} />
-                  at the Edge <span> </span>
-                  <br className={styles.landingBreak} />
-                  of the present.
+                  Empowering organizations to create a better tomorrow.
                 </h1>
                 <h6 className={styles.landingText}>
                   We develop technologies that create a safer tomorrow that
@@ -261,6 +237,12 @@ const Home = () => {
               </div>
               <h5 className={styles.backBoxListText}>Edge Computed</h5>
             </li>
+            <li className={styles.blackBoxIcon}>
+              <div className={styles.balckBoxIconImg}>
+                <Image src={edgeCompImg} alt="edge computed" />
+              </div>
+              <h5 className={styles.backBoxListText}>Offline</h5>
+            </li>
           </ul>
         </div>
 
@@ -269,9 +251,7 @@ const Home = () => {
           <div className={styles.revolutionAtomImg}>
             <Image src={revolutionAtomImg} alt="Revolution Atom" />
           </div>
-          <h2 className={styles.heading2}>
-            Creating Revolution through Change
-          </h2>
+          <h2 className={styles.heading2}>Revolution through Innovation</h2>
 
           <ul className={styles.revolutionList}>
             <li
@@ -280,11 +260,11 @@ const Home = () => {
             >
               <div className={styles.revolutionItemImg}>
                 {activeRev === 1 && <div className={styles.imgGlow}></div>}
-                <Image src={decentI} alt="autonomous Industries" />
+                <Image src={decentI} alt="autonomous_machines" />
               </div>
-              <h5 className={styles.revolutionItemText}>
+              <div className={styles.revolutionItemText}>
                 Autonomous Machines
-              </h5>
+              </div>
             </li>
 
             <li
@@ -295,9 +275,9 @@ const Home = () => {
                 {activeRev === 2 && <div className={styles.imgGlow}></div>}
                 <Image src={connectingPeopleImg} alt="Cyber Physical Systems" />
               </div>
-              <h5 className={styles.revolutionItemText}>
-                Decentralized Cyber Physical Systems
-              </h5>
+              <div className={styles.revolutionItemText}>
+                Cyber Physical Systems
+              </div>
             </li>
 
             <li
@@ -306,20 +286,11 @@ const Home = () => {
             >
               <div className={styles.revolutionItemImg}>
                 {activeRev === 3 && <div className={styles.imgGlow}></div>}
-                <Image src={securityAuditImg} alt="Seaurity and audit" />
+                <Image src={securityAuditImg} alt="C4I Systems" />
               </div>
-              <h5 className={styles.revolutionItemText}>C4I Systems</h5>
+              <div className={styles.revolutionItemText}>C4I Systems</div>
             </li>
-
-            {/* <li className={styles.revolutionItem} onClick={() => setActiveRev(4)}>
-            <div className={styles.revolutionItemImg}>
-              {activeRev === 4 && <div className={styles.imgGlow}></div>}
-              <Image src={socialFootprintImg} alt="Social Footprint" />
-            </div>
-            <div className={styles.revolutionItemText}>Social Footprint</div>
-          </li> */}
           </ul>
-
           <div className={styles.revolutionCard}>
             <div className={styles.circle1}></div>
             <div className={styles.circle2}></div>
@@ -331,10 +302,9 @@ const Home = () => {
                   <div className={styles.revolutionCardImage}>
                     <Image src={e.img} alt={e.title} />
                   </div>
-                  <h5 className={styles.revolutionCardSubHeading}>
-                    {e.title}
-                  </h5>
-                  {e.text}
+                  <h5 className={styles.revolutionCardSubHeading}>{e.title}</h5>
+
+                  <p>{e.text}</p>
                 </li>
               ))}
             </ul>

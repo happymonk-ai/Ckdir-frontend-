@@ -80,7 +80,7 @@
   // margin-bottom: 6rem;
   padding-bottom: 6rem;
   .heading1 {
-    width: 82.2rem;
+    width: 80%;
     // margin: auto;
   }
 
@@ -141,8 +141,12 @@
   .balckBoxIconList {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 70%;
     z-index: 5;
+    overflow-x: scroll;
+    &::-webkit-scrollbar{
+      width: 0;
+    }
   }
 
   .backBoxListText {
@@ -264,12 +268,34 @@
     }
 
     .revolutionCardList {
+      width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      padding: 4rem 3rem 1rem 3rem;
+      align-items: center;
+      padding: 3rem;
       z-index: 9;
-      gap: 30px;
+      overflow-x: auto;
+      transition: 0.2s;
+      transform-origin: right top;
+      .revolutionCardItem {
+        min-width: 300px;
+        max-width: 500px;
+        min-height: 250px;
+        max-height: 250px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        transition: 0.2s;
+        transform-origin: right top;
+        padding-bottom: 1rem;
+      }
+      .revolutionCardItem:hover {
+        transform: translateY(-1rem);
+      }
+      .readMoreText {
+        padding: auto;
+      }
     }
   }
 
@@ -511,8 +537,6 @@
   display: none;
 }
 
-
-
 @media screen and (max-width: 1032px) {
   .landingBreak {
     display: block;
@@ -569,9 +593,9 @@
     .balckBoxIconList {
       // flex-direction: column;
 
-        .backBoxListText {
-          font-size: 14px;
-        }
+      .backBoxListText {
+        font-size: 14px;
+      }
 
       .blackBoxIcon {
         &:first-child {
@@ -612,6 +636,9 @@
 
   .revolutionList,
   .revolutionCardList {
+    display:block;
+    float: left;
+    flex:33.33%;
     width: unset;
     padding: 10rem 6rem !important;
     gap: 5rem;
@@ -634,16 +661,16 @@
     font-size: 3rem !important;
   }
 
-  .revolutionCardList {
-    padding: 0 3rem !important;
-    padding-top: 10px !important;
-    flex-direction: column;
-    margin-bottom: 8rem;
-    .revolutionCardImage {
-      width: 49px;
-      margin: auto;
-    }
-  }
+  // .revolutionCardList {
+  //   padding: 0 3rem !important;
+  //   padding-top: 10px !important;
+  //   flex-direction: column;
+  //   margin-bottom: 8rem;
+  //   .revolutionCardImage {
+  //     width: 49px;
+  //     margin: auto;
+  //   }
+  // }
 
   .revolutionaCotainer {
     margin: unset;
