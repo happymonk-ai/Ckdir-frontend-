@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import styles from "../../styles/Jd.module.scss";
 import jobHuntImg from "../../public/businesswoman-networking-using-digital-devices.png";
@@ -13,30 +13,90 @@ import jbtopImg from "../../public/businesswoman-networking-using-digital-device
 import applyImg from "../../public/top-view-person-writing-laptop-with-copy-space.png";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useQuery } from "urql";
+import { useForm } from "react-hook-form";
 
-const blogQuery = `
+
+
+
+
+const SIB_ENDPOINT = "https://api.sendinblue.com/v3"
+const SIB_KEY = "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"
+
+
+const jdIdQuery = `
 query ($id: ID!){
-    blog(id: $id){
-      Title,
+  jobDeescription(id: $id){
+      JobTitle,
       Description,
-      createdAt,
+      published_at,
+      Objectiveofthisrole,
+      DailyandMonthlyresponsibilities
     }
   }
 `;
 
-const JD = ({ responsibility }) => {
+const JD = () => {
   const router = useRouter();
   const id = router.query.jdId;
+  const [roleresponsibilities, setRoleresponsibilities] = useState([]);
 
   const [result, reexecuteQuery] = useQuery({
-    query: blogQuery,
+    query: jdIdQuery,
     variables: {
       id,
     },
     pause: !id,
   });
-
   const { data, fetching, error } = result;
+
+
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => {
+    axios.post(`${SIB_ENDPOINT}/contacts`, 
+    {
+      listIds: [2],
+      email: data.email,
+      updateEnabled: false,
+      attributes: { FIRSTNAME: data.name, LASTNAME: '', SMS: data.phone, COMPANY: data.organisation }
+    },{
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": SIB_KEY
+      }
+    }).then(response => {
+      console.log("REMOTE SUBMISSION SUCCESS", response);
+      setSuccess(true)
+    })
+    .catch( ({ response }) => {
+      console.log("REMOTE SUBMISSION ERROR", response.data.message);
+      setError(true)
+      setErrorMessage(response.data.message)
+    });
+  }
+
+
+
+  useEffect(() => {
+    let responsibility = data?.jobDeescription?.DailyandMonthlyresponsibilities;
+    let objectives = data?.jobDeescription?.Objectiveofthisrole;
+
+    let whatYouWillDo = [];
+    if (responsibility) {
+      let resArray = responsibility.split("\n");
+      whatYouWillDo = resArray;
+    }
+    if (objectives) {
+      let resArray = objectives.split("\n");
+      whatYouWillDo = [...whatYouWillDo, ...resArray];
+      whatYouWillDo = whatYouWillDo.filter((e) => {
+        if (e !== "") {
+          return e;
+        }
+      });
+    }
+    setRoleresponsibilities(whatYouWillDo);
+  }, [data]);
 
   return (
     <>
@@ -52,44 +112,51 @@ const JD = ({ responsibility }) => {
         <div className={styles.landingContainer}>
           <Header />
           <div className={styles.landingPage}>
-            <h2 className={styles.heading1}>Openings for Data Scientist</h2>
-            <h3 className={styles.landingText}>Number of vacancy - 03</h3>
+            <h2 className={styles.heading1}>
+              Openings For {data?.jobDeescription?.JobTitle}
+            </h2>
+            {/* <h3 className={styles.landingText}>Number of vacancy - 03</h3> */}
           </div>
         </div>
 
-        <div className="desc">
-          <div className={styles.dhar}>
-            <div className={styles.topImg}>
-              <h2 className={styles.heading}>What you&apos;ll do?</h2>
-              <Image src={jbtopImg} alt={"jb image"} />
-            </div>
-            <div className={styles.content}>
-              <div className={styles.heading}>What you&apos;ll do?</div>
-              <p className={styles.dharText}>
-                Design and develop secure cloud system architectures in
-                accordance with established standards. Design and implement a
-                highly scalable CI/CD pipeline.
-              </p>
-              <div className={styles.dharPoints}>
-                <ul className={styles.dharList}>
-                  {responsibility?.map((e, i) => (
-                    <li key={i} className={styles.dharItem}>
-                      {/* <div className={styles.dharItemStyle}>a</div> */}
-                      <p className={styles.dharText}>
-                        <div></div>
-                        {e}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+        {roleresponsibilities?.length > 0 && (
+          <div className="desc">
+            <div className={styles.dhar}>
+              <div className={styles.topImg}>
+                <h2 className={styles.heading}>What you&apos;ll do?</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <Image src={jbtopImg} alt={"jb image"} />
+                </div>
+              </div>
+
+              <div className={styles.content}>
+                <div className={styles.heading}>What you&apos;ll do?</div>
+                {/* <p className={styles.dharText}>
+                      Design and develop secure cloud system architectures in
+                      accordance with established standards. Design and implement a
+                      highly scalable CI/CD pipeline.
+                    </p> */}
+                <div className={styles.dharPoints}>
+                  <ul className={styles.dharList}>
+                    {roleresponsibilities?.map((e, i) => (
+                      <li key={i} className={styles.dharItem}>
+                        {/* <div className={styles.dharItemStyle}>a</div> */}
+                        <h6 className={styles.dharText}>
+                          <div></div>
+                          {e}
+                        </h6>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className={styles.chokidrBackImg}>
+                <Image src={jobHuntImg} alt={"job hunt"} />
               </div>
             </div>
-
-            <div className={styles.chokidrBackImg}>
-              <Image src={jobHuntImg} alt={"job hunt"} />
-            </div>
           </div>
-        </div>
+        )}
 
         <h2 className={`${styles.heading} ${styles.applyHeader}`}>
           Apply here
@@ -150,5 +217,3 @@ const JD = ({ responsibility }) => {
 };
 
 export default JD;
-
-

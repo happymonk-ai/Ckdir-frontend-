@@ -10,16 +10,14 @@ const jobQuery = `
     jobDeescriptions{
       id,
       JobTitle,
-      Description,
-      JobOverview,
       published_at,
-      exp
+      Experience,
       
     }
 }
 `;
 
-const career = ({ openRoles }) => {
+const Career = () => {
   const [result, reexecuteQuery] = useQuery({
     query: jobQuery,
   });
@@ -53,14 +51,14 @@ const career = ({ openRoles }) => {
           <h2 className={styles.heading1}>Open Roles</h2>
           {data && (
             // openRoles.map((e, i) =>
-            <ul className={styles.roleList} >
+            <ul className={styles.roleList}>
               {/* <li className={styles.boldText}>{e.field}</li> */}
               {data?.jobDeescriptions?.map((role, ri) => (
                 <React.Fragment key={ri}>
                   <li className={styles.roleItem}>
-                    <LongCard url={`careers/job-description`}>
+                    <LongCard url={`/careers/${role.id}`}>
                       <h4 className={styles.boldText}>{role.JobTitle}</h4>
-                      <h5 className={styles.grayText}>{role.exp}</h5>
+                      <h5 className={styles.grayText}>{role.Experience}</h5>
                     </LongCard>
                   </li>
                 </React.Fragment>
@@ -74,47 +72,4 @@ const career = ({ openRoles }) => {
   );
 };
 
-export default career;
-
-export const getStaticProps = () => {
-  return {
-    props: {
-      openRoles: [
-        {
-          field: "Technology/ IT",
-          roles: [
-            {
-              name: "Back end developer",
-              exp: "0-1 year/ Freshers",
-            },
-            {
-              name: "Front end developer",
-              exp: "0-1 year/ Freshers",
-            },
-            {
-              name: "UI UX Designer",
-              exp: "0-1 year/ Freshers",
-            },
-          ],
-        },
-        {
-          field: "Data Science",
-          roles: [
-            {
-              name: "Data science intern",
-              exp: "0-1 year/ Freshers",
-            },
-            {
-              name: "Junior Data scientist",
-              exp: "0-1 year/ Freshers",
-            },
-            {
-              name: "Senior Data scientist",
-              exp: "5+ years",
-            },
-          ],
-        },
-      ],
-    },
-  };
-};
+export default Career;
