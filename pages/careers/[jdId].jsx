@@ -189,7 +189,7 @@ const JD = () => {
                   {success ? (
                     <>
                       <span className={styles.successMessage}>
-                        <h5>Your Application Submited SuccessFully</h5> <br />
+                        <h5>Your Application Submited Successfully</h5> <br />
                       </span>
                     </>
                   ) : (
