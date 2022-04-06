@@ -41,6 +41,7 @@ import homeAnalytics from "../public/compressed/sensor-fusion-min.png";
 import smartAIImg from "../public/compressed/smart-artificail-intelligence-min.png";
 import iphone11Img from "../public/compressed/register-now-banner-min.png";
 import Head from "next/head";
+import offline from "../public/offline.svg";
 
 const revCardData = {
   1: [
@@ -170,7 +171,7 @@ const revCardData = {
 };
 
 const revCardUrl = [
-  "/product/chokidr-software/autonomousIdentities",
+  "/product/chokidr-software/autonomousMachines",
   "/product/chokidr-software/connecting-people-and-things",
   "/product/chokidr-software/edge-iot",
   "/product/chokidr-software/green-and-economy",
@@ -239,7 +240,7 @@ const Home = () => {
             </li>
             <li className={styles.blackBoxIcon}>
               <div className={styles.balckBoxIconImg}>
-                <Image src={edgeCompImg} alt="edge computed" />
+                <Image src={offline} alt="edge computed" />
               </div>
               <h5 className={styles.backBoxListText}>Offline</h5>
             </li>
@@ -385,9 +386,14 @@ const Home = () => {
                 streamline productivity.
               </p>
               <div className={styles.readMoreText}>
-                <Link href="/platform/ai">
+                <Button
+                  title={"Read more"}
+                  url={"/platform/ai"}
+                  // isActive={true}
+                />
+                {/* <Link href="/platform/ai">
                   <a>Read more</a>
-                </Link>
+                </Link> */}
               </div>
               <div className={styles.carouselBtn}>
                 <Icons.filledDot />
@@ -415,9 +421,11 @@ const Home = () => {
               </p>
 
               <div className={styles.readMoreText}>
-                <Link href="/product/chokidr-hardware">
-                  <a>Read more</a>
-                </Link>
+                <Button
+                  title={"Read more"}
+                  url={"/product/chokidr-hardware"}
+                  // isActive={true}
+                />
               </div>
 
               <div className={styles.carouselBtn}>

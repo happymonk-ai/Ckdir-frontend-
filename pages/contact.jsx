@@ -20,20 +20,73 @@ import docsImg from "../public/rect-comment.png";
 import callImg from "../public/icons/call-outline.png";
 import aenvelopImg from "../public/icons/outline-envelop2.png";
 import CloseIcon from "@mui/icons-material/Close";
-import Head from 'next/head'
+import Head from "next/head";
+import axios from "axios";
+
+import { useForm } from "react-hook-form";
+
+const SIB_ENDPOINT = "https://api.sendinblue.com/v3";
+const SIB_KEY =
+  "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";
 
 const Contact = () => {
   const [isFormActive, setIsFormActive] = useState(false);
   const [isContactForm, setIsContactForm] = useState(false);
+  const [phoneInput, setPhoneInput] = useState();
+  const [success, setSuccess] = useState(false);
+
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    axios
+      .post(
+        `${SIB_ENDPOINT}/contacts`,
+        {
+          listIds: [6],
+          email: data.email,
+          updateEnabled: false,
+          attributes: {
+            FIRSTNAME: data.name,
+            LASTNAME: "",
+            SMS: data.phone,
+            COMPANY: "",
+            QUERIES: data.queries,
+          },
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "api-key": SIB_KEY,
+          },
+        }
+      )
+      .then((response) => {
+        console.log("REMOTE SUBMISSION SUCCESS", response);
+        setSuccess(true);
+        setTimeout(() => {
+setSuccess(false)
+        }, 2000);
+      })
+      .catch(({ response }) => {
+        console.log("REMOTE SUBMISSION ERROR", response?.data);
+        setError(true);
+        setErrorMessage(response.data.message);
+      });
+  };
+
   return (
     <>
       <Head>
         <title>Happymonk - Contact Us</title>
-        <meta
-          property="og:title"
-          content="Happymonk  Contact Us"
-          key="title"
-        />
+        <meta property="og:title" content="Happymonk  Contact Us" key="title" />
       </Head>
       <div>
         <div className={styles.landingContainer}>
@@ -89,9 +142,7 @@ const Contact = () => {
 
         {/* support */}
         <div className={styles.support}>
-          <h3 className={`${styles.heading} ${styles.supportHead}`}>
-            Support
-          </h3>
+          <h3 className={`${styles.heading} ${styles.supportHead}`}>Support</h3>
           <div className={styles.img}>
             <Image src={supportImg} alt={"support"} />
             <p className={styles.para}>
@@ -217,7 +268,6 @@ const Contact = () => {
                 />
               </div>
             </div>
-          
           </div>
         </div>
 
@@ -253,7 +303,23 @@ const Contact = () => {
               {/* <Image src={applyImg} alt="apply form" /> */}
             </div>
             <div className={styles.formContainer}>
-              <div className={styles.form}>
+              <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+                {success ? (
+                  <>
+                    <span className={styles.successMessage}>
+                      <h5>Your Query Submited Successfully</h5> <br />
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    {error && (
+                      <span className={styles.errorMessage}>
+                        {errorMessage} <br />
+                      </span>
+                    )}
+                  </>
+                )}
+
                 <div className={styles.formHead}>
                   <div className={styles.heading}>
                     {isContactForm ? "Contact form" : "Ask your queries"}
@@ -267,7 +333,12 @@ const Contact = () => {
                     <Image src={userImg} alt="user" />
                   </span>
                   <span className={styles.fieldInput}>
-                    <input type="text" placeholder="Your Name" />
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      {...register("name")}
+                      required={true}
+                    />
                   </span>
                 </div>
                 <div className={styles.field}>
@@ -275,7 +346,12 @@ const Contact = () => {
                     <Image src={aenvelopImg} alt="email" />
                   </span>
                   <span className={styles.fieldInput}>
-                    <input type="text" placeholder="Email id" />
+                    <input
+                      type="email"
+                      placeholder="Email id"
+                      {...register("email")}
+                      required={true}
+                    />
                   </span>
                 </div>
                 <div className={styles.field}>
@@ -283,7 +359,17 @@ const Contact = () => {
                     <Image src={callImg} alt="phone" />
                   </span>
                   <span className={styles.fieldInput}>
-                    <input type="text" placeholder="Phone number" />
+                    <input
+                      type="text"
+                      placeholder="Phone number"
+                      required={true}
+                      maxLength={13}
+                      value={phoneInput}
+                      onChange={(e) => {
+                        setPhoneInput(e.target.value.replace(/\D/g, ""));
+                      }}
+                      {...register("phone")}
+                    />
                   </span>
                 </div>
                 <div className={`${styles.field} ${styles.queryText}`}>
@@ -294,13 +380,25 @@ const Contact = () => {
                     className={`${styles.fieldInput} ${styles.uploadField}`}
                   >
                     <span>{isContactForm ? "Message" : " Your Query"}</span>
-                    <textarea type="file" placeholder="Your Query"></textarea>
+                    <textarea
+                      type="text"
+                      placeholder="Your Query"
+                      required={true}
+                      {...register("queries")}
+                    ></textarea>
                   </span>
                 </div>
                 <div className={styles.submitBtn}>
-                  <Button url={""} title={"Send"} isActive={true} />
+                  <button
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "none",
+                    }}
+                  >
+                    <Button url={""} title={"Send"} isActive={true} />
+                  </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

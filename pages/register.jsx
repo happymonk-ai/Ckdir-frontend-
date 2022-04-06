@@ -97,7 +97,7 @@ const Register = () => {
                       <span className={inputStyles.icon}>
                         <Image src={mailIcon} alt="user" />
                       </span>
-                      <input placeholder="Email ID" {...register("email")} />              
+                      <input type={"email"} placeholder="Email ID" {...register("email")} required={true} />              
                     </div>
                   </div>
 

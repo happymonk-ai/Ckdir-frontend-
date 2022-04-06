@@ -108,9 +108,10 @@ const ChokidrSoftware = () => {
                   and devices under one single unified dashboard.
                 </p>
                 <div className={styles.readMoreText}>
-                  <Link href="/product/chokidr-software/command-and-control">
-                    <a>Read more</a>
-                  </Link>
+                  <Button
+                    title={"Read more"}
+                    url={"/product/chokidr-software/command-and-control"}
+                  />
                 </div>
               </div>
               <div className={styles.carouselBtn}>
@@ -135,9 +136,10 @@ const ChokidrSoftware = () => {
                   manufacturing, and many other sectors.
                 </p>
                 <div className={styles.readMoreText}>
-                  <Link href="/product/chokidr-software/autonomousMachines">
-                    <a>Read more</a>
-                  </Link>
+                  <Button
+                    title={"Read more"}
+                    url={"/product/chokidr-software/autonomousMachines"}
+                  />
                 </div>
               </div>
               <div className={styles.carouselBtn}>
@@ -207,8 +209,8 @@ const ChokidrSoftware = () => {
             text={
               <div className={styles.container}>
                 <div className={styles.label}>
-                Connect Dhar and Sub-second feedback even while being offline
-                through LoRaWAN and Inbuilt 5G with Legacy Retrofiting.
+                  Connect Dhar and Sub-second feedback even while being offline
+                  through LoRaWAN and Inbuilt 5G with Legacy Retrofiting.
                 </div>
               </div>
             }
@@ -228,7 +230,10 @@ const ChokidrSoftware = () => {
               text={
                 <div className={`${styles.container}`}>
                   <div className={styles.label}>
-                  Reduce Carbon foot print of your organisation. <br></br>Blockchain technology helps businesses to bring credibility to their carbon offsetting strategies to backup their net zero commitments with public transparency.
+                    Reduce Carbon foot print of your organisation. <br></br>
+                    Blockchain technology helps businesses to bring credibility
+                    to their carbon offsetting strategies to backup their net
+                    zero commitments with public transparency.
                   </div>
                 </div>
               }
