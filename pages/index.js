@@ -332,7 +332,7 @@ const Home = () => {
             giving away the actual location of the entity. A world where your
             Identity is verified without having to share your personal details
             such as age, date of birth. A world where data that is sent to
-            authorities are reliable and not sent to wrong personel. The
+            authorities are reliable and not sent to wrong personal. The
             imagination just got real.
           </p>
 
