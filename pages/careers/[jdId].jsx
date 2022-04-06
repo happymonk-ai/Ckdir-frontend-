@@ -15,14 +15,11 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useQuery } from "urql";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
-
-
-
-
-const SIB_ENDPOINT = "https://api.sendinblue.com/v3"
-const SIB_KEY = "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"
-
+const SIB_ENDPOINT = "https://api.sendinblue.com/v3";
+const SIB_KEY =
+  "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";
 
 const jdIdQuery = `
 query ($id: ID!){
@@ -40,6 +37,52 @@ const JD = () => {
   const router = useRouter();
   const id = router.query.jdId;
   const [roleresponsibilities, setRoleresponsibilities] = useState([]);
+  const [phoneInput, setPhoneInput] = useState();
+  const [success, setSuccess] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const onSubmit = (data) => {
+    axios
+      .post(
+        `${SIB_ENDPOINT}/contacts`,
+        {
+          listIds: [5],
+          email: data.email,
+          updateEnabled: false,
+          attributes: {
+            FIRSTNAME: data.name,
+            LASTNAME: "",
+            SMS: data.phone,
+            COMPANY: "",
+            RESUME: data.resume,
+          },
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "api-key": SIB_KEY,
+          },
+        }
+      )
+      .then((response) => {
+        console.log("REMOTE SUBMISSION SUCCESS", response);
+        setSuccess(true);
+      })
+      .catch(({ response }) => {
+        console.log("REMOTE SUBMISSION ERROR", response?.data);
+        setError(true);
+        setErrorMessage(response.data.message);
+      });
+  };
 
   const [result, reexecuteQuery] = useQuery({
     query: jdIdQuery,
@@ -48,34 +91,7 @@ const JD = () => {
     },
     pause: !id,
   });
-  const { data, fetching, error } = result;
-
-
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => {
-    axios.post(`${SIB_ENDPOINT}/contacts`, 
-    {
-      listIds: [2],
-      email: data.email,
-      updateEnabled: false,
-      attributes: { FIRSTNAME: data.name, LASTNAME: '', SMS: data.phone, COMPANY: data.organisation }
-    },{
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": SIB_KEY
-      }
-    }).then(response => {
-      console.log("REMOTE SUBMISSION SUCCESS", response);
-      setSuccess(true)
-    })
-    .catch( ({ response }) => {
-      console.log("REMOTE SUBMISSION ERROR", response.data.message);
-      setError(true)
-      setErrorMessage(response.data.message)
-    });
-  }
-
-
+  const { data, fetching } = result;
 
   useEffect(() => {
     let responsibility = data?.jobDeescription?.DailyandMonthlyresponsibilities;
@@ -168,46 +184,93 @@ const JD = () => {
             </div>
             <div className={styles.formContainer}>
               <div className={styles.heading}>Apply here</div>
-              <div className={styles.form}>
-                <div className={styles.field}>
-                  <span className={styles.fieldIcon}>
-                    <Image src={userImg} alt="user" />
-                  </span>
-                  <span className={styles.fieldInput}>
-                    <input type="text" placeholder="Your Name" />
-                  </span>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className={styles.form}>
+                  {success ? (
+                    <>
+                      <span className={styles.successMessage}>
+                        <h5>Your Application Submited SuccessFully</h5> <br />
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      {error && (
+                        <span className={styles.errorMessage}>
+                          {errorMessage} <br />
+                        </span>
+                      )}
+                    </>
+                  )}
+                  <div className={styles.field}>
+                    <span className={styles.fieldIcon}>
+                      <Image src={userImg} alt="user" />
+                    </span>
+                    <span className={styles.fieldInput}>
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        {...register("name")}
+                        required={true}
+                      />
+                    </span>
+                  </div>
+                  <div className={styles.field}>
+                    <span className={styles.fieldIcon}>
+                      <Image src={envelopImg} alt="email" />
+                    </span>
+                    <span className={styles.fieldInput}>
+                      <input
+                        type="email"
+                        placeholder="Email Id"
+                        {...register("email")}
+                        required={true}
+                      />
+                    </span>
+                  </div>
+                  <div className={styles.field}>
+                    <span className={styles.fieldIcon}>
+                      <Image src={callImg} alt="phone" />
+                    </span>
+                    <span className={styles.fieldInput}>
+                      <input
+                        type="text"
+                        placeholder="Phone number"
+                        required={true}
+                        maxLength={13}
+                        value={phoneInput}
+                        onChange={(e) => {
+                          setPhoneInput(e.target.value.replace(/\D/g, ""));
+                        }}
+                        {...register("phone")}
+                      />
+                    </span>
+                  </div>
+                  <div className={styles.field}>
+                    <span className={styles.fieldIcon}>
+                      <Image src={docsImg} alt="user" />
+                    </span>
+                    <span className={styles.fieldInput}>
+                      <input
+                        type="text"
+                        placeholder="Resume Link"
+                        required={true}
+                        {...register("resume")}
+                      />
+                    </span>
+                  </div>
+
+                  <div className={styles.submitBtn}>
+                    <button
+                      style={{
+                        backgroundColor: "transparent",
+                        border: "none",
+                      }}
+                    >
+                      <Button url={""} title={"Submit"} isActive={true} />
+                    </button>
+                  </div>
                 </div>
-                <div className={styles.field}>
-                  <span className={styles.fieldIcon}>
-                    <Image src={envelopImg} alt="email" />
-                  </span>
-                  <span className={styles.fieldInput}>
-                    <input type="text" placeholder="Email id" />
-                  </span>
-                </div>
-                <div className={styles.field}>
-                  <span className={styles.fieldIcon}>
-                    <Image src={callImg} alt="phone" />
-                  </span>
-                  <span className={styles.fieldInput}>
-                    <input type="text" placeholder="Phone number" />
-                  </span>
-                </div>
-                <div className={styles.field}>
-                  <span className={styles.fieldIcon}>
-                    <Image src={docsImg} alt="user" />
-                  </span>
-                  <span
-                    className={`${styles.fieldInput} ${styles.uploadField}`}
-                  >
-                    <span>Upload resume</span>
-                    <input type="file" placeholder="Upload resume" />
-                  </span>
-                </div>
-                <div className={styles.submitBtn}>
-                  <Button url={""} title={"Submit"} isActive={true} />
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
