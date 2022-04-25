@@ -15,7 +15,7 @@ import mapImg from "../../public/map.png";
 // import serversImg from "../../public/icons/connected-servers.svg";
 // import aiAnalyticsImg from "../../public/icons/AI-analytics.svg";
 import workingChartImg from "../../public/working-chart.png";
-import ai from "../../public/ai.jpg";
+import ai from "../../public/ai-new.jpg";
 import Head from "next/head";
 
 const platFormCardData = [

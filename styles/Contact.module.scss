@@ -307,16 +307,15 @@
   background-color: #232323;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 25px;
   border-radius: 10px;
-  .fieldIcon {
-    flex: 0.1;
-  }
+  // .fieldIcon {
+  //   flex: 0.1;
+  // }
+  gap: 20px;
   .fieldInput,
   input,
   textarea {
-    font-size: 12px;
-    line-height: 30px;
     font-family: Inter;
     border: none;
     outline: none;
@@ -325,6 +324,11 @@
     flex: 1;
     height: 100%;
     width: 100%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px; 
+    color: rgba(255, 255, 255, 0.6);
+
   }
 
   .uploadField {
