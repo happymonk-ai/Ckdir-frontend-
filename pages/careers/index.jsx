@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import LongCard from "../../components/LongCard";
 import styles from "../../styles/Career.module.scss";
@@ -17,7 +17,7 @@ const jobQuery = `
 }
 `;
 
-const Career = () => {
+const Career = ({ openRoles }) => {
   const [result, reexecuteQuery] = useQuery({
     query: jobQuery,
   });
@@ -27,6 +27,11 @@ const Career = () => {
   useEffect(() => {
     console.log(data);
   }, [data]);
+
+  const [active, setActive] = useState();
+  const handleActive = (tab) => {
+    setActive(tab);
+  };
 
   return (
     <>
@@ -38,7 +43,7 @@ const Career = () => {
         <div className={styles.landingContainer}>
           <Header />
           <div className={styles.landingPage}>
-            <h2 className={styles.heading1}>Jobs at Happymonk.AI</h2>
+            <h2 className={styles.heading1}>Jobs at Happymonk</h2>
             <p className={styles.landingText}>
               Like building revolutionary products? Do your fingers type faster
               than your brains? Then, This is the right place for you.
@@ -56,7 +61,13 @@ const Career = () => {
               {data?.jobDeescriptions?.map((role, ri) => (
                 <React.Fragment key={ri}>
                   <li className={styles.roleItem}>
-                    <LongCard url={`/careers/${role.id}`}>
+                    <LongCard
+                      url={`/careers/${role.id}`}
+                      id={role.id}
+                      role={role}
+                      active={active}
+                      handleActive={handleActive}
+                    >
                       <h4 className={styles.boldText}>{role.JobTitle}</h4>
                       <h5 className={styles.grayText}>{role.Experience}</h5>
                     </LongCard>
