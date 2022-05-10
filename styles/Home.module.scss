@@ -80,7 +80,7 @@
   // margin-bottom: 6rem;
   padding-bottom: 6rem;
   .heading1 {
-    width: 82.2rem;
+    width: 80%;
     // margin: auto;
   }
 
@@ -89,6 +89,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 15px;
   }
 
   .landingText {
@@ -100,6 +101,7 @@
     font-size: 2.5rem;
     line-height: 4rem;
     color: rgba(251, 251, 251, 0.8);
+   
   }
   .readMore {
     width: fit-content;
@@ -141,8 +143,13 @@
   .balckBoxIconList {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 70%;
     z-index: 5;
+    overflow-x: scroll;
+    padding: 0 20px;
+    &::-webkit-scrollbar{
+      width: 0;
+    }
   }
 
   .backBoxListText {
@@ -182,7 +189,7 @@
   // background-color: $black;
   margin-top: 33px;
   text-align: center;
-  min-height: 100vh;
+  // min-height: 100vh;
 
   .heading2 {
     width: 40%;
@@ -193,7 +200,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10rem 15.3rem;
+    padding: 10rem 10%;
     display: flex;
     align-items: baseline;
   }
@@ -226,7 +233,7 @@
   }
 
   .revolutionCard {
-    width: 80%;
+    width: 93%;
     margin: 3rem auto;
     position: relative;
     overflow: hidden;
@@ -264,12 +271,39 @@
     }
 
     .revolutionCardList {
+      width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      padding: 4rem 3rem 1rem 3rem;
+      align-items: center;
+      padding: 3rem;
+      padding-bottom: 0;
       z-index: 9;
-      gap: 30px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      &::-webkit-scrollbar{
+        width: 0;
+      }
+      transition: 0.2s;
+      transform-origin: right top;
+      .revolutionCardItem {
+        min-width: 300px;
+        max-width: 500px;
+        // min-height: 250px;
+        // max-height: 250px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        transition: 0.2s;
+        transform-origin: right top;
+        padding-bottom: 1rem;
+      }
+      .revolutionCardItem:hover {
+        transform: translateY(-1rem);
+      }
+      .readMoreText {
+        padding: auto;
+      }
     }
   }
 
@@ -404,6 +438,7 @@
 
   .readMoreText {
     text-align: right;
+    width: fit-content;
   }
 }
 
@@ -511,8 +546,6 @@
   display: none;
 }
 
-
-
 @media screen and (max-width: 1032px) {
   .landingBreak {
     display: block;
@@ -532,6 +565,7 @@
 
     .heading1 {
       font-size: 40px;
+      line-height: 50px;
     }
 
     .landingText {
@@ -569,9 +603,9 @@
     .balckBoxIconList {
       // flex-direction: column;
 
-        .backBoxListText {
-          font-size: 14px;
-        }
+      .backBoxListText {
+        font-size: 14px;
+      }
 
       .blackBoxIcon {
         &:first-child {
@@ -612,8 +646,11 @@
 
   .revolutionList,
   .revolutionCardList {
+    display:block;
+    float: left;
+    flex:33.33%;
     width: unset;
-    padding: 10rem 6rem !important;
+    // padding: 10rem 6rem !important;
     gap: 5rem;
     justify-content: flex-start;
     overflow-x: auto;
@@ -634,16 +671,16 @@
     font-size: 3rem !important;
   }
 
-  .revolutionCardList {
-    padding: 0 3rem !important;
-    padding-top: 10px !important;
-    flex-direction: column;
-    margin-bottom: 8rem;
-    .revolutionCardImage {
-      width: 49px;
-      margin: auto;
-    }
-  }
+  // .revolutionCardList {
+  //   padding: 0 3rem !important;
+  //   padding-top: 10px !important;
+  //   flex-direction: column;
+  //   margin-bottom: 8rem;
+  //   .revolutionCardImage {
+  //     width: 49px;
+  //     margin: auto;
+  //   }
+  // }
 
   .revolutionaCotainer {
     margin: unset;
@@ -801,6 +838,8 @@
         font-size: 3.5rem;
         font-family: Inter;
         font-weight: bold;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }

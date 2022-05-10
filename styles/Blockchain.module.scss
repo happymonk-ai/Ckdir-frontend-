@@ -192,7 +192,6 @@
 .platformPic {
   height: 66.5rem;
   margin: 7rem 6rem;
-
   background: #0f0f0f;
   border-radius: 1rem;
 }
@@ -205,14 +204,19 @@
 }
 
 .kpImg {
-  width: 53.8rem;
-  height: 43.5rem;
+  width: 60%;
+  height: 60%;
+  padding: 10px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .kpPoints {
   display: flex;
   justify-content: space-between;
   margin-top: 2.8rem;
+  flex-direction: column;
 }
 
 .kpItem {

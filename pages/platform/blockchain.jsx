@@ -13,6 +13,7 @@ import phonesImg from "../../public/phoneGroup.png";
 import locationImg from "../../public/icons/location.svg";
 import proofDocIcon from "../../public/icons/proofDoc.svg";
 import authorityProof from "../../public/icons/authorityProof.svg";
+import zkp from "../../public/zkp.jpeg";
 import Head from 'next/head'
 
 const Blockchain = ({ kpList }) => {
@@ -108,10 +109,13 @@ const Blockchain = ({ kpList }) => {
 
         {/* 0 knowledge proof section */}
         <div className={styles.kp}>
-          <h2 className={styles.heading}>Zero knowledge Proof</h2>
+          {/* <h2 className={styles.heading}>Zero knowledge Proof</h2>
           <h5 className={styles.kpText}>
             ZKP is essentially about proving that:
-          </h5>
+          </h5> */}
+           <div className={styles.kpImg}>
+              <Image src={zkp} alt="knowledge proof" />
+            </div>
           <div className={styles.kpPoints}>
             <ul className={styles.kpList}>
               {kpList?.map((e, i) => (
@@ -121,9 +125,7 @@ const Blockchain = ({ kpList }) => {
                 </li>
               ))}
             </ul>
-            <div className={styles.kpImg}>
-              <Image src={kpImg} alt="knowledge proof" />
-            </div>
+           
           </div>
 
           <div className={styles.cards}>

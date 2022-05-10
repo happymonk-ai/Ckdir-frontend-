@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import axios from 'axios';
+
 import Image from "next/image";
 import styles from "../styles/Register.module.scss";
 import logo from "../public/registerLogo.png";
@@ -7,310 +11,121 @@ import phoneIcon from "../public/icons/phone2.png";
 import userIcon from "../public/icons/user2.png";
 import idIcon from "../public/icons/id-icon.svg";
 import FilledBtn from "../components/FilledBtn";
-import SelectBox from "../components/SelectBox";
 import iMacImg from "../public/Apple-iMac-Retina.png";
-import iphoneFullImg from "../public/iphone-full.png";
-import CarouselNavigation from "../components/CarouselNavigation";
-import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import { useState } from "react";
-import SelectField from "../components/SelectField";
-import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import outlineFlag from "../public/icons/flag-outline.png";
-import Head from "next/head";
+import inputStyles from "../styles/componentsStyle/Input.module.scss";
+import btnStyles from "../styles/componentsStyle/FilledBtn.module.scss";
 
-const SelfRegistrationForm = ({setRegType}) => {
-  const [selfRegForm, setSelfRegForm] = useState(0);
+const SIB_ENDPOINT = "https://api.sendinblue.com/v3"
+const SIB_KEY = "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"
 
-  return selfRegForm === 0 ? (
+const Register = () => {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const onSubmit = data => {
+    axios.post(`${SIB_ENDPOINT}/contacts`, 
+    {
+      listIds: [2],
+      email: data.email,
+      updateEnabled: false,
+      attributes: { FIRSTNAME: data.name, LASTNAME: '', SMS: data.phone, COMPANY: data.organisation }
+    },{
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": SIB_KEY
+      }
+    }).then(response => {
+      console.log("REMOTE SUBMISSION SUCCESS", response);
+      setSuccess(true)
+    })
+    .catch( ({ response }) => {
+      console.log("REMOTE SUBMISSION ERROR", response.data.message);
+      setError(true)
+      setErrorMessage(response.data.message)
+    });
+  }
+
+  return (
     <div className={styles.container}>
       <div className={styles.form}>
         <div className={styles.header}>
           <Image src={logo} alt="logo" className={styles.logo} />
         </div>
         <div className={styles.formContainer}>
-          <div className={styles.formHeader}>
-            <div className={styles.title}>Registration Form</div>
-            <div className={styles.selectBox}>
-              <SelectBox selected={(value) => setRegType(value)} />
-            </div>
-          </div>
-          <div className={styles.label}>Personal information</div>
-          <div className={styles.fields}>
-            <div className={styles.field}>
-              <Input
-                type={"text"}
-                getValue={(value) => {}}
-                placeholder="Name"
-                icon={<Image src={userIcon} alt="user" />}
-              />
-            </div>
+          {success ? (
+            <span className={styles.successMessage}>
+              <h1>Thank You!!</h1>
+              <h2>We will get back to you soon.</h2>
+            </span>
+          ) : (
+            <>
+              <div className={styles.formHeader}>
+                <div className={styles.title}>Registration Form</div>
+                <div className={styles.selectBox}>
+                  {/* <SelectBox /> */}
+                </div>
+              </div>
+              <div className={styles.label}>Personal information</div>
+              {error &&
+                <span className={styles.errorMessage}>{errorMessage} <br /></span>
+              }
+              <div className={styles.fields}>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  {/* register your input into the hook by invoking the "register" function */}
+                  <div className={styles.field}>
+                    <div className={inputStyles.input}>
+                      <span className={inputStyles.icon}>
+                        <Image src={userIcon} alt="user" />
+                      </span>
+                      <input placeholder="Name" {...register("name")} />              
+                    </div>
+                  </div>
 
-            <div className={styles.field}>
-              <Input
-                type={"text"}
-                getValue={(value) => {}}
-                placeholder="Phone number"
-                icon={<Image src={phoneIcon} alt="phone" />}
-              />
-            </div>
-            <div className={styles.field}>
-              <Input
-                type={"text"}
-                getValue={(value) => {}}
-                placeholder="Email ID"
-                icon={<Image src={mailIcon} alt="mail" />}
-              />
-            </div>
-            <div className={styles.field}>
-              <Input
-                type={"text"}
-                getValue={(value) => {}}
-                placeholder="Government ID proof"
-                icon={<Image src={idIcon} alt="id" />}
-              />
-            </div>
-            <div className={styles.radioField}>
-              <div className={styles.radioOptions}>
-                <div className={styles.radioIcon}>
-                  <CircleOutlinedIcon />
-                </div>
-                <div className={styles.fieldLabelText}>Aadhar Card</div>
-              </div>
-              <div className={styles.radioOptions}>
-                <div className={styles.radioIcon}>
-                  <CircleOutlinedIcon />
-                </div>
-                <div className={styles.fieldLabelText}>PAN Card</div>
-              </div>
-              <div className={styles.radioOptions}>
-                <div className={styles.radioIcon}>
-                  <CircleOutlinedIcon />
-                </div>
-                <div className={styles.fieldLabelText}>Driving license</div>
-              </div>
-            </div>
+                  <div className={styles.field}>
+                    <div className={inputStyles.input}>
+                      <span className={inputStyles.icon}>
+                        <Image src={phoneIcon} alt="user" />
+                      </span>
+                      <input placeholder="Phone number (with country code)" {...register("phone")} />              
+                    </div>
+                  </div>
 
-            <div className={styles.btn}>
-              <div>
-                <CarouselNavigation
-                  counts={2}
-                  defaultView={0}
-                  getValue={() => {}}
-                />
+                  <div className={styles.field}>
+                    <div className={inputStyles.input}>
+                      <span className={inputStyles.icon}>
+                        <Image src={mailIcon} alt="user" />
+                      </span>
+                      <input type={"email"} placeholder="Email ID" {...register("email")} required={true} />              
+                    </div>
+                  </div>
+
+                  <div className={styles.field}>
+                    <div className={inputStyles.input}>
+                      <span className={inputStyles.icon}>
+                        <Image src={idIcon} alt="user" />
+                      </span>
+                      <input placeholder="Organisation Name" {...register("organisation")} />              
+                    </div>
+                  </div>
+                  
+                  {/* errors will return when field validation fails  */}
+                  {errors.exampleRequired && <span>This field is required</span>}
+                  {/* <FilledBtn title="Submit" type="submit" url="" /> */}
+                  <input type="submit" className={btnStyles.button} />
+                </form>
               </div>
-              <div onClick={() => setSelfRegForm(1)}>
-                <FilledBtn title="Next" url="" />
-              </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       </div>
       <div className={styles.info}>
-        {/* <div className={styles.text}>
-          <div className={styles.heading}>Flagship Features</div>
-          <div className={styles.para}>
-            Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi.
-          </div>
-        </div> */}
         <div className={styles.img}>
           <Image src={iMacImg} alt={"desktop"} />
         </div>
       </div>
     </div>
-  ) : (
-    <div className={styles.container}>
-      <div className={styles.form}>
-        <div className={styles.header}>
-          <Image src={logo} alt="logo" className={styles.logo} />
-        </div>
-        <div className={styles.formContainer}>
-          <div className={styles.formHeader}>
-            <div className={styles.title}>Registration Form</div>
-            <div className={styles.selectBox}>
-            <SelectBox selected={(type) => setRegType(type)} />
-            </div>
-          </div>
-          <div className={styles.label}>Personal information</div>
-          <div className={styles.fields}>
-            <div className={styles.field}>
-              <div className={styles.outer}>
-                <div
-                  className={styles.countryDrop}
-                  // onClick={() => setDrop(!drop)}
-                >
-                  <div className={styles.cLeft}>
-                    <span>
-                      <Image src={outlineFlag} alt="icon" />
-                    </span>
-                    <span>Choose country</span>
-                  </div>
-                  <div className={styles.cRight}>
-                    <KeyboardArrowDownOutlinedIcon
-                      style={{ fontSize: "20px" }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.field}>
-              <Input
-                type={"text"}
-                getValue={(value) => {}}
-                placeholder="Address"
-                icon={<Image src={phoneIcon} alt="phone" />}
-              />
-            </div>
-            <div className={styles.field}>
-              <div className={styles.outer}>
-                <div
-                  className={styles.countryDrop}
-                  // onClick={() => setDrop(!drop)}
-                >
-                  <div className={styles.cLeft}>
-                    <span>
-                      <Image src={outlineFlag} alt="icon" />
-                    </span>
-                    <span>Reason for installing Chokdir</span>
-                  </div>
-                  <div className={styles.cRight}>
-                    <KeyboardArrowDownOutlinedIcon
-                      style={{ fontSize: "20px" }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.btn}>
-              <div>
-                <CarouselNavigation
-                  counts={2}
-                  defaultView={1}
-                  getValue={() => {}}
-                />
-              </div>
-
-              <div onClick={() => setSelfRegForm(1)}>
-                <FilledBtn title="Get invitation" url="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={`${styles.info}  ${styles.selfInvite}`}>
-        <div className={styles.phoneImg}>
-          <Image src={iphoneFullImg} alt={"desktop"} />
-        </div>
-        {/* <div className={styles.text}>
-          <div className={styles.heading}>Flagship Features</div>
-          <div className={styles.para}>
-           <li>
-           Amet, consectetur adipiscing elit, sed do eiusmod tempor.
-           </li>
-           <li>
-           Amet, consectetur adipiscing elit, sed do eiusmod tempor.
-           </li>
-           <li>
-           Amet, consectetur adipiscing elit, sed do eiusmod tempor.
-           </li>
-          </div>
-        </div> */}
-      </div>
-    </div>
-  );
-};
-
-const Register = () => {
-  const [formCount, setFormCount] = useState(0);
-  const [regType, setRegType] = useState("self");
-
-  return (
-    <>
-      <Head>
-        <title>Happymonk - Register</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:title" content="Happymonk  Register" key="title" />
-      </Head>
-
-      {regType === "self" ? (
-        <SelfRegistrationForm setRegType={setRegType} />
-      ) : (
-        <div className={styles.container}>
-          <div className={styles.form}>
-            <div className={styles.header}>
-              <Image src={logo} alt="logo" className={styles.logo} />
-            </div>
-            <div className={styles.formContainer}>
-              <div className={styles.formHeader}>
-                <div className={styles.title}>Registration Form</div>
-                <div className={styles.selectBox}>
-                <SelectBox selected={(value) => {setRegType(value)}} />
-                </div>
-              </div>
-              <div className={styles.label}>Personal information</div>
-              <div className={styles.fields}>
-                <div className={styles.field}>
-                  <Input
-                    type={"text"}
-                    getValue={(value) => {}}
-                    placeholder="Name"
-                    icon={<Image src={userIcon} alt="user" />}
-                  />
-                </div>
-
-                <div className={styles.field}>
-                  <Input
-                    type={"text"}
-                    getValue={(value) => {}}
-                    placeholder="Phone number"
-                    icon={<Image src={phoneIcon} alt="phone" />}
-                  />
-                </div>
-                <div className={styles.field}>
-                  <Input
-                    type={"text"}
-                    getValue={(value) => {}}
-                    placeholder="Email ID"
-                    icon={<Image src={mailIcon} alt="mail" />}
-                  />
-                </div>
-
-                <div className={styles.btn}>
-                  <div>
-                    <CarouselNavigation
-                      counts={3}
-                      defaultView={0}
-                      getValue={() => {}}
-                    />
-                  </div>
-                  <div>
-                    <FilledBtn title="Next" url="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.info}>
-            {/* 
-            // NO content
-            <div className={styles.text}>
-              <div className={styles.heading}>Flagship Features</div>
-              <div className={styles.para}>
-                Amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi.
-              </div>
-            </div> */}
-            <div className={styles.img}>
-              <Image src={iMacImg} alt={"desktop"} />
-            </div>
-          </div>
-        </div>
-      )}
-    </>
   );
 };
 

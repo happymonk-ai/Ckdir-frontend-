@@ -40,13 +40,13 @@ const ChokidrSoftware = () => {
           <div className={styles.glowCircle}></div>
           <div className={styles.container}>
             <div className={styles.textContainer}>
-              <h2 className={styles.landingText}>Accelerating Web 3.0</h2>
+              <h2 className={styles.landingText}>
+                Accelerating Autonomous Safety & Security
+              </h2>
               <p className={styles.para}>
-                Chokidr software is an executable Web and mobile application,
-                that provides a variety of fantastic features that helps you
-                navigate through and access the range of your network through a
-                laptop or phone. What&apos;s in the box of these fantastic
-                features, you ask?
+                Chokidr&trade; state of the Art Security & Threat Detection
+                platform, designed to improve safety, autonomy, & efficiency of
+                people.
               </p>
             </div>
             <div className={styles.img}>
@@ -104,13 +104,14 @@ const ChokidrSoftware = () => {
               <div className={styles.textContainer}>
                 <h2 className={styles.heading}>Command & Control</h2>
                 <p className={styles.para}>
-                  Get real time information across your organisation, members
-                  and devices under one single unified dashboardF
+                  Get real time information across your organization, members
+                  and devices under one single unified dashboard.
                 </p>
                 <div className={styles.readMoreText}>
-                  <Link href="/product/chokidr-software/command-and-control">
-                    <a>Read more</a>
-                  </Link>
+                  <Button
+                    title={"Read more"}
+                    url={"/product/chokidr-software/command-and-control"}
+                  />
                 </div>
               </div>
               <div className={styles.carouselBtn}>
@@ -135,9 +136,10 @@ const ChokidrSoftware = () => {
                   manufacturing, and many other sectors.
                 </p>
                 <div className={styles.readMoreText}>
-                  <Link href="/product/chokidr-software/autonomousMachines">
-                    <a>Read more</a>
-                  </Link>
+                  <Button
+                    title={"Read more"}
+                    url={"/product/chokidr-software/autonomousMachines"}
+                  />
                 </div>
               </div>
               <div className={styles.carouselBtn}>
@@ -157,7 +159,11 @@ const ChokidrSoftware = () => {
             text={
               <div className={styles.container}>
                 <div className={styles.label}>
-                  Connect Sensors, Information Boards
+                  A world like no other.<br></br> A simple, well-connected,
+                  Decentralized application for people, companies and things
+                  with powerful privacy preserving network-wide insight
+                  generation can help foster more collaboration and generate
+                  significant value for all the participants.
                 </div>
               </div>
             }
@@ -178,6 +184,12 @@ const ChokidrSoftware = () => {
                 <div className={styles.container}>
                   <div className={styles.label}>
                     Decentralized Identities for Humans, Devices and Things.
+                    <br></br>
+                    Identities contains data such as public keys, enabling the
+                    holder to prove ownership over their personal data.
+                    Verifiable Credentials are statements about the holder. They
+                    can be verified online or in person, and the holder decides
+                    who to share them with.
                   </div>
                 </div>
               }
@@ -218,7 +230,10 @@ const ChokidrSoftware = () => {
               text={
                 <div className={`${styles.container}`}>
                   <div className={styles.label}>
-                    Reduce Carbon foot print of your organisation.
+                    Reduce Carbon foot print of your organisation. <br></br>
+                    Blockchain technology helps businesses to bring credibility
+                    to their carbon offsetting strategies to backup their net
+                    zero commitments with public transparency.
                   </div>
                 </div>
               }

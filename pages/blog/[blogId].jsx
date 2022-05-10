@@ -38,8 +38,8 @@ const Blog1 = () => {
         <meta property="og:title" content="Blog" key="title" />
       </Head>
       <div>
-        <div className={styles.landingContainer}>
           <Header />
+        <div className={styles.landingContainer}>
           <div className={styles.landingPage}></div>
         </div>
 

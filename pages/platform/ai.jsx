@@ -15,20 +15,21 @@ import mapImg from "../../public/map.png";
 // import serversImg from "../../public/icons/connected-servers.svg";
 // import aiAnalyticsImg from "../../public/icons/AI-analytics.svg";
 import workingChartImg from "../../public/working-chart.png";
+import ai from "../../public/ai.jpg";
 import Head from "next/head";
 
 const platFormCardData = [
   {
     imageUrl: cardImg1,
-    heading: "Edge IOT",
+    heading: "Autonomous Machines",
     text:
       "Autonomous Prediction & Actions on the edge. Get critical insights, and aid your team with critical information from sensors, real-time data of your organization, being even offline.",
   },
   {
     imageUrl: cardImg2,
-    heading: "Sensor Fusion",
+    heading: "Edge IoT",
     text:
-      "Analyze, detect and take actions in real time. Save millions of dollars for organizations and improve human safety & organization efficiency.",
+      "Create a shared, secure and immutable view of the truth, delivering transformable new levels of transparency, efficiency and opportunity through Digital Twins.",
   },
 ];
 const AI = () => {
@@ -56,8 +57,9 @@ const AI = () => {
 
         {/* chart section */}
         <div className={styles.chart}>
+          <div className={styles.heading}>Salient features</div>
           <div className={styles.chartImg}>
-            <Image src={workingChartImg} alt="chart" />
+            <Image src={ai} alt="chart" />
           </div>
         </div>
 
@@ -121,13 +123,14 @@ const AI = () => {
               </div>
               <div className={styles.sCardText}>
                 <h3 className={styles.sCardHeading}>
-                  Detection & Identification
+                  Intelligent Video Analytics
                 </h3>
                 <p className={styles.sCardSummary}>
-                  Hyper Connected Systems : Proactively Detects Incidents across
-                  factories, warehouse, fleet, ensuring improved employee
-                  safety, lesser workplace accidents, easier compliance
-                  management.
+                  Security & Safety are transforming human lives. enterprises
+                  face challenges with using existing infrastructure to power
+                  these applications. The CHOKIDR™ platform provides a unified
+                  infrastructure to power both traditional and modern
+                  organization, and their data from center to edge.
                 </p>
               </div>
             </div>
@@ -138,11 +141,13 @@ const AI = () => {
               </div>
               <div className={`${styles.sCardText} ${styles.alignEnd}`}>
                 <h2 className={styles.sCardHeading}>
-                  Decentralized Command and Control
+                  AI Over 5G & LoRaWAN&trade;
                 </h2>
                 <p className={styles.sCardSummary}>
-                  Centralized Command & Control over your entire decentralized
-                  infrastructure.
+                  Connect Billions of Devices, Harnessing the power of AI &
+                  Blockchain in a infinite eco-system over Monk&trade; Network
+                  over 5G & LoRaWAN. Deploy Solutions on Premise or Cloud or
+                  over IoT devices.
                 </p>
               </div>
             </div>
@@ -153,12 +158,13 @@ const AI = () => {
               </div>
               <div className={styles.sCardText}>
                 <h2 className={styles.sCardHeading}>
-                  Visual Track and Trace
+                  Autonomous AI <br></br> Everywhere to Anywhere
                 </h2>
                 <p className={styles.sCardSummary}>
-                  Spot abnormal behavior or suspicious activity that could
-                  indicate a problem without even identifying the individual or
-                  inferring any unnecessary bias.
+                  Securely Deploy, Manage and scale your infrastructure across
+                  distributed edge infrastructure. Fleet & Sensor Integration
+                  Manage the lifecycle of deployment, security and detailed
+                  monitoring of your organization.
                 </p>
               </div>
             </div>

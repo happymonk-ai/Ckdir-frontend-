@@ -16,32 +16,45 @@ import privecyImg from "../../public/icons/lock-privecy.svg";
 import React from "react";
 import ConnectNetworkSection from "../../components/ConnectNetowrkSection";
 import networkContactImg from "../../public/cloud-computing-banner-background-smart-city-1.png";
-import Head from 'next/head'
+import Head from "next/head";
 
 const Network = () => {
   const platFormCardData = [
     {
       imageUrl: platformCard1Img,
-      heading: "Hardware",
+      heading: `Cloud Connect`,
       text:
-        "Access the advantage of a private network that gives you the flexibility of staying connected through the cloud and also through the device - yes, offline too! Ensure no data loss due to internet connectivity fluctuations with the offline connectivity.",
+        "Click, Connect & Integrate your legacy Infrastructure, Fleet and Members into a common eco-system with multi-tenancy permissions and views",
+    },
+    {
+      imageUrl: platformCard1Img,
+      heading: "Go offline",
+      text:
+        "Our Propriety hardware systems allows you to take your data on-premise, adhere to compliance and create offline systems which scale horizontally deeply easing impacting the financial efficiency and compliance.",
+    },
+    {
+      imageUrl: platformCard1Img,
+      heading: "G2A, G2G Communication",
+      text:
+        "Create Private G2G Communication across locations, sensors and communication services via LoRaWAN. ",
     },
     {
       imageUrl: platformCard2Img,
-      heading: "Cloud",
+      heading: "Multi Location & Devices",
       text:
-        "A private network across your organisation at various locations is just the thing to give you complete control over the tracking and maintenance of all data, across the network.",
+        "Integrate your organization across multiple locations, fleet into one common eco-systems to give you complete control over the track & trace, across your organization through single command and control centre on your phone.",
     },
     {
       imageUrl: platformCard3Img,
-      heading: "Public Network",
+      heading: "Legacy Retrofitting",
       text:
-        "The benefits of Monk Network/Dhar doesn’t end there. Enjoy the privilege of having a public network, where all data is verifiable with zero knowledge proofs.",
+        "Retro-fit your existing infrastructure and harness the power of state of the art blockchain and artificial intelligent algorithms.",
     },
     {
       imageUrl: platformCard4Img,
       heading: "Zero Fee",
-      text: "The best part? Monk Network is a Zero Fee network!",
+      text:
+        "Public Network runs at zero fees for any data verification or transfers that happens across the network. Organizations can create their own private network through our propriety hardware and LoRaWAN.",
     },
   ];
   return (
@@ -55,8 +68,8 @@ const Network = () => {
           <Header />
           <div className={styles.textContainer}>
             <h2 className={styles.landingText}>
-              Creating Private Network Solutions for industries, organisation
-              and agencies.
+              Creating Independent, Sustainable & Compliance based Eco-system
+              for Governments, Industries and Agencies.
             </h2>
           </div>
         </div>
@@ -75,12 +88,49 @@ const Network = () => {
             <ul className={styles.featureList}>
               <li className={styles.featureItem}>
                 <div className={styles.featureIcon}>
-                  <Image src={inteligenceImg} alt="inteligence" />
+                  <Image src={privecyImg} alt="privacy" />
                 </div>
-                <h5 className={styles.featureText}>
-                  Decentralised Intelligence
-                </h5>
+                <div className={styles.featureText}>
+                  Cloud Connect&trade; Retrofit Your IPCamera Infrastructure via
+                  ONVIF&trade;
+                </div>
               </li>
+              <li className={styles.featureItem}>
+                <div className={styles.featureIcon}>
+                  <Image src={inteligenceImg} alt="intelligence" />
+                </div>
+                <div className={styles.featureText}>
+                  Public x Private Network using LoRaWAN&trade;, 5G&trade; and
+                  LAN&trade; Networks
+                </div>
+              </li>
+              <li className={styles.featureItem}>
+                <div className={styles.featureIcon}>
+                  <Image src={governanceImg} alt="governance" />
+                </div>
+                <div className={styles.featureText}>
+                  Offline Sensing and storage, syncs via Monk&trade; across all
+                  the systems.
+                </div>
+              </li>
+              <li className={styles.featureItem}>
+                <div className={styles.featureIcon}>
+                  <Image src={governanceImg} alt="governance" />
+                </div>
+                <div className={styles.featureText}>
+                  On-premise storage of information & Analytics on DHAR&trade;.
+                </div>
+              </li>
+              <li className={styles.featureItem}>
+                <div className={styles.featureIcon}>
+                  <Image src={privecyImg} alt="privacy" />
+                </div>
+                <div className={styles.featureText}>
+                  RetroFit Legacy Sensors RFID, BLE, 5G via DHAR&trade; with
+                  click of a button.
+                </div>
+              </li>
+
               <li className={styles.featureItem}>
                 <div className={styles.featureIcon}>
                   <Image
@@ -88,25 +138,10 @@ const Network = () => {
                     alt="coordinating devices"
                   />
                 </div>
-                <h5 className={styles.featureText}>
-                  Co-ordinating untrusted devices
-                </h5>
-              </li>
-              <li className={styles.featureItem}>
-                <div className={styles.featureIcon}>
-                  <Image src={governanceImg} alt="governance" />
+                <div className={styles.featureText}>
+                  Verify Critical Data Across Organization, People & things
+                  using ZKPs
                 </div>
-                <h5 className={styles.featureText}>
-                  Central Oracle and governance
-                </h5>
-              </li>
-              <li className={styles.featureItem}>
-                <div className={styles.featureIcon}>
-                  <Image src={privecyImg} alt="privecy" />
-                </div>
-                <h5 className={styles.featureText}>
-                  Privacy perserving personalisation
-                </h5>
               </li>
             </ul>
           </div>
@@ -130,7 +165,9 @@ const Network = () => {
         {/* test network section */}
         <div className={styles.connectNetwork}>
           <ConnectNetworkSection
-            heading={"Test Public Network to be Launched this June!"}
+            heading={
+              "Leverage the power of Decentralization and Private network for your organization!"
+            }
             url={"/contact"}
             isActive={true}
             img={networkContactImg.src}
@@ -177,12 +214,11 @@ const Network = () => {
           <div className={styles.networkTextContainer}>
             <div>
               <h2 className={styles.networkHeading}>
-                Start using the Network today.
+                Take a leap into the future
               </h2>
 
               <p className={styles.networkText}>
-                Bolster activity tracking and monitoring of your organisation
-                with this state of the art technology embedded in Monk.
+                Contact our representatives and get started right away.
               </p>
             </div>
             <br />
