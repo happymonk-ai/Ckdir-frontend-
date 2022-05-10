@@ -1,0 +1,629 @@
+@import "../colors";
+@import "../mixins.scss";
+
+.JobDescriptionContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px 25px 20px 5%;
+  background-color: #171717;
+  max-width: 1333px;
+}
+
+.heading1 {
+  font-family: "Outfit";
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 5rem;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.boldText {
+  font-family: "Inter";
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 5rem;
+}
+
+.grayText {
+  font-family: "Inter";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3rem;
+  color: rgba(228, 228, 231, 0.6);
+}
+
+.landingContainer {
+  background-image: url("../../public/professional-programmer-working-late-dark-office.png");
+  @include bg-norepeat-cover;
+  min-height: 533px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.landingPage {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  flex: 1;
+
+  .landingText {
+    font-family: "Inter";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
+
+// dhar
+.heading {
+  font-family: "Outfit";
+  letter-spacing: 0em;
+  color: $white;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+}
+.dhar {
+  color: rgba(251, 251, 251, 0.8);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 10px !important;
+  .heading {
+    margin-top: 10px;
+  }
+
+  .topImg {
+    display: none;
+  }
+
+  .content,
+  .chokidrBackImg {
+    flex: 1;
+  }
+
+  .chokidrBackImg {
+    height: 603px;
+    overflow: hidden;
+  }
+}
+
+.dharPoints {
+  display: flex;
+}
+
+.dharItem {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dharText {
+  height: 100%;
+  div {
+    background: $green;
+    margin-right: 25px;
+    min-width: 1rem !important;
+    min-height: 1rem !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-self: flex-start;
+    margin-right: 20px;
+    margin-top: 7.5px;
+  }
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+}
+
+.applyHeader {
+  display: none;
+}
+
+.apply {
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px !important;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  .heading {
+    text-align: center;
+  }
+
+  .applyImg {
+    span {
+      display: none !important;
+    }
+  }
+}
+
+.formMobileHeading {
+  display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $apply_form_color !important;
+  padding: 10px 40px 40px 40px;
+  border-radius: 10px;
+}
+.field {
+  height: 70px;
+  background-color: #232323;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 10px !important;
+  margin-bottom: 28px;
+  .fieldIcon {
+    flex: 0.1;
+    padding-left: 27px;
+  }
+  .fieldInput,
+  .uploadLabel,
+  input {
+    font-size: 20px !important;
+    line-height: 30px;
+    font-family: "Inter";
+    border: none;
+    outline: none;
+    background-color: #232323;
+    color: #fbfbfb;
+    flex: 1;
+    width: 100%;
+  }
+
+  .highlightLabel {
+    padding: 2% 5%;
+    background: #555555;
+  }
+
+  .uploadField {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .uploadField span {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.uploadInput {
+  width: 100%;
+}
+.uploadInput::-webkit-file-upload-button {
+  visibility: hidden !important;
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 20px;
+}
+
+.applyContainer {
+  display: flex;
+  gap: 20px;
+  border-radius: 10px !important;
+  .applyImg,
+  .formContainer {
+    flex: 1;
+  }
+
+  .form {
+    margin: auto;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: auto;
+    .heading {
+      color: white;
+      text-align: left;
+      color: rgba(251, 251, 251, 0.8);
+      margin-bottom: 0%;
+    }
+    .fieldsContainer {
+      padding: 1%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 39px;
+      .fieldsContainerLeft {
+        display: flex;
+        column-gap: 5%;
+      }
+      .fieldsContainerRight {
+        display: flex;
+        gap: 5%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .landingContainer {
+    background-position: center;
+    background-image: url("../../public/professional-programmer-working-late-dark-office-sm.png");
+  }
+  .landingPage {
+    .heading1 {
+      font-size: 40px;
+      line-height: 50px;
+    }
+    .landingText {
+      font-size: 24px;
+      line-height: 27px;
+    }
+  }
+
+  .dhar {
+    flex-direction: column;
+    padding: unset;
+    .topImg {
+      display: block;
+      .heading {
+        display: block;
+        text-align: center;
+        margin: unset;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .chokidrBackImg {
+    width: unset;
+    padding-bottom: 5rem;
+    display: none;
+  }
+
+  .dharText {
+    width: fit-content;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: rgba(251, 251, 251, 0.8);
+  }
+
+  .apply {
+    margin-top: 0;
+    .heading {
+      display: none;
+    }
+    background-image: unset;
+
+    .applyImg {
+      span {
+        display: block !important;
+      }
+    }
+  }
+  .applyContainer {
+    flex-direction: column;
+    // margin: auto;
+  }
+}
+
+.successMessage {
+  display: flex;
+  width: 100%;
+  position: relative;
+  padding: 1rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+  h5 {
+    font-size: 16px;
+  }
+}
+.errorMessage {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  font-size: 14px;
+}
+
+.jobDescHeading {
+  display: flex;
+  cursor: pointer;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  div {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    .roleName {
+      color: $green;
+      font-size: 50px;
+      font-weight: 500;
+    }
+    .roleExp {
+      margin-right: auto;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #e4e4e7cc;
+      display: flex;
+      padding-top: 1%;
+    }
+  }
+
+  .rolesIcon {
+    margin-left: auto;
+    color: $green;
+    cursor: pointer;
+  }
+}
+
+// Company address
+
+.companyAddress {
+  display: flex;
+  text-align: left;
+  font-family: "Inter" !important;
+  font-style: normal;
+  gap: 15px;
+  font-weight: 600;
+  font-family: "Inter";
+  line-height: 21px;
+  color: #fbfbfb;
+  font-size: 1.9rem !important;
+  line-height: 21px;
+  padding: 4% 0% 2%;
+  div {
+    img {
+      height: 30px !important;
+    }
+  }
+}
+
+//PHONE SELECTOR
+
+.inputClass {
+  border: none !important;
+  background-color: #232323 !important;
+  margin-left: 4rem !important;
+  width: 80% !important;
+  border-left: 0.5px solid rgba(228, 228, 231, 0.2) !important;
+  padding-left: 5px !important;
+  border-radius: 0px !important;
+  height: 25px !important;
+  color: #fbfbfb;
+}
+.dropdownClass {
+  max-width: 275px !important;
+  background-color: #121212 !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  li {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(228, 228, 231, 0.8);
+    background: #121212 !important;
+    transition: ease-in-out 0.3s;
+    div {
+      transform: scale(1.3) !important;
+      margin-right: 5% !important;
+    }
+    &:hover {
+      transition: ease-in-out 0.3s;
+      background: rgba(1, 143, 106, 0.85) !important;
+      border-radius: 4px;
+    }
+  }
+}
+
+.buttonClass {
+  border: none !important;
+  background-color: #232323 !important;
+  margin-left: -15px !important;
+  padding-left: 0px !important;
+
+  div {
+    background-color: #232323 !important;
+    div {
+      transform: scale(1.3) !important;
+    }
+  }
+}
+
+.phoneInputContainer {
+  display: grid;
+  grid-template-columns: 20% auto;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0px;
+  span {
+    width: fit-content !important;
+  }
+}
+
+// JOB APPLICATION
+
+.applySuccessContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 5% 1%;
+  div {
+    p {
+      font-family: "Outfit";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 60px;
+      text-align: center;
+      color: #fbfbfb;
+    }
+  }
+}
+
+// Break Points
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .formSection {
+    background-color: black !important;
+  }
+  .fieldsContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0% !important;
+  }
+  .rolesIcon {
+    max-height: 24px !important;
+    max-width: 24px !important;
+  }
+  .form {
+    background-color: black !important;
+    padding: 0px !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
+  .dharText {
+    font-size: 14.5px;
+    line-height: 20px;
+    div {
+      min-height: 8px;
+      min-width: 8px;
+    }
+  }
+
+  .applyHeader {
+    font-family: "Outfit";
+    letter-spacing: 0em;
+    color: rgba(251, 251, 251, 0.8);
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 60px;
+    display: block;
+    text-align: center;
+  }
+  .JobDescriptionContainer {
+    padding: 20px 5%;
+  }
+  .jobDescHeading {
+    padding-bottom: 5%;
+    div {
+      flex-direction: column;
+      gap: 5px;
+      .roleName {
+        font-size: 18px !important;
+        line-height: 20px;
+      }
+      .roleExp {
+        font-size: 14.5px;
+        line-height: 15px;
+      }
+    }
+  }
+
+  .formMobileHeading {
+    display: block;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      gap: 2%;
+      padding-bottom: 4rem;
+      h1 {
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        color: #fbfbfb;
+      }
+      h2 {
+        font-family: "Outfit";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(251, 251, 251, 0.8);
+      }
+    }
+  }
+
+  .applySuccessContainer {
+    gap: 39px;
+    padding-top: 20%;
+    padding-bottom: 15%;
+    div {
+      img {
+        height: 65% !important;
+        width: 65% !important;
+      }
+      p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .submitBtn {
+    display: flex;
+    justify-content: right;
+    padding-top: 12px;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 460px) {
+  .buttonClass {
+    div {
+      div {
+        transform: scale(1) !important;
+      }
+    }
+  }
+}

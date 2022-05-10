@@ -69,14 +69,12 @@ const Contact = () => {
         }
       )
       .then((response) => {
-        console.log("REMOTE SUBMISSION SUCCESS", response);
         setSuccess(true);
         setTimeout(() => {
-setSuccess(false)
+          setSuccess(false);
         }, 2000);
       })
       .catch(({ response }) => {
-        console.log("REMOTE SUBMISSION ERROR", response?.data);
         setError(true);
         setErrorMessage(response.data.message);
       });
