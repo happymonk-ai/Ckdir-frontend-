@@ -4,7 +4,7 @@ import { createClient, Provider } from "urql";
 import Head from "next/head";
 
 const client = createClient({
-  url: "https://api.ckdr.co.in/graphql",
+  url: process.env.NEXT_PUBLIC_GRAPHQL_URL || "https://app.ckdr.co.in/graphql",
 });
 
 function MyApp({ Component, pageProps }) {
