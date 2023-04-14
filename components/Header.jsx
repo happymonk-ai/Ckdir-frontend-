@@ -1,5 +1,5 @@
 import styles from "../styles/componentsStyle/Header.module.scss";
-import happyMonkLogo from "../public/new-logo.png";
+import happyMonkLogo from "../public/happymonk-logo.png";
 import { Icons } from "../utils/icons";
 import Image from "next/image";
 import NavDropDown from "./NavDropDown";

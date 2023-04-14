@@ -16,16 +16,30 @@
 }
 
 .heading1 {
-  font-weight: 700;
-  font-size: 8rem;
-  line-height: 8.5rem;
-  letter-spacing: 5%;
+  font-weight: 300;
+  font-size: 5.21vw;
+  line-height: 5.9vw;
+  letter-spacing: 0.05em;
   font-family: "Outfit", sans-serif;
 }
 
+// Specially created for 2nd page heading
+.heading2Text {
+  position: absolute;
+  left: 13.89vw;
+  top: 8.89vw;
+  width: 48vw;
+  font-size: 3.34vw;
+  line-height: 3.475vw;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .heading2 {
-  font-size: 4rem;
-  line-height: 5rem;
+  font-size: 2.778vw;
+  line-height: 3.473vw;
   font-weight: 600;
   font-family: Outfit;
   font-style: normal;
@@ -33,16 +47,17 @@
 
 .heading3 {
   font-family: Outfit;
-  font-size: 2.4rem;
+  font-size: 2.223vw;
   font-style: normal;
-  font-weight: 500;
-  line-height: 3rem;
+  font-weight: 400;
+  line-height: 4.167vw;
+  color: rgba(251, 251, 251, 0.9);
 }
 
 .heading1,
-.heading2,
-.heading3 {
-  color: $white;
+.heading2 {
+  // color: $white;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .readMoreText {
@@ -50,17 +65,19 @@
   font-weight: 500;
   font-size: 2rem;
   line-height: 3.5rem;
-  color: $white;
+  color: rgba(251, 251, 251, 1);
   margin-bottom: 20px;
+  margin-left: auto;
+  padding-right: 5px;
 }
 
 .para {
-  // font-family: Inter;
+  font-family: Inter;
   font-size: 2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 35px;
-  color: $white;
+  color: rgba(243, 243, 243, 1);
 }
 
 .darkLayer {
@@ -80,7 +97,17 @@
   // margin-bottom: 6rem;
   padding-bottom: 6rem;
   .heading1 {
-    width: 80%;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    width: 65vw;
+    b {
+      // font-family: "Outer";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 5.21vw;
+      line-height: 5.9vw;
+      color: rgba(255, 255, 255, 0.9);
+    }
     // margin: auto;
   }
 
@@ -96,17 +123,23 @@
     font-family: Inter;
     font-style: normal;
     // margin: auto;
-    max-width: 60%;
-    font-weight: 600;
-    font-size: 2.5rem;
-    line-height: 4rem;
+    width: 50.5vw;
+    font-weight: 500;
+    font-size: 1.67vw;
+    line-height: 2.78vw;
     color: rgba(251, 251, 251, 0.8);
-   
   }
   .readMore {
     width: fit-content;
+    // width: 9vw;
     height: 4.7rem;
+    color: #fbfbfb;
     // margin: auto;
+  }
+
+  .homeBtnContainer {
+    display: flex;
+    gap: 3rem;
   }
 }
 
@@ -120,7 +153,7 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   text-align: center;
   justify-content: space-evenly;
   position: relative;
@@ -135,39 +168,57 @@
     position: absolute;
     width: 62.9rem;
     height: 46.4rem;
-    right: -26rem;
+    right: -24rem;
     user-select: none;
     z-index: 2;
   }
 
   .balckBoxIconList {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    // display: flex;
+    // justify-content: space-between;
+    gap: 6.74vw;
+    width: 65vw;
     z-index: 5;
+    margin: 10.42vw 0 0 8.06vw;
     overflow-x: scroll;
-    padding: 0 20px;
-    &::-webkit-scrollbar{
+    // position: absolute;
+    // padding: 0 20px;
+    &::-webkit-scrollbar {
       width: 0;
     }
   }
 
   .backBoxListText {
+    width: 15.98vw;
     font-family: Inter;
     font-style: normal;
-    font-size: 3rem;
+    font-size: 1.39vw;
     font-weight: 600;
-    line-height: 4rem;
+    line-height: 1.67vw;
+    color: rgba(255, 255, 255, 0.8);
   }
+
+  .blackBoxListDescription {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.112vw;
+    line-height: 1.32vw;
+    color: #f3f3f3cc;
+  }
+
   .blackBoxIcon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.6rem;
+    gap: 1.5rem;
     &:first-child {
       .balckBoxIconImg {
         // height: 80px;
-        width: 79px;
+        width: 100px;
         img {
           width: 110px !important;
         }
@@ -176,7 +227,7 @@
   }
 
   .balckBoxIconImg {
-    width: 89px;
+    width: 100px;
     height: 100px;
     display: flex;
     align-items: flex-end;
@@ -194,6 +245,7 @@
   .heading2 {
     width: 40%;
     margin: auto;
+    color: rgba(251, 251, 251, 0.9);
   }
 
   .revolutionList {
@@ -233,7 +285,7 @@
   }
 
   .revolutionCard {
-    width: 93%;
+    width: 76%;
     margin: 3rem auto;
     position: relative;
     overflow: hidden;
@@ -271,36 +323,41 @@
     }
 
     .revolutionCardList {
+      position: relative;
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 3rem;
-      padding-bottom: 0;
-      z-index: 9;
+      // align-items: center;
+      padding: 3rem 0 0;
+      // padding-bottom: 0;
+      // z-index: 9;
       overflow-x: auto;
       overflow-y: hidden;
-      &::-webkit-scrollbar{
+
+      &::-webkit-scrollbar {
         width: 0;
       }
       transition: 0.2s;
       transform-origin: right top;
       .revolutionCardItem {
-        min-width: 300px;
-        max-width: 500px;
+        // min-width: 300px;
+        // min-width: 27.25%;
+        // max-width: 500px;
         // min-height: 250px;
         // max-height: 250px;
-        border-radius: 16px;
+        // border-radius: 16px;
         display: flex;
         flex-direction: column;
-        padding: 1.5rem;
+        // padding: 1.5rem;
+        // margin: 1.4rem 3.2rem 0;
         transition: 0.2s;
         transform-origin: right top;
-        padding-bottom: 1rem;
+        padding: 0.695vw;
+        z-index: 9;
       }
-      .revolutionCardItem:hover {
-        transform: translateY(-1rem);
-      }
+      // .revolutionCardItem:hover {
+      //   transform: translateY(-1rem);
+      // }
       .readMoreText {
         padding: auto;
       }
@@ -309,18 +366,21 @@
 
   .revolutionCardSubHeading,
   .revolutionCardText {
-    color: $white;
-    font-size: 20px;
     font-family: Inter;
-    line-height: 30px;
+    padding-top: 1.5rem;
+    font-size: 1.39vw;
+    line-height: 1.67vw;
+    color: #f3f3f3cc;
   }
 
   .revolutionCardSubHeading {
-    padding-top: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.67vw;
+    line-height: 2.015vw;
   }
 
   .revolutionCardText {
-    padding-top: 10px;
+    padding-top: 1.5rem;
   }
 }
 
@@ -346,8 +406,7 @@
   position: relative;
   // background-color: $black;
   text-align: center;
-  padding-top: 17.5rem;
-  padding-bottom: 10rem;
+  margin: 7.143vw;
 
   .protokolloBg1 {
     position: absolute;
@@ -418,7 +477,7 @@
     background-image: url("../public/compressed/banner-home-AI-and-fusion-min.png");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
+    // min-height: 100vh;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -497,7 +556,19 @@
 
 .networkingContainer {
   .networkingText {
-    width: 40%;
+    width: 45%;
+
+    .heading2 {
+      font-weight: 700;
+    }
+
+    .heading3 {
+      font-family: "Inter";
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 4.5rem;
+      color: rgba(251, 251, 251, 0.8);
+    }
   }
   .networking {
     position: relative;
@@ -512,6 +583,12 @@
     .readMore {
       width: fit-content;
       height: 4.7rem;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 3.5rem;
+      color: rgba(251, 251, 251, 1);
     }
 
     .globeBg {
@@ -525,10 +602,10 @@
 
     .colorFade {
       position: absolute;
-      height: 100%;
-      width: 70%;
-      left: -25.2rem;
-      top: 8.8rem;
+      height: 62.5vw;
+      width: 62.5vw;
+      left: -17.5vw;
+      top: 6.12vw;
       z-index: -10;
       background: rgba(35, 156, 124, 0.9);
       border: 3px solid rgba(251, 251, 251, 0.05);
@@ -556,25 +633,25 @@
 
   .landingContainer {
     height: 666px;
-    .heading1,
-    .landingText,
+    // .heading1,
+    // .landingText,
     .readMore {
       width: unset;
       margin: unset;
     }
 
-    .heading1 {
-      font-size: 40px;
-      line-height: 50px;
-    }
+    // .heading1 {
+    //   font-size: 40px;
+    //   line-height: 50px;
+    // }
 
-    .landingText {
-      max-width: unset;
-      padding-left: 4rem;
-      padding-right: 4rem;
-      font-size: 24px;
-      line-height: 34px;
-    }
+    // .landingText {
+    //   max-width: unset;
+    //   padding-left: 4rem;
+    //   padding-right: 4rem;
+    //   font-size: 24px;
+    //   line-height: 34px;
+    // }
 
     .landingPage {
       height: 100%;
@@ -584,15 +661,15 @@
   }
 
   .balckBoxContainer {
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: space-evenly;
-    min-height: 295px;
-    .heading1 {
-      font-size: 30px;
-      line-height: unset;
-      width: 73%;
-    }
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // justify-content: space-evenly;
+    // min-height: 295px;
+    // .heading1 {
+    //   font-size: 30px;
+    //   line-height: unset;
+    //   width: 73%;
+    // }
 
     .chokidarImg {
       opacity: 0.95;
@@ -603,9 +680,9 @@
     .balckBoxIconList {
       // flex-direction: column;
 
-      .backBoxListText {
-        font-size: 14px;
-      }
+      // .backBoxListText {
+      //   font-size: 14px;
+      // }
 
       .blackBoxIcon {
         &:first-child {
@@ -619,16 +696,16 @@
         }
       }
       .balckBoxIconImg {
-        width: 49px;
+        width: 50px;
         margin-bottom: 10px;
       }
-      width: unset;
+      // width: unset;
 
-      overflow-x: scroll;
-      &::-webkit-scrollbar {
-        width: 2px;
-      }
-      gap: 5rem;
+      // overflow-x: scroll;
+      // &::-webkit-scrollbar {
+      //   width: 2px;
+      // }
+      // gap: 5rem;
     }
   }
 
@@ -646,9 +723,9 @@
 
   .revolutionList,
   .revolutionCardList {
-    display:block;
+    display: block;
     float: left;
-    flex:33.33%;
+    flex: 33.33%;
     width: unset;
     // padding: 10rem 6rem !important;
     gap: 5rem;
@@ -663,13 +740,13 @@
     }
   }
 
-  .revolutionCardText {
-    font-size: 14px !important;
-    line-height: 20px !important;
-  }
-  .revolutionCardSubHeading {
-    font-size: 3rem !important;
-  }
+  // .revolutionCardText {
+  //   font-size: 14px !important;
+  //   line-height: 20px !important;
+  // }
+  // .revolutionCardSubHeading {
+  //   font-size: 3rem !important;
+  // }
 
   // .revolutionCardList {
   //   padding: 0 3rem !important;
@@ -684,6 +761,7 @@
 
   .revolutionaCotainer {
     margin: unset;
+    margin-top: 33px;
     .heading2 {
       width: 60%;
       margin: auto;
@@ -868,9 +946,9 @@
   }
 
   .protocolImg {
-    width: 46px;
+    width: 13.5vw;
     margin: auto;
-    height: 43px;
+    height: 13.5vw;
   }
 
   .protocolItemText {
@@ -885,10 +963,596 @@
       font-size: 55px;
     }
 
+    // .balckBoxIconList {
+    //   .backBoxListText {
+    //     font-size: 25px;
+    //   }
+    // }
+  }
+}
+
+.border,
+.active {
+  background-color: transparent;
+  width: 5rem;
+  height: 5px;
+
+  border-radius: 5.5px;
+  transition: 0.3s box-shadow;
+
+  cursor: pointer;
+
+  background: rgba(217, 217, 217, 0.2);
+  // box-shadow: 0px 7px 45px 10px rgba(169, 255, 233, 0.4);
+}
+
+.active {
+  background: #ffffff;
+}
+
+.activeBarContainer {
+  margin: auto;
+  width: 11rem;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2.7rem;
+}
+
+.techSecWrapper {
+  margin: 0 7.9862vw;
+}
+
+.technologiesContainer {
+  display: flex;
+  gap: 5rem;
+  height: 31.7362vw;
+  margin: 5rem 0 0;
+}
+
+.technologiesList {
+  // display: grid;
+  // grid-auto-flow: column;
+  // grid-auto-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 38.2vw;
+  gap: 2vw;
+  z-index: 5;
+  // overflow-x: scroll;
+  // padding: 0 20px;
+  // &::-webkit-scrollbar {
+  //   width: 0;
+  // }
+}
+
+.technologies {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.technologyIconImg {
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+
+  span {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.techInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.techInfoSubHeading {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.528vw;
+  line-height: 1.875vw;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.techInfoText {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25vw;
+  line-height: 1.528vw;
+
+  color: rgba(243, 243, 243, 0.8);
+}
+
+.detectionGifContainer {
+  width: 42.362vw;
+  background: rgba(0, 0, 0, 0.1);
+
+  span {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 10px;
+  }
+}
+
+.offeringsSecWrapper {
+  margin: 6.945vw 7.9862vw;
+
+  .heading2 {
+    // width: 40%;
+    margin: auto;
+    color: rgba(251, 251, 251, 0.9);
+    text-align: center;
+    line-height: 6rem;
+  }
+}
+
+.offeringsContainer {
+  margin: 3.4723vw 0 0 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1.389vw;
+}
+
+.offeringItem {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  gap: 2.0834vw;
+  background: #171717;
+  border-radius: 10px;
+  padding: 2.639vw 3.1945vw 2.7084vw;
+}
+
+.offeringItem:hover {
+  background: rgba(1, 143, 106, 0.85);
+  box-shadow: 0px 2px 45px 2px rgba(169, 255, 233, 0.4);
+  border-radius: 10px;
+}
+
+.offeringIcon {
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.offeringInfoHeading {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25vw;
+  line-height: 1.528vw;
+  margin-bottom: 0.6945vw;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.offeringInfoText {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25vw;
+  line-height: 1.528vw;
+
+  color: rgba(243, 243, 243, 0.8);
+}
+
+.partnersSecWrapper {
+  margin: 0 11.5rem;
+
+  .heading2 {
+    // width: 40%;
+    margin: auto;
+    color: rgba(251, 251, 251, 0.9);
+    text-align: center;
+
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+}
+
+.partnersList {
+  display: flex;
+  margin: 3rem auto 12rem;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.695vw;
+}
+
+.offeringsImg {
+  display: flex;
+  width: 6.945vw;
+  height: 6.945vw;
+  margin: auto;
+  background-color: #018f6ad9;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  div {
+    width: 50%;
+    // height: 50%;
+  }
+}
+
+.offeringsList {
+  width: 73%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: auto;
+  padding-top: 3.125vw;
+}
+
+.offeringItemText {
+  font-family: Inter;
+  font-size: 1.667vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.0134vw;
+  letter-spacing: 0em;
+  text-align: justified;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.695vw;
+}
+
+.ourTechsHeading {
+  font-size: 2.778vw;
+  line-height: 3.473vw;
+  font-weight: 700;
+  font-family: Outfit;
+  font-style: normal;
+  color: #fbfbfb;
+}
+
+.aditionalProtoKollo .heading2 {
+  margin: 3.9rem auto 1.6rem;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 5rem;
+  color: rgba(243, 243, 243, 1);
+  // text-align: center;
+}
+
+.caseStudySecWrapper {
+  .heading2 {
+    margin: 10rem auto 4rem;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 5rem;
+    text-align: center;
+    color: rgba(251, 251, 251, 1);
+  }
+}
+
+.caseStudiesImgContainer {
+  display: flex;
+  margin: auto auto 11rem;
+  // min-height: 100vh;
+  gap: 1.389vw;
+  justify-content: space-around;
+}
+
+.caseStudyImg {
+  position: relative;
+  text-align: center;
+}
+
+.caseStudyImg span {
+  background: rgba(15, 15, 15, 0.5);
+}
+
+.textOnImage {
+  // position: absolute;
+  // top: 25%;
+  // bottom: 25%;
+  // left: 25%;
+  // right: 25%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 5rem;
+  // text-align: center;
+  color: rgba(251, 251, 251, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.revolutionCardImage {
+  color: rgba(255, 255, 255, 1);
+  z-index: 5;
+}
+
+.rec.rec-arrow {
+  z-index: 5;
+}
+
+//  ----------------------------------------------------------------- //
+//                      MEDIA QURIES                                  //
+//  ----------------------------------------------------------------- //
+
+@media screen and (max-width: 772px) {
+  .balckBoxContainer {
+    min-height: 300px;
+  }
+
+  .blackBoxListDescription {
+    display: none;
+  }
+
+  .offeringsList {
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 12px;
+  }
+
+  .offeringsImg {
+    width: 50px;
+    height: 50px;
+    div {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  .offeringInfoHeading {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  // .revolutionaCotainer {
+  //   .revolutionCard {
+  //     .revolutionCardList {
+  //       .revolutionCardItem {
+  //         min-width: 300px;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .revolutionCardImage {
+    width: 40px;
+    height: 40px;
+  }
+  .revolutionCardItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .technologiesContainer {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .techInfoText {
+    display: none;
+  }
+
+  .technologiesList {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .technologies {
+    flex-direction: column;
+  }
+
+  .detectionGifContainer {
+    width: auto;
+  }
+
+  .technologyIconImg {
+    width: auto;
+    height: auto;
+  }
+
+  .offeringsSecWrapper {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .offeringInfoText {
+    display: none;
+  }
+
+  .offeringItem {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .offeringIcon {
+    width: auto;
+    height: auto;
+  }
+
+  .offeringInfoHeading {
+    text-align: center;
+  }
+
+  .techSecWrapper {
+    min-height: auto;
+    margin: 0 11.5rem 10rem;
+  }
+
+  .offeringsSecWrapper {
+    margin-bottom: 10rem;
+    min-height: auto;
+  }
+
+  .partnersList {
+    margin-bottom: 8rem;
+  }
+
+  .activeBarContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .home {
+    .heading2 {
+      font-size: 5.8vw;
+      line-height: 7.25vw;
+    }
+  }
+
+  .landingContainer .heading1 {
+    font-size: 7.25vw;
+    line-height: 9.2vw;
+    width: 90.5vw;
+
+    b {
+      font-weight: 700;
+      font-size: 7.25vw;
+      line-height: 9.2vw;
+    }
+  }
+
+  .landingContainer .landingText {
+    width: 81.5vw;
+    font-weight: 500;
+    font-size: 3.87vw;
+    line-height: 5.8vw;
+  }
+
+  .heading2Text {
+    position: relative;
+    left: 7rem;
+    top: 5.5rem;
+    width: 60%;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+    font-family: "Outfit", sans-serif;
+    font-style: normal;
+    text-align: left;
+  }
+
+  .balckBoxContainer {
     .balckBoxIconList {
-      .backBoxListText {
-        font-size: 25px;
-      }
+      margin: 0 auto;
+      width: 75vw;
+    }
+
+    .backBoxListText {
+      font-size: 2.89vw;
+      line-height: 3.623vw;
+    }
+
+    .blackBoxIcon,
+    .balckBoxIconList {
+      gap: 0;
+    }
+  }
+
+  .revolutionCardImage {
+    width: 30px;
+    height: 30px;
+  }
+
+  .revolutionaCotainer {
+    .revolutionCardSubHeading {
+      font-size: 3.39vw;
+      line-height: 4.11vw;
+    }
+
+    .revolutionCardText {
+      font-size: 2.899vw;
+      line-height: 3.625vw;
+    }
+
+    .revolutionCard {
+      width: 68.5%;
+    }
+  }
+
+  .ourTechsHeading {
+    font-size: 5.8vw;
+    line-height: 12.08vw;
+  }
+
+  .offeringsList {
+    width: 90%;
+  }
+
+  .offeringsImg {
+    width: 50px;
+    height: 50px;
+    div {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  .technologiesList {
+    width: 90%;
+  }
+
+  .technologyIconImg {
+    min-width: auto;
+    max-width: 50px !important;
+    height: 50px;
+  }
+
+  .techInfoSubHeading {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  .technologies {
+    align-items: center;
+    gap: 1rem;
+    width: 20vw;
+  }
+
+  .technologiesList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .textOnImage {
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  // .aditionalProtoKollo {
+  //   .aditionalProtoKolloBgImg {
+  //     // min-height: auto;
+  //     margin: 0 0.06945vw;
+  //   }
+  // }
+
+  .home {
+    .heading2Text {
+      left: 200px;
+      top: 128px;
+      width: 48vw;
+      font-size: 3.34vw;
+      line-height: 3.475vw;
+    }
+  }
+
+  .balckBoxContainer {
+    .balckBoxIconList {
+      margin: 150px 0 0 116px;
+      gap: 100px;
     }
   }
 }
