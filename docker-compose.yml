@@ -1,0 +1,12 @@
+version: '3.7'
+services: 
+  app:
+    build: 
+        context: .
+        dockerfile: Dockerfile.prod
+    image: ckdr_frontend_web:latest
+    stdin_open: true
+    tty: true
+    ports: 
+      - "3002:3000"
+

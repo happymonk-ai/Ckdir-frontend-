@@ -6,6 +6,8 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: black;
   color: #fff;
+  /* max-width: 1440px; */
+  margin: 0 auto;
 }
 
 a {
@@ -46,9 +48,53 @@ html {
   font-size: 62.5%;
 }
 
+.rec.rec-arrow {
+  z-index: 10;
+  color: rgba(255, 255, 255, 1);
+}
+
+.rec.rec-arrow:disabled {
+  filter: brightness(50%);
+}
+
+.rec.rec-arrow:hover:enabled,
+.rec.rec-arrow:focus:enabled {
+  background-color: rgba(103, 58, 183, 0.1);
+}
+
+.rec.rec-dot {
+  background: rgba(217, 217, 217, 0.2);
+  box-shadow: none;
+}
+
+.rec.rec-dot_active {
+  background: rgba(255, 255, 255, 1);
+}
+
+.rec.rec-slider-container {
+  margin: 0;
+}
+
+/* .rec.rec-item-wrapper {
+  width: 21vw !important;
+} */
+
 @media screen and (max-width: 550px) {
   html {
     font-size: 32.5%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .rec.rec-pagination {
+    margin-top: 0;
+  }
+
+  .rec.rec-arrow {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    line-height: 20px;
   }
 }
 
