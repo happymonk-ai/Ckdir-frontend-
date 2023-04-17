@@ -27,16 +27,23 @@
   background: rgba(1, 143, 106, 0.85);
   box-shadow: 0px 7px 45px 10px rgba(169, 255, 233, 0.4);
 }
+
 .button {
   // background-color: $orange;
-  color: #fff;
+  color: rgba(251, 251, 251, 1);
   width: 100%;
   // box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 1.389vw;
+  line-height: 2.431vw;
   cursor: pointer;
+}
+
+@media screen and (max-width: 722px) {
+  .button {
+    font-size: 18px;
+  }
 }
