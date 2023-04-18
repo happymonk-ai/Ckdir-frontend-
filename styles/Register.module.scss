@@ -37,6 +37,7 @@
   width: 31.25vw;
   min-width: 265px;
   margin: auto 10.2084vw auto 6.7362vw;
+<<<<<<< HEAD
   // padding: 5rem 0;
 }
 
@@ -47,6 +48,21 @@
 .backIconContainer {
   padding: 8px 1.7362vw 0;
   cursor: pointer;
+}
+
+.formSection {
+  flex-grow: 1;
+=======
+  padding: 5rem 0;
+>>>>>>> a9cd0b4 (update book demo page)
+}
+
+.iconAndFormContainer {
+  display: flex;
+}
+
+.backIconContainer {
+  padding: 6px 2.0834vw 0;
 }
 
 .formSection {
@@ -288,5 +304,8 @@
   font-size: 14px;
   bottom: 20px;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a9cd0b4 (update book demo page)
