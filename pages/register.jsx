@@ -201,7 +201,10 @@ const Register = () => {
                             <li
                               onClick={() => setSelectedSector("Manufacturing")}
                             >
-                              <Image src={manufacturingIcon} alt="sector icon" />
+                              <Image
+                                src={manufacturingIcon}
+                                alt="sector icon"
+                              />
                               <span> Manufacturing </span>
                             </li>
                             <li onClick={() => setSelectedSector("Logistics")}>
@@ -240,7 +243,9 @@ const Register = () => {
                       <span>This field is required</span>
                     )}
                     {/* <FilledBtn title="Submit" type="submit" url="" /> */}
-                    <input type="submit" className={btnStyles.button} />
+                    <div className={selectStyles.submitBtn}>
+                      <input type="submit" className={btnStyles.button} />
+                    </div>
                   </form>
                 </div>
               </div>
