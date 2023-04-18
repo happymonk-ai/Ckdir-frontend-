@@ -40,10 +40,14 @@ const Register = () => {
 
   useEffect(() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     setDropdownVisible(false);
 =======
     setDropdownVisible((prev) => !prev);
 >>>>>>> 405422f (fix: fonts and back btn)
+=======
+    setDropdownVisible(false);
+>>>>>>> 03c69fd (fix: select industry list)
   }, [selectedSector]);
 
   const {
