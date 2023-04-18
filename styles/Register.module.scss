@@ -16,6 +16,7 @@
   font-weight: 700;
   font-family: "Source Sans Pro";
   font-style: normal;
+  color: rgba(18, 18, 18, 1);
 }
 
 .label {
@@ -25,6 +26,7 @@
   line-height: 30px;
   font-weight: 600;
   font-family: "Source Sans Pro";
+  color: rgba(18, 18, 18, 0.8)
 }
 
 .form {
@@ -44,6 +46,7 @@
 
 .backIconContainer {
   padding: 6px 2.0834vw 0;
+  cursor: pointer;
 }
 
 .formSection {

@@ -297,7 +297,7 @@ const Home = () => {
                 <div className={styles.readMore}>
                   <Button
                     title={"Book Demo"}
-                    url={"/product/chokidr-software"}
+                    url={"/register"}
                     isActive={false}
                   />
                 </div>

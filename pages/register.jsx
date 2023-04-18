@@ -1,8 +1,9 @@
-import { useState} from "react";
+import { useState,useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Register.module.scss";
 import logo from "../public/registerLogo.png";
 import Input from "../components/Input";
@@ -32,9 +33,9 @@ const Register = () => {
   const [selectedSector, setSelectedSector] = useState("");
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
-  // useEffect(() => {
-  //   setDropdownVisible((prev) => !prev);
-  // }, [selectedSector, dropdownVisible]);
+  useEffect(() => {
+    setDropdownVisible((prev) => !prev);
+  }, [selectedSector]);
 
   const {
     register,
@@ -92,7 +93,9 @@ const Register = () => {
           ) : (
             <div className={styles.iconAndFormContainer}>
               <div className={styles.backIconContainer}>
-                <Image src={backIcon} alt="back icon"></Image>
+                <Link href="/" passHref>
+                  <Image src={backIcon} alt="back icon"></Image>
+                </Link>
               </div>
               <div className={styles.formSection}>
                 <div className={styles.formHeader}>
