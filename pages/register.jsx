@@ -17,6 +17,11 @@ import backIcon from "../public/icons/back-icon.svg";
 import gvtIcon from "../public/icons/government-icon.svg";
 import privateIcon from "../public/icons/private-icon.svg";
 import manufacturingIcon from "../public/icons/manufacturing-icon.svg";
+import financeIcon from "../public/icons/stats 1.svg";
+import othersIcon from "../public/icons/more-information 1.svg";
+import healthIcon from "../public/icons/healthcare 2.svg";
+import eduIcon from "../public/icons/education 1.svg";
+import warehouseIcon from "../public/icons/warehouse 1.svg";
 import logisticsIcon from "../public/icons/logistics-icon.svg";
 import downArrowIcon from "../public/icons/down-arrow.svg";
 import FilledBtn from "../components/FilledBtn";
@@ -217,23 +222,23 @@ const Register = () => {
                             <li
                               onClick={() => setSelectedSector("Warehousing")}
                             >
-                              <Image src={sectorIcon} alt="sector icon" />
+                              <Image src={warehouseIcon} alt="sector icon" />
                               <span> Warehousing </span>
                             </li>
                             <li onClick={() => setSelectedSector("Education")}>
-                              <Image src={sectorIcon} alt="sector icon" />
+                              <Image src={eduIcon} alt="sector icon" />
                               <span> Education </span>
                             </li>
                             <li onClick={() => setSelectedSector("Healthcare")}>
-                              <Image src={sectorIcon} alt="sector icon" />
+                              <Image src={healthIcon} alt="sector icon" />
                               <span> Healthcare </span>
                             </li>
                             <li onClick={() => setSelectedSector("Finance")}>
-                              <Image src={sectorIcon} alt="sector icon" />
+                              <Image src={financeIcon} alt="sector icon" />
                               <span> Finance </span>
                             </li>
                             <li onClick={() => setSelectedSector("Others")}>
-                              <Image src={sectorIcon} alt="sector icon" />
+                              <Image src={othersIcon} alt="sector icon" />
                               <span> Others </span>
                             </li>
                           </ul>
