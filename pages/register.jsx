@@ -39,7 +39,7 @@ const Register = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
-    setDropdownVisible((prev) => !prev);
+    setDropdownVisible(false);
   }, [selectedSector]);
 
   const {
