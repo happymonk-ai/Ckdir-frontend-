@@ -39,7 +39,11 @@ const Register = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
+<<<<<<< HEAD
     setDropdownVisible(false);
+=======
+    setDropdownVisible((prev) => !prev);
+>>>>>>> 405422f (fix: fonts and back btn)
   }, [selectedSector]);
 
   const {
