@@ -3,7 +3,7 @@
   padding: 0 0 4px 10px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  // gap: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   position: relative;
   cursor: pointer;
@@ -18,6 +18,7 @@
     font-family: "Source Sans Pro";
     color: rgba(46, 48, 52, 0.9);
     cursor: pointer;
+    margin-left: 15.5px;
   }
 
   input::placeholder {
@@ -27,6 +28,7 @@
 
 .listContainer {
   position: relative;
+  z-index: 1;
 }
 
 .list {
@@ -77,5 +79,9 @@
 }
 
 .submitBtn {
-  margin: 86px 0 10.4167vw;
+  margin: 67px 0 auto;
+}
+
+.dummy {
+  fill: red;
 }

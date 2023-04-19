@@ -28,6 +28,8 @@ import inputStyles from "../styles/componentsStyle/Input.module.scss";
 import btnStyles from "../styles/componentsStyle/FilledBtn.module.scss";
 import selectStyles from "../styles/componentsStyle/Select.module.scss";
 
+import Svg from "../components/Svg"
+
 const SIB_ENDPOINT = "https://api.sendinblue.com/v3";
 const SIB_KEY =
   "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";
@@ -150,30 +152,6 @@ const Register = () => {
                     </div>
 
                     <div className={styles.field}>
-                      <div className={inputStyles.input}>
-                        <span className={inputStyles.icon}>
-                          <Image src={idIcon} alt="user" />
-                        </span>
-                        <input
-                          placeholder="Organisation Name"
-                          {...register("organisation")}
-                        />
-                      </div>
-                    </div>
-
-                    <div className={styles.field}>
-                      <div className={inputStyles.input}>
-                        <span className={inputStyles.icon}>
-                          <Image src={companySizeIcon} alt="user" />
-                        </span>
-                        <input
-                          placeholder="Company Size"
-                          {...register("companySize")}
-                        />
-                      </div>
-                    </div>
-
-                    <div className={styles.field}>
                       <div className={selectStyles.select}>
                         <span className={inputStyles.icon}>
                           <Image src={sectorIcon} alt="user" />
@@ -242,6 +220,30 @@ const Register = () => {
                           </ul>
                         </div>
                       )}
+                    </div>
+
+                    <div className={styles.field}>
+                      <div className={inputStyles.input}>
+                        <span className={inputStyles.icon}>
+                          <Image src={idIcon} alt="user" />
+                        </span>
+                        <input
+                          placeholder="Organisation Name"
+                          {...register("organisation")}
+                        />
+                      </div>
+                    </div>
+
+                    <div className={styles.field}>
+                      <div className={inputStyles.input}>
+                        <span className={inputStyles.icon}>
+                          <Image src={companySizeIcon} alt="user" />
+                        </span>
+                        <input
+                          placeholder="Company Size"
+                          {...register("companySize")}
+                        />
+                      </div>
                     </div>
 
                     {/* errors will return when field validation fails  */}
