@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -31,8 +31,6 @@ import inputStyles from "../styles/componentsStyle/Input.module.scss";
 import btnStyles from "../styles/componentsStyle/FilledBtn.module.scss";
 import selectStyles from "../styles/componentsStyle/Select.module.scss";
 
-import Svg from "../components/Svg";
-
 const SIB_ENDPOINT = "https://api.sendinblue.com/v3";
 const SIB_KEY =
   "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";
@@ -40,6 +38,7 @@ const SIB_KEY =
 const Register = () => {
   const [selectedSector, setSelectedSector] = useState("");
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     setDropdownVisible(false);
@@ -81,15 +80,16 @@ const Register = () => {
     onSubmit,
   });
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors },
+  // } = useForm();
+
+  // const [success, setSuccess] = useState(false);
+  // const [error, setError] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState("");
 
   // const onSubmit = (data) => {
   //   axios
@@ -162,11 +162,11 @@ const Register = () => {
                     </div>
                   </div>
                   <div className={styles.label}>Enter your details here</div>
-                  {error && (
+                  {/* {error && (
                     <span className={styles.errorMessage}>
                       {errorMessage} <br />
                     </span>
-                  )}
+                  )} */}
                   <div className={styles.fields}>
                     <form onSubmit={formik.handleSubmit}>
                       {/* register your input into the hook by invoking the "register" function */}
@@ -392,9 +392,9 @@ const Register = () => {
                       </div>
 
                       {/* errors will return when field validation fails  */}
-                      {errors.exampleRequired && (
+                      {/* {errors.exampleRequired && (
                         <span>This field is required</span>
-                      )}
+                      )} */}
                       {/* <FilledBtn title="Submit" type="submit" url="" /> */}
                       <div className={selectStyles.submitBtn}>
                         <input type="submit" className={btnStyles.button} />
