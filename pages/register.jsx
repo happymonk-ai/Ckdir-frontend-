@@ -70,15 +70,18 @@ const Register = () => {
       name: Yup.string()
         .min(2, "Too Short!")
         .max(50, "Too Long!")
-        .required("Name is required"),
+        .required("Name is required")
+        .trim(),
       phone: Yup.string()
         .matches(/^(\+\d{1,3}[- ]?)?\d{10}$/, "Must be a valid phone number")
         .required("Contact number is required"),
       email: Yup.string()
         .email("Enter a valid email address")
         .required("Email is required"),
-      // sector: Yup.string().required("Sector is required"),
-      organisation: Yup.string().required("Orgainisation name is required"),
+      sector: Yup.string().required("Sector is required"),
+      organisation: Yup.string()
+        .required("Orgainisation name is required")
+        .trim(),
       companySize: Yup.number()
         .typeError("Must be a number")
         .required("Company size is required"),
@@ -241,8 +244,11 @@ const Register = () => {
                           <input
                             name="sector"
                             placeholder="Industry Sector"
+                            // onChange={handleChange}
                             value={selectedSector}
                             autoComplete="off"
+                            readOnly
+                            // {...formik.getFieldProps("sector")}
                           />
                           <span
                             onClick={() => setDropdownVisible((prev) => !prev)}
@@ -258,19 +264,28 @@ const Register = () => {
                           <div className={selectStyles.listContainer}>
                             <ul className={selectStyles.list}>
                               <li
-                                onClick={() => setSelectedSector("Government")}
+                                onClick={(e) => {
+                                  setSelectedSector("Government");
+                                  formik.values.sector = "Government";
+                                }}
                               >
                                 <Image src={gvtIcon} alt="sector icon" />
                                 <span>Government</span>
                               </li>
-                              <li onClick={() => setSelectedSector("Private")}>
+                              <li
+                                onClick={() => {
+                                  setSelectedSector("Private");
+                                  formik.values.sector = "Private";
+                                }}
+                              >
                                 <Image src={privateIcon} alt="sector icon" />
                                 <span>Private</span>
                               </li>
                               <li
-                                onClick={() =>
-                                  setSelectedSector("Manufacturing")
-                                }
+                                onClick={() => {
+                                  setSelectedSector("Manufacturing");
+                                  formik.values.sector = "Manufacturing";
+                                }}
                               >
                                 <Image
                                   src={manufacturingIcon}
@@ -279,34 +294,56 @@ const Register = () => {
                                 <span> Manufacturing </span>
                               </li>
                               <li
-                                onClick={() => setSelectedSector("Logistics")}
+                                onClick={() => {
+                                  setSelectedSector("Logistics");
+                                  formik.values.sector = "Logistics";
+                                }}
                               >
                                 <Image src={logisticsIcon} alt="sector icon" />
                                 <span> Logistics </span>
                               </li>
                               <li
-                                onClick={() => setSelectedSector("Warehousing")}
+                                onClick={() => {
+                                  setSelectedSector("Warehousing");
+                                  formik.values.sector = "Warehousing";
+                                }}
                               >
                                 <Image src={warehouseIcon} alt="sector icon" />
                                 <span> Warehousing </span>
                               </li>
                               <li
-                                onClick={() => setSelectedSector("Education")}
+                                onClick={() => {
+                                  setSelectedSector("Education");
+                                  formik.values.sector = "Education";
+                                }}
                               >
                                 <Image src={eduIcon} alt="sector icon" />
                                 <span> Education </span>
                               </li>
                               <li
-                                onClick={() => setSelectedSector("Healthcare")}
+                                onClick={() => {
+                                  setSelectedSector("Healthcare");
+                                  formik.values.sector = "Healthcare";
+                                }}
                               >
                                 <Image src={healthIcon} alt="sector icon" />
                                 <span> Healthcare </span>
                               </li>
-                              <li onClick={() => setSelectedSector("Finance")}>
+                              <li
+                                onClick={() => {
+                                  setSelectedSector("Finance");
+                                  formik.values.sector = "Finance";
+                                }}
+                              >
                                 <Image src={financeIcon} alt="sector icon" />
                                 <span> Finance </span>
                               </li>
-                              <li onClick={() => setSelectedSector("Others")}>
+                              <li
+                                onClick={() => {
+                                  setSelectedSector("Others");
+                                  formik.values.sector = "Others";
+                                }}
+                              >
                                 <Image src={othersIcon} alt="sector icon" />
                                 <span> Others </span>
                               </li>
