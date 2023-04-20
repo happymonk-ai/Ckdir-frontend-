@@ -1,52 +1,55 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 // import { useForm } from "react-hook-form";
+import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
 
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Register.module.scss";
 import logo from "../public/chokidr-logo.svg";
-import successIcon from "../public/icons/success-icon.svg";
+import iMacImg from "../public/hp 1.png";
+import backIcon from "../public/icons/back-icon.svg";
+import companySizeIcon from "../public/icons/company-size.svg";
+import downArrowIcon from "../public/icons/down-arrow.svg";
+import eduIcon from "../public/icons/education 1.svg";
 import mailIcon from "../public/icons/email-icon.svg";
+import gvtIcon from "../public/icons/government-icon.svg";
+import healthIcon from "../public/icons/healthcare 2.svg";
+import logisticsIcon from "../public/icons/logistics-icon.svg";
+import manufacturingIcon from "../public/icons/manufacturing-icon.svg";
+import othersIcon from "../public/icons/more-information 1.svg";
+import idIcon from "../public/icons/org-icon.svg";
+import privateIcon from "../public/icons/private-icon.svg";
+import sectorIcon from "../public/icons/sector 1.svg";
+import financeIcon from "../public/icons/stats 1.svg";
+import successIcon from "../public/icons/success-icon.svg";
 import phoneIcon from "../public/icons/telephone-icon.svg";
 import userIcon from "../public/icons/user-icon.svg";
-import idIcon from "../public/icons/org-icon.svg";
-import companySizeIcon from "../public/icons/company-size.svg";
-import sectorIcon from "../public/icons/sector 1.svg";
-import backIcon from "../public/icons/back-icon.svg";
-import gvtIcon from "../public/icons/government-icon.svg";
-import privateIcon from "../public/icons/private-icon.svg";
-import manufacturingIcon from "../public/icons/manufacturing-icon.svg";
-import financeIcon from "../public/icons/stats 1.svg";
-import othersIcon from "../public/icons/more-information 1.svg";
-import healthIcon from "../public/icons/healthcare 2.svg";
-import eduIcon from "../public/icons/education 1.svg";
 import warehouseIcon from "../public/icons/warehouse 1.svg";
-import logisticsIcon from "../public/icons/logistics-icon.svg";
-import downArrowIcon from "../public/icons/down-arrow.svg";
-import iMacImg from "../public/hp 1.png";
-import inputStyles from "../styles/componentsStyle/Input.module.scss";
 import btnStyles from "../styles/componentsStyle/FilledBtn.module.scss";
+import inputStyles from "../styles/componentsStyle/Input.module.scss";
 import selectStyles from "../styles/componentsStyle/Select.module.scss";
+import styles from "../styles/Register.module.scss";
 
 const SIB_ENDPOINT = "https://api.sendinblue.com/v3";
-const SIB_KEY =
-  "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";
+const SIB_KEY = process.env.NEXT_PUBLIC_SIB_KEY;
 
 const Register = () => {
   const [selectedSector, setSelectedSector] = useState("");
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [success, setSuccess] = useState(false);
 
+
+
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+
   useEffect(() => {
     setDropdownVisible(false);
   }, [selectedSector]);
 
-  const onSubmit = () => {
-    setSuccess(true);
-  };
+
 
   const formik = useFormik({
     initialValues: {
@@ -77,50 +80,51 @@ const Register = () => {
         .typeError("Must be a number")
         .required("Company size is required"),
     }),
-    onSubmit,
+    onSubmit: (values, { setSubmitting }) => {
+
+      handleSubmit(values, setSubmitting);
+    },
   });
 
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   watch,
-  //   formState: { errors },
-  // } = useForm();
 
-  // const [success, setSuccess] = useState(false);
-  // const [error, setError] = useState(false);
-  // const [errorMessage, setErrorMessage] = useState("");
+  const handleSubmit = (data, setSubmitting) => {
 
-  // const onSubmit = (data) => {
-  //   axios
-  //     .post(
-  //       `${SIB_ENDPOINT}/contacts`,
-  //       {
-  //         listIds: [2],
-  //         email: data.email,
-  //         updateEnabled: false,
-  //         attributes: {
-  //           FIRSTNAME: data.name,
-  //           LASTNAME: "",
-  //           SMS: data.phone,
-  //           COMPANY: data.organisation,
-  //         },
-  //       },
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           "api-key": SIB_KEY,
-  //         },
-  //       }
-  //     )
-  //     .then((response) => {
-  //       setSuccess(true);
-  //     })
-  //     .catch(({ response }) => {
-  //       setError(true);
-  //       setErrorMessage(response.data.message);
-  //     });
-  // };
+    console.log(data)
+    setSubmitting(true);
+    axios
+      .post(
+        `${SIB_ENDPOINT}/contacts`,
+        {
+          listIds: [4],
+          email: data.email,
+          updateEnabled: false,
+          attributes: {
+            NAME: data.name,
+            SMS: data.phone,
+            ORGANISATION_NAME: data.organisation,
+            COMPANY_SIZE: data.companySize,
+            INDUSTRY_SECTOR: data.sector,
+          },
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "api-key": SIB_KEY,
+          },
+        }
+      )
+      .then((response) => {
+        setSuccess(true);
+        setSubmitting(false);
+      })
+      .catch(({ response }) => {
+        setError(true);
+        setSubmitting(false);
+        setErrorMessage(response.data.message);
+      });
+  };
+
+  const { isSubmitting } = formik;
 
   return (
     <div className={styles.container}>
@@ -162,11 +166,11 @@ const Register = () => {
                     </div>
                   </div>
                   <div className={styles.label}>Enter your details here</div>
-                  {/* {error && (
+                    {error && (
                     <span className={styles.errorMessage}>
                       {errorMessage} <br />
                     </span>
-                  )} */}
+                    )}
                   <div className={styles.fields}>
                     <form onSubmit={formik.handleSubmit}>
                       {/* register your input into the hook by invoking the "register" function */}
@@ -240,7 +244,7 @@ const Register = () => {
                             value={selectedSector}
                             autoComplete="off"
                             readOnly
-                            // {...formik.getFieldProps("sector")}
+                          // {...formik.getFieldProps("sector")}
                           />
                           <span
                             onClick={() => setDropdownVisible((prev) => !prev)}
@@ -362,7 +366,7 @@ const Register = () => {
                           />
                         </div>
                         {formik.touched.organisation &&
-                        formik.errors.organisation ? (
+                            formik.errors.organisation ? (
                           <p className={styles.errorMessage}>
                             {formik.errors.organisation}
                           </p>
@@ -382,22 +386,18 @@ const Register = () => {
                           />
                         </div>
                         {formik.touched.companySize &&
-                        formik.errors.companySize ? (
+                            formik.errors.companySize ? (
                           <p className={styles.errorMessage}>
                             {formik.errors.companySize}
                           </p>
                         ) : (
                           ""
                         )}
-                      </div>
-
-                      {/* errors will return when field validation fails  */}
-                      {/* {errors.exampleRequired && (
-                        <span>This field is required</span>
-                      )} */}
-                      {/* <FilledBtn title="Submit" type="submit" url="" /> */}
+                        </div>
                       <div className={selectStyles.submitBtn}>
-                        <input type="submit" className={btnStyles.button} />
+                          <button type="submit" className={btnStyles.button} style={{
+                            pointerEvents: formik.isSubmitting ? "none" : "auto"
+                          }}>   {formik.isSubmitting ? 'Submitting...' : 'Submit'}</button>
                       </div>
                     </form>
                   </div>
