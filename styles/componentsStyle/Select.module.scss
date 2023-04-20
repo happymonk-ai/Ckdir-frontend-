@@ -18,7 +18,7 @@
     font-family: "Source Sans Pro";
     color: rgba(46, 48, 52, 0.9);
     cursor: pointer;
-    margin-left: 15.5px;
+    padding-left: 16px;
   }
 
   input::placeholder {
@@ -66,13 +66,10 @@
 
   li:hover {
     background: rgba(1, 143, 106, 0.85);
-    img {
-      fill: white;
-    }
     span {
       color: rgba(255, 255, 255, 1);
       img {
-        fill: white;
+        color: rgba(255, 255, 255, 1);
       }
     }
   }
@@ -80,8 +77,4 @@
 
 .submitBtn {
   margin: 67px 0 auto;
-}
-
-.dummy {
-  fill: red;
 }
