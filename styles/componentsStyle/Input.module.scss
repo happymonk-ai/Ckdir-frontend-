@@ -15,6 +15,9 @@
     font-family: "Source Sans Pro";
     color: rgba(46, 48, 52, 0.9);
   }
+  input::placeholder{
+    color: rgba(46, 48, 52, 0.4)
+  }
 }
 
 .icon {
