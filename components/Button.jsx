@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/componentsStyle/Button.module.scss";
 
-const Button = ({ title, url, isActive }) => {
+const Button = ({ title, url, isActive, }) => {
   return (
     <div className={styles.container}>
       {url ? (
@@ -13,7 +13,7 @@ const Button = ({ title, url, isActive }) => {
       ) : (
         // <Link href={url}>
         //   <a>
-            <div className={styles.button}>{title}</div>
+          <div className={styles.button}>{title}</div>
         //   </a>
         // </Link>
       )}

@@ -88,8 +88,6 @@ const Register = () => {
 
 
   const handleSubmit = (data, setSubmitting) => {
-
-    console.log(data)
     setSubmitting(true);
     axios
       .post(
@@ -166,14 +164,13 @@ const Register = () => {
                     </div>
                   </div>
                   <div className={styles.label}>Enter your details here</div>
-                    {error && (
+                  {error && (
                     <span className={styles.errorMessage}>
                       {errorMessage} <br />
                     </span>
-                    )}
+                  )}
                   <div className={styles.fields}>
                     <form onSubmit={formik.handleSubmit}>
-                      {/* register your input into the hook by invoking the "register" function */}
                       <div className={styles.field}>
                         <div className={inputStyles.input}>
                           <span className={inputStyles.icon}>
@@ -366,7 +363,7 @@ const Register = () => {
                           />
                         </div>
                         {formik.touched.organisation &&
-                            formik.errors.organisation ? (
+                          formik.errors.organisation ? (
                           <p className={styles.errorMessage}>
                             {formik.errors.organisation}
                           </p>
@@ -386,18 +383,18 @@ const Register = () => {
                           />
                         </div>
                         {formik.touched.companySize &&
-                            formik.errors.companySize ? (
+                          formik.errors.companySize ? (
                           <p className={styles.errorMessage}>
                             {formik.errors.companySize}
                           </p>
                         ) : (
                           ""
                         )}
-                        </div>
+                      </div>
                       <div className={selectStyles.submitBtn}>
-                          <button type="submit" className={btnStyles.button} style={{
-                            pointerEvents: formik.isSubmitting ? "none" : "auto"
-                          }}>   {formik.isSubmitting ? 'Submitting...' : 'Submit'}</button>
+                        <button type="submit" className={btnStyles.button} style={{
+                          pointerEvents: formik.isSubmitting ? "none" : "auto"
+                        }}>   {formik.isSubmitting ? 'Submitting...' : 'Submit'}</button>
                       </div>
                     </form>
                   </div>

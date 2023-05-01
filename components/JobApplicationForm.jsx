@@ -1,21 +1,19 @@
+import axios from "axios";
 import Image from "next/image";
-import Button from "./Button";
-import styles from "../styles/componentsStyle/JobDescription.module.scss";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import React, { useEffect, useState } from "react";
-import envelopImg from "../public/icons/outline-envelop2.png";
-import userImg from "../public/user.png";
+import coverLetterImg from "../public/icons/cover-letter.svg";
 import docsImg from "../public/icons/docs.png";
 import linkedinImg from "../public/icons/linkedin.svg";
-import coverLetterImg from "../public/icons/cover-letter.svg";
-import uploadImg from "../public/icons/upload.svg";
-import PhoneNumberInput from "./PhoneNumberInput";
+import envelopImg from "../public/icons/outline-envelop2.png";
+import userImg from "../public/user.png";
+import styles from "../styles/componentsStyle/JobDescription.module.scss";
 import AppliedSuccess from "./AppliedSuccess";
-import axios from "axios";
+import Button from "./Button";
+import PhoneNumberInput from "./PhoneNumberInput";
 
 const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
-  const SIB_KEY =
-    "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";
+  const SIB_KEY = process.env.NEXT_PUBLIC_SIB_KEY;
 
   const [selected, setSelected] = useState("");
   const [success, setSuccess] = useState(false);
@@ -26,9 +24,9 @@ const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
   // const [coverLetterInput, setCoverLetterInput] = useState();
   // const [resumeInput, setResumeInput] = useState();
 
-  const handleCoverLetter = (e) => {};
+  const handleCoverLetter = (e) => { };
 
-  const handleResume = (target) => {};
+  const handleResume = (target) => { };
 
   const onSubmit = (data) => {
     axios
@@ -39,10 +37,8 @@ const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
           email: data.email,
           updateEnabled: false,
           attributes: {
-            FIRSTNAME: data.name,
-            LASTNAME: "",
+            NAME: data.name,
             SMS: phoneInput,
-            COMPANY: "",
             RESUME: data.resume,
             COVER_LETTER: data.cover,
             LINKEDIN: data.linkedin,
@@ -55,7 +51,7 @@ const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
           },
         }
       )
-      .then((response) => {
+      .then(() => {
         setSuccess(true);
       })
       .catch(({ response }) => {

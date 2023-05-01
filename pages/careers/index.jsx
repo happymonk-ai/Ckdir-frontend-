@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import Head from "next/head";
+import React, { useState } from "react";
+import { useQuery } from "urql";
 import Header from "../../components/Header";
 import LongCard from "../../components/LongCard";
 import styles from "../../styles/Career.module.scss";
-import Head from "next/head";
-import { useQuery } from "urql";
 
 const jobQuery = `
   query {
@@ -23,10 +23,6 @@ const Career = ({ openRoles }) => {
   });
 
   const { data, fetching, error } = result;
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   const [active, setActive] = useState();
   const handleActive = (tab) => {

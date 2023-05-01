@@ -1,10 +1,10 @@
+import Head from "next/head";
+import { createClient, Provider } from "urql";
 import Footer from "../components/Footer";
 import "../styles/globals.css";
-import { createClient, Provider } from "urql";
-import Head from "next/head";
 
 const client = createClient({
-  url: process.env.NEXT_PUBLIC_GRAPHQL_URL || "https://app.ckdr.co.in/graphql",
+  url: process.env.NEXT_PUBLIC_GRAPHQL_URL,
 });
 
 function MyApp({ Component, pageProps }) {
