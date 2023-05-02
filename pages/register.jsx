@@ -87,8 +87,6 @@ const Register = () => {
 
 
   const handleSubmit = (data, setSubmitting) => {
-
-    console.log(data)
     setSubmitting(true);
     axios
       .post(
@@ -172,7 +170,6 @@ const Register = () => {
                   )}
                   <div className={styles.fields}>
                     <form onSubmit={formik.handleSubmit}>
-                      {/* register your input into the hook by invoking the "register" function */}
                       <div className={styles.field}>
                         <div className={inputStyles.input}>
                           <span className={inputStyles.icon}>
