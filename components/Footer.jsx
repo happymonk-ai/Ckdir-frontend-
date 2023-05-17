@@ -1,11 +1,11 @@
 import Image from "next/image";
-import styles from "../styles/componentsStyle/Footer.module.scss";
 import logoImg from "../public/icons/smallLogo.svg";
 import textLogoImg from "../public/icons/smallTextLogo.svg";
+import styles from "../styles/componentsStyle/Footer.module.scss";
 // import copyrightImg from "../public/icons/copyright.svg"
+import Link from "next/link";
 import envelopImg from "../public/icons/envelop.svg";
 import phoneImg from "../public/icons/phone.svg";
-import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -103,10 +103,10 @@ const Footer = () => {
                 </Link>
               </li>
               {/* <li className={styles.listItem}> */}
-                {/* <Link href={'/product/chokidr-software/identities'}>
+              {/* <Link href={'/product/chokidr-software/identities'}>
                                     <a> */}
-                {/* Discord */}
-                {/* </a>
+              {/* Discord */}
+              {/* </a>
                                 </Link> */}
               {/* </li> */}
             </ul>
@@ -138,7 +138,7 @@ const Footer = () => {
                 <span className={styles.contactIcon}>
                   <Image src={phoneImg} alt="phone" />
                 </span>
-                <span>+91 82961 33177</span>
+                <span>+91 99161 77221</span>
               </li>
             </ul>
             {/* <ul className={styles.topSpacing}>
