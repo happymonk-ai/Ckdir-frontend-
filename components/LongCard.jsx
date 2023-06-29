@@ -1,7 +1,6 @@
-import styles from "../styles/componentsStyle/LongCard.module.scss";
-import { FaChevronDown } from "react-icons/fa";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "urql";
+import styles from "../styles/componentsStyle/LongCard.module.scss";
 import JobDescription from "./JobDescription";
 import RoleHeader from "./RoleHeader";
 
@@ -42,7 +41,9 @@ const LongCard = ({ children, url, role, id, active, handleActive }) => {
   });
   const { data, fetching } = result;
 
-  useEffect(() => {}, [roleDetails]);
+  useEffect(() => { }, [roleDetails]);
+
+  console.log(role.JobTitle)
 
   useEffect(() => {
     let responsibility = data?.jobDeescription?.DailyandMonthlyresponsibilities;
