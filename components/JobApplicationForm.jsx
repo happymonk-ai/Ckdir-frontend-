@@ -15,18 +15,11 @@ import PhoneNumberInput from "./PhoneNumberInput";
 const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
   const SIB_KEY = process.env.NEXT_PUBLIC_SIB_KEY;
 
-  const [selected, setSelected] = useState("");
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [phoneInput, setPhoneInput] = useState(null);
   const [linkedInInput, setLinkedInInput] = useState();
-  // const [coverLetterInput, setCoverLetterInput] = useState();
-  // const [resumeInput, setResumeInput] = useState();
-
-  const handleCoverLetter = (e) => { };
-
-  const handleResume = (target) => { };
 
   const onSubmit = (data) => {
     axios
@@ -42,6 +35,7 @@ const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
             RESUME: data.resume,
             COVER_LETTER: data.cover,
             LINKEDIN: data.linkedin,
+            ROLE: role.JobTitle
           },
         },
         {
@@ -63,8 +57,6 @@ const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
   const {
     register,
     handleSubmit,
-    watch,
-    control,
     formState: { errors },
   } = useForm();
 
@@ -142,18 +134,9 @@ const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
                               {...register("resume")}
                               required={true}
                             />
-                            {/* <input
-                          className={styles.uploadInput}
-                          type="file"
-                          name="resume"
-                          value={resumeInput}
-                          {...register("resume")}
-                          onChange={({ target }) => handleResume(target)}
-                        /> */}
+
                           </span>
-                          {/* <span className={styles.fieldIcon}>
-                            <Image src={uploadImg} alt="upload resume" />
-                          </span> */}
+
                         </div>
                       </div>
                       <div className={styles.fieldsContaineRight}>
@@ -201,18 +184,9 @@ const JobApplicationForm = ({ SIB_ENDPOINT, role }) => {
                               placeholder="Cover Letter Link"
                               {...register("cover")}
                             />
-                            {/* <input
-                          className={styles.uploadInput}
-                          type="file"
-                          value={coverLetterInput}
-                          name="cover_letter"
-                          {...register("cover_letter")}
-                          onChange={(e) => handleCoverLetter(e)}
-                        /> */}
+
                           </span>
-                          {/* <span className={styles.fieldIcon}>
-                            <Image src={uploadImg} alt="upload cover letter" />
-                          </span> */}
+
                         </div>
                       </div>
                     </div>
